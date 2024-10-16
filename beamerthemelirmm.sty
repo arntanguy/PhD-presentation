@@ -1,0 +1,152 @@
+\mode<presentation>
+
+\RequirePackage{tgpagella}
+
+\useoutertheme[subsection=false,shadow]{miniframes}
+\useinnertheme{default}
+\usefonttheme{serif}
+
+% setting format to 16:9
+\geometry{paperwidth=16cm,paperheight=9cm}
+
+% helper macro to copy a template into another
+\newcommand\letbeamertemplate[2]{%
+  \csletcs{beamer@@tmpl@#1}{beamer@@tmpl@#2}%
+}
+
+% Currently template `headline` is `miniframes` theme.
+% First, copy `headline` to `footline`.
+\letbeamertemplate{footline}{headline}
+% Then, reset `headline`
+\setbeamertemplate{headline}[default]
+
+% show slide number on all slides but the first
+\addtobeamertemplate{footline} 
+{
+  \ifnum\c@framenumber=1
+  \else
+    \begin{beamercolorbox}[wd=0.95\paperwidth,right,dp=2ex]{page number}
+      \insertframenumber/\inserttotalframenumber
+    \end{beamercolorbox}
+  \fi
+  \begin{beamercolorbox}[colsep=1.25pt]{lower separation line foot}
+  \end{beamercolorbox}
+}
+
+% Title page: default
+\defbeamertemplate*{title page}{lirmm}[1][]
+{
+  \vbox{}
+  \vfill
+  \begingroup
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+      \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}\vskip0.5em
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \endgroup
+  \vfill
+}
+
+% Title page background logos
+\addtobeamertemplate{title page}
+{
+  \begin{tikzpicture}[overlay, remember picture]
+    % logo graph chart
+    \node[inner sep=0pt,outer sep=0pt,anchor=north west] at (current page.north west)
+    {\includegraphics[height=\the\paperheight]{logos/Title_image.jpg}};
+    % logo lirmm
+    \node[inner sep=0pt,outer sep=0pt,anchor=north east] at (14cm,1cm)
+    {\includegraphics[height=3cm]{logos/LIRMM_square.png}};
+    % logo cnrs
+    \node[inner sep=0pt,outer sep=0pt,anchor=east] at (13.75cm,-3.6cm)
+    {\includegraphics[height=2cm]{logos/cnrs.png}};
+    % logo honda
+    \node[inner sep=0pt,outer sep=0pt,anchor=south east] at (14cm,-6.9cm)
+    {\includegraphics[height=1.4cm]{logos/hri.jpg}};
+    % logo umontpellier
+    \node[inner sep=0pt,outer sep=0pt,anchor=south east] at (9.5cm,-7cm)
+    {\includegraphics[height=1.5cm]{logos/logo_UM.png}};
+  \end{tikzpicture}
+}
+
+
+% Default title template + add logo and offsets for title and subtitle
+% The % symbols and carriage returns all influence movements, this is a mess
+\defbeamertemplate*{frametitle}{lirmm}[1][left]{%
+  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \@tempdima=\textwidth%
+  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+  \begin{beamercolorbox}[sep=0.2cm,#1,wd=\the\@tempdima]{frametitle}
+    \usebeamerfont{frametitle}%
+    \vbox{}\vskip-1ex%
+    \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
+    \includegraphics[width=0.95\paperwidth]{logos/Slides_header.png}%
+    \vspace*{-7ex}
+    \hspace*{9.5ex}
+    {
+      \ifx\insertframesubtitle\@empty%
+      {
+        \strut\insertframetitle\strut\par%
+      }
+      \else
+      {
+        \vspace*{-4ex}%
+
+        \hspace*{11ex}%
+        \strut\insertframetitle\strut\par%
+        \hspace*{11ex}%
+        \usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\strut\insertframesubtitle\strut\par
+      }%
+      \fi
+    }%
+    \vskip 2ex%
+    \if@tempswa\else\vskip-.3cm\fi% set inside beamercolorbox... evil here...
+  \end{beamercolorbox}%
+}
+
+% Display a slide before the current section with overview inf
+\AtBeginSection[]
+{%
+   \begin{frame}
+       \frametitle{Overview}
+       \tableofcontents[currentsection,hideothersubsections]
+   \end{frame}
+}
+
+\setbeamerfont{title like}{shape=\scshape}
+\setbeamerfont{frametitle}{shape=\scshape}
+\setbeamerfont{section in head/foot}{shape=\scshape,size=\tiny}
+\setbeamerfont{footnote}{size=\tiny}
+
+\setbeamertemplate{navigation symbols}{} % decomment to hide bottom nav buttons
+\setbeamercovered{transparent} % don't hide strip-teased bullet points
+
+\definecolor{barcolor}{HTML}{3871c0} % lirmm blue
+% \setbeamercolor{lower separation line head}{bg=barcolor} 
+\setbeamercolor{lower separation line foot}{bg=barcolor} 
+\setbeamercolor{normal text}{fg=black,bg=white} 
+\setbeamercolor{alerted text}{fg=red} 
+\setbeamercolor{example text}{fg=black} 
+\setbeamercolor{structure}{fg=black} 
+ 
+\setbeamercolor{palette tertiary}{fg=black,bg=black!10} 
+\setbeamercolor{palette quaternary}{fg=black,bg=black!10} 
+
+\mode<all>
