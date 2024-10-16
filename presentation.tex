@@ -1,0 +1,285 @@
+\documentclass{beamer}
+
+\usetheme{lirmm}
+
+\title{Comité de Suivi Individuel}
+\author{Hugo Lefèvre}
+\institute{LIRMM}{}
+\date{\today}
+\subject{Spatial Vector Algebra, Rigid Body Physics}
+
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{upquote}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{multimedia}
+\usepackage[style=ieee,doi=false]{biblatex}
+\addbibresource{bib/biblio.bib}
+
+\usetikzlibrary{positioning}
+
+
+% \input{./configurations.tex}
+
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{
+backgroundcolor=\color{lbcolor},
+	tabsize=2,
+	%   rulecolor=,
+	language=C++,
+	basicstyle=\scriptsize,
+	upquote=true,
+	aboveskip={0.5\baselineskip},
+	% columns=fixed,
+	showstringspaces=false,
+	extendedchars=false,
+	breaklines=true,
+	prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+	frame=single,
+	showtabs=false,
+	showspaces=false,
+	showstringspaces=false,
+	identifierstyle=\ttfamily,
+	keywordstyle=\color[rgb]{0,0,1},
+	commentstyle=\color[rgb]{0.026,0.512,0.095},
+	stringstyle=\color[rgb]{0.627,0.126,0.941},
+	numberstyle=\color[rgb]{0.205, 0.142, 0.73},
+	%        \lstdefinestyle{C++}{language=C++,style=numbers}’.
+}
+
+\newcommand{\CoM}{\boldsymbol{c}}
+\newcommand{\VRP}{\boldsymbol{v}}
+\newcommand{\DCM}{\boldsymbol{\xi}}
+\newcommand{\PluckerPose}{\boldsymbol{r}}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}
+	\frametitle{Table of Contents}
+	\tableofcontents
+\end{frame}
+
+
+\section{Context}
+
+\begin{frame}
+	\frametitle{Human assistance}
+	The subject is very well known:
+	\begin{itemize}
+		\item Aging populations
+		\item 
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Human assistance}
+	\framesubtitle{Why humanoid robots?}
+	(put caregiver picture left, then transposed to robot then experiment)
+	\begin{columns}[T]
+		\begin{column}{0.24\textwidth}
+			\begin{tikzpicture}
+				\node
+				[label={[font=\tiny, align=center]below:A caregiver assisting an \\ elderly person.}] 
+				% (Standup) at (5, 0)
+				{
+					\includegraphics[height=3cm]{figures/Friends_position_human3_white.png}
+				};
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}{0.24\textwidth}
+			\begin{tikzpicture}
+				\node
+				[label={[font=\tiny, align=center]below:RHPS1 assisting a human \\ in simulation.}] 
+				{
+					\includegraphics[height=3cm]{figures/Friends_position_human3_white.png}
+				};
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}{0.48\textwidth}
+			\begin{tikzpicture}
+				\node
+				[label={[font=\tiny]below:HRP-4 assisting a human standing-up and sitting again.}]
+				{
+					\includegraphics[height=3cm]{figures/fp1.png}
+					\includegraphics[height=3cm]{figures/fp2.png}
+					\includegraphics[height=3cm]{figures/fp3.png}
+					\includegraphics[height=3cm]{figures/fp4.png}
+				};
+			\end{tikzpicture}
+		\end{column}
+	\end{columns}
+	% \begin{tikzpicture}
+	% 	\node
+	% 	[label={[scale=0.6]below:HRP-4 assisting a human standing-up and sitting again.}] 
+	% 	(Standup) at (14, 0)
+	% 	{
+	% 		\includegraphics[height=3cm]{figures/fp1.png}
+	% 		\includegraphics[height=3cm]{figures/fp2.png}
+	% 		\includegraphics[height=3cm]{figures/fp3.png}
+	% 		\includegraphics[height=3cm]{figures/fp4.png}
+	% 	};
+	% 	\node
+	% 	[label={[scale=0.6, align=center]below:RHPS1 assisting a human \\ in simulation.}] 
+	% 	(Standup) at (5, 0)
+	% 	{
+	% 		\includegraphics[height=3cm]{figures/Friends_position_human3_white.png}
+	% 	};
+	% \end{tikzpicture}
+	Anthropomorphic shape allow to take example from caregivers expertise : we do NOT try to "lift" the person.
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Human assistance}
+	\framesubtitle{How to assist?}
+	Problem: how do we assist a person in their movements?
+
+	Generally we only want to help them remain in balance. 
+	
+	Luckily humanoid balance and its control is also our field of study !
+
+	it's easy \footfullcite{roux2021icar}\footfullcite{kojima2020biorob}\footfullcite{bussy2012roman}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Static/robust balance regions}
+
+	\begin{columns}[T]
+		\begin{column}{0.48\textwidth}
+			Newton-Euler: 
+			\begin{equation}\label{Eq:NEforce}
+				\sum_{i=1}^{n} \boldsymbol{f}_{i} + m\mathbf{g} = m\ddot{\CoM}
+			\end{equation}
+			\begin{equation}\label{Eq:NEmoments}
+				\sum_{i=1}^{n} (\mathbf{r}_{i} - \CoM) \times \boldsymbol{f}_{i} + \boldsymbol{n}_{i} = \boldsymbol{\dot{L}}
+			\end{equation}
+		\end{column}
+		
+		\begin{column}{0.48\textwidth}
+			Unilateral contacts with non--slippage condition add:
+			\begin{equation}\label{Eq:Unilateral}
+				\mathbf{u}_i^T \boldsymbol{f}_i \geq 0  
+			\end{equation}
+			\begin{equation}\label{Eq:Friction}
+				\|(\mathbb{I}-\mathbf{u}_i \mathbf{u}_i^T)\boldsymbol{f}_i \| \leq \mu_i \mathbf{u}_i^T \boldsymbol{f}_i
+			\end{equation}
+		\end{column}
+	\end{columns}
+	
+	
+	The set of contact forces $\boldsymbol{f}$ and CoM positions $\CoM$ that respect these equations ensures balance.
+	Problem: too many assumptions for a dynamic motion !
+	% \movie[autostart,width=3cm,height=2cm,poster,showcontrols]{}{movies/Honda2023.mp4}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Static/robust balance regions}
+
+	\begin{columns}[T]
+		\begin{column}{0.48\textwidth}
+			\begin{equation}
+				\sum_{i=1}^{n} \boldsymbol{f}_{i} + m\mathbf{g} = m\ddot{\CoM} \tag{\ref{Eq:NEforce}}
+			\end{equation}
+			\begin{equation}
+				\sum_{i=1}^{n} (\mathbf{r}_{i} - \CoM) \times \boldsymbol{f}_{i} + \boldsymbol{n}_{i} = \boldsymbol{\dot{L}} \tag{\ref{Eq:NEmoments}}
+			\end{equation}
+			\begin{equation}
+				\mathbf{u}_i^T \boldsymbol{f}_i \geq 0  \tag{\ref{Eq:Unilateral}}
+			\end{equation}
+			\begin{equation}
+				\|(\mathbb{I}-\mathbf{u}_i \mathbf{u}_i^T)\boldsymbol{f}_i \| \leq \mu_i \mathbf{u}_i^T \boldsymbol{f}_i \tag{\ref{Eq:Friction}}
+			\end{equation}
+		\end{column}
+		
+		\begin{column}{0.48\textwidth}
+			\includegraphics[height=3cm]{figures/figure_haudren.png}
+		\end{column}
+	\end{columns}
+	
+	
+	The set of contact forces $\boldsymbol{f}$ and CoM positions $\CoM$ that respect these equations ensures balance.
+	Problem: too many assumptions for a dynamic motion !
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{The Divergent Component of Motion}
+
+\end{frame}
+
+\section{Sit-to-Stand-to-Sit Assistance}
+\begin{frame}
+	\frametitle{Towards a dynamic balance region}
+
+	\movie[autostart,width=6cm,height=4cm,poster,showcontrols]{}{movies/Honda2023.mp4}
+
+\end{frame}
+
+\section{Dynamic balance region}
+\begin{frame}
+	\frametitle{Towards a dynamic balance region}
+	Scaling etc...
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Towards a dynamic balance region}
+	\framesubtitle{Contact friction cones}
+
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Towards a dynamic balance region}
+	\framesubtitle{Actuation polytopes}
+
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Towards a dynamic balance region}
+	\framesubtitle{Minkowsky sum}
+
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Usage}
+	Explain damping, bounding etc
+
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Drawbacks and improvements}
+	GJK, Force poly problems
+
+	
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Next time}
+	{\centering
+	\bf{Thank you for your attention !} \par}
+	
+	\hfill \\
+	
+	{\centering
+	Please ask any questions or make any suggestions\par}
+
+\end{frame}
+\end{document}
