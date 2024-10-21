@@ -33,6 +33,8 @@
   \end{beamercolorbox}
 }
 
+% TODO define an endpage template
+
 % Title page: default
 \defbeamertemplate*{title page}{lirmm}[1][]
 {
@@ -130,10 +132,19 @@
    \end{frame}
 }
 
+% make sure a footnote is at the bottom of the frame and not of the block only
+\renewcommand{\footfullcite}[1]{
+  \footnote[frame]{\fullcite{#1}}%
+}
+% Redefinition of footnotes to have number in brackets for citations (maybe define a toggle command to keep actual footnotes correct)
+\renewcommand\@makefnmark{\hbox{\usebeamercolor[fg]{footnote mark}\usebeamerfont*{normal text}[\@thefnmark]}}%
+\renewcommand\@makefntext[1]{\usebeamercolor[fg]{footnote mark}\usebeamerfont*{footnote mark}[\@thefnmark]\enspace\usebeamerfont*{footnote} #1}%
+
 \setbeamerfont{title like}{shape=\scshape}
 \setbeamerfont{frametitle}{shape=\scshape}
 \setbeamerfont{section in head/foot}{shape=\scshape,size=\tiny}
 \setbeamerfont{footnote}{size=\tiny}
+\setbeamerfont{footnote mark}{size=\tiny}
 
 \setbeamertemplate{navigation symbols}{} % decomment to hide bottom nav buttons
 \setbeamercovered{transparent} % don't hide strip-teased bullet points
