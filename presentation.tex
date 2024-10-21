@@ -1,13 +1,4 @@
-\documentclass{beamer}
-
-\usetheme{lirmm}
-
-\title{Comité de Suivi Individuel}
-\author{Hugo Lefèvre}
-\institute{LIRMM}{}
-\date{\today}
-\subject{Spatial Vector Algebra, Rigid Body Physics}
-
+\documentclass[10pt]{beamer}
 \usepackage{listings}
 \usepackage{graphicx}
 \usepackage{amsmath}
@@ -17,6 +8,16 @@
 \usepackage{hyperref}
 \usepackage{multimedia}
 \usepackage[style=ieee,doi=false]{biblatex}
+
+\usetheme{lirmm}
+
+\title{Comité de Suivi Individuel}
+\author{Hugo Lefèvre}
+\institute{LIRMM}{}
+\date{\today}
+\subject{Spatial Vector Algebra, Rigid Body Physics}
+
+
 \addbibresource{bib/biblio.bib}
 
 \usetikzlibrary{positioning}
@@ -59,20 +60,21 @@ backgroundcolor=\color{lbcolor},
 \begin{document}
 \frame{\titlepage}
 
-\begin{frame}
-	\frametitle{Table of Contents}
-	\tableofcontents
-\end{frame}
+% \begin{frame}
+% 	\frametitle{Table of Contents}
+% 	\tableofcontents
+% \end{frame}
 
 
 \section{Context}
 
 \begin{frame}
 	\frametitle{Human assistance}
-	The subject is very well known:
+	This subject is very well known:
 	\begin{itemize}
-		\item Aging populations
-		\item 
+		\item Aging populations with reduced autonomy
+		\item Dynamic movements become more difficult with frailty
+		\item Lack in number of caregivers
 	\end{itemize}
 
 \end{frame}
@@ -80,22 +82,21 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Human assistance}
 	\framesubtitle{Why humanoid robots?}
-	(put caregiver picture left, then transposed to robot then experiment)
 	\begin{columns}[T]
 		\begin{column}{0.24\textwidth}
 			\begin{tikzpicture}
 				\node
-				[label={[font=\tiny, align=center]below:A caregiver assisting an \\ elderly person.}] 
+				[label={[font=\scriptsize, align=center]below:A caregiver assisting an \\ elderly person.}] 
 				% (Standup) at (5, 0)
 				{
-					\includegraphics[height=3cm]{figures/Friends_position_human3_white.png}
+					\includegraphics[height=3cm]{figures/caregiver_stand2.png}
 				};
 			\end{tikzpicture}
 		\end{column}
 		\begin{column}{0.24\textwidth}
 			\begin{tikzpicture}
 				\node
-				[label={[font=\tiny, align=center]below:RHPS1 assisting a human \\ in simulation.}] 
+				[label={[font=\scriptsize, align=center]below:RHPS1 assisting a human \\ in simulation.}] 
 				{
 					\includegraphics[height=3cm]{figures/Friends_position_human3_white.png}
 				};
@@ -104,7 +105,7 @@ backgroundcolor=\color{lbcolor},
 		\begin{column}{0.48\textwidth}
 			\begin{tikzpicture}
 				\node
-				[label={[font=\tiny]below:HRP-4 assisting a human standing-up and sitting again.}]
+				[label={[font=\scriptsize]below:HRP-4 assisting a human standing-up and sitting again.}]
 				{
 					\includegraphics[height=3cm]{figures/fp1.png}
 					\includegraphics[height=3cm]{figures/fp2.png}
@@ -144,13 +145,13 @@ backgroundcolor=\color{lbcolor},
 	
 	Luckily humanoid balance and its control is also our field of study !
 
-	it's easy \footfullcite{roux2021icar}\footfullcite{kojima2020biorob}\footfullcite{bussy2012roman}
+	it's easy \footfullcite{roux2021icar}\footfullcite{audren2018tro}\footfullcite{bussy2012roman}
 
 \end{frame}
 
 \begin{frame}
 	\frametitle{Static/robust balance regions}
-
+	Where should the CoM lie to achieve balance?
 	\begin{columns}[T]
 		\begin{column}{0.48\textwidth}
 			Newton-Euler: 
@@ -173,10 +174,8 @@ backgroundcolor=\color{lbcolor},
 		\end{column}
 	\end{columns}
 	
-	
-	The set of contact forces $\boldsymbol{f}$ and CoM positions $\CoM$ that respect these equations ensures balance.
-	Problem: too many assumptions for a dynamic motion !
-	% \movie[autostart,width=3cm,height=2cm,poster,showcontrols]{}{movies/Honda2023.mp4}
+	\hfill \\
+	The set of contact forces $\boldsymbol{f}$ and CoM positions $\CoM$ that respect equations \eqref{Eq:NEforce} to \eqref{Eq:Friction} balances the robot. If $\ddot{\CoM} = \mathbf{0}$ then the balance is said to be static.
 \end{frame}
 
 \begin{frame}
@@ -199,35 +198,79 @@ backgroundcolor=\color{lbcolor},
 		\end{column}
 		
 		\begin{column}{0.48\textwidth}
-			\includegraphics[height=3cm]{figures/figure_haudren.png}
+			\centering
+			\begin{tikzpicture}
+				\node
+				[label={[font=\scriptsize]below:Visualization of the robust static balance region in\footfullcite{audren2018tro}.}]
+				{
+					\includegraphics[height=3.5cm]{figures/figure_haudren.png}
+				};
+			\end{tikzpicture}
 		\end{column}
 	\end{columns}
 	
+	Audren et al. proposed to cap $\ddot{\CoM}$ instead of setting it to zero to achieve a {\bf robust} balance. A 3D region for the CoM was computed through iterative projection (SOCP).
 	
-	The set of contact forces $\boldsymbol{f}$ and CoM positions $\CoM$ that respect these equations ensures balance.
-	Problem: too many assumptions for a dynamic motion !
+\end{frame}
+
+\begin{frame}
+	\frametitle{Static/robust balance regions}
+	Put regions of Julien\footfullcite{roux2021icar} and Saeid\footfullcite{samadi2021ral}
+	These were improvements on the iterative projection algorithms to be able to compute this region in real time: instead
 	
+	\hfill \\
+
+	Basically enforcing this position criterion ensures balance.
 \end{frame}
 
 
 \begin{frame}
 	\frametitle{The Divergent Component of Motion}
-
+	DCM VRP etc
 \end{frame}
 
 \section{Sit-to-Stand-to-Sit Assistance}
 \begin{frame}
-	\frametitle{Towards a dynamic balance region}
+	\frametitle{Integrating a human in a controller}
+	\framesubtitle{Motion capture}
+	Explain xsens mocap
+\end{frame}
 
-	\movie[autostart,width=6cm,height=4cm,poster,showcontrols]{}{movies/Honda2023.mp4}
+\begin{frame}
+	\frametitle{Integrating a human in a controller}
+	\framesubtitle{Region computation for the human model}
+	Show live region with chair blabla
+\end{frame}
+
+\begin{frame}
+	\frametitle{Towards a dynamic balance criterion}
+	\framesubtitle{The previous criteria are insufficient}
+	Show com outside when contact rupture but still balanced
+\end{frame}
+
+\begin{frame}
+	\frametitle{Towards a dynamic balance criterion}
+	\framesubtitle{The previous criteria are insufficient}
+	Use DCM as new criterion
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sit-to-stand-to-sit assistance}
+	\centering
+	% XXX not the correct video
+	\movie[autostart,width=8cm,height=5cm,poster,showcontrols]{}{movies/Honda2023.mp4}
 
 \end{frame}
 
 \section{Dynamic balance region}
 \begin{frame}
-	\frametitle{Towards a dynamic balance region}
-	Scaling etc...
-
+	\frametitle{Limitations of the previous region}
+	
+	\begin{itemize}
+		\item Not designed for dynamic movements.
+		\item Slow computation ($\backsim$60ms for 3 contacts).
+		\item Not taking actuation capabilities into account (human weakness...).
+	\end{itemize}
 \end{frame}
 
 
