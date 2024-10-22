@@ -1,6 +1,6 @@
 \documentclass[10pt]{beamer}
 \usepackage{listings}
-\usepackage{graphicx}
+\usepackage{graphbox,graphicx}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{upquote}
@@ -11,7 +11,7 @@
 
 \usetheme{lirmm}
 
-\title{Comité de Suivi Individuel}
+\title{JRL Seminar}
 \author{Hugo Lefèvre}
 \institute{LIRMM}{}
 \date{\today}
@@ -56,6 +56,12 @@ backgroundcolor=\color{lbcolor},
 \newcommand{\VRP}{\boldsymbol{v}}
 \newcommand{\DCM}{\boldsymbol{\xi}}
 \newcommand{\PluckerPose}{\boldsymbol{r}}
+\newcommand{\torque}{\bs{\tau}}
+\newcommand{\lowerBound}[1]{\underline{#1}}
+\newcommand{\upperBound}[1]{\overline{#1}}
+\newcommand{\bs}{\boldsymbol}
+\newcommand{\transpose}[1]{{#1}^\top}
+\newcommand{\jacobianVector}{\bs{J}}
 
 \begin{document}
 \frame{\titlepage}
@@ -132,20 +138,22 @@ backgroundcolor=\color{lbcolor},
 	% 		\includegraphics[height=3cm]{figures/Friends_position_human3_white.png}
 	% 	};
 	% \end{tikzpicture}
-	Anthropomorphic shape allow to take example from caregivers expertise : we do NOT try to "lift" the person.
+	Anthropomorphic shape allow to take example from caregivers expertise : we do NOT try to "lift" the person, we assist their movements.
 
 \end{frame}
 
 \begin{frame}
 	\frametitle{Human assistance}
 	\framesubtitle{How to assist?}
-	Problem: how do we assist a person in their movements?
-
-	Generally we only want to help them remain in balance. 
+	Problem: how do we assist a person in their movements without imposing the full movement?
 	
-	Luckily humanoid balance and its control is also our field of study !
+	\hfill \\
 
-	it's easy \footfullcite{roux2021icar}\footfullcite{audren2018tro}\footfullcite{bussy2012roman}
+	Generally we only want to help them remain in balance.
+
+	\hfill \\
+
+	Luckily humanoid balance and its control is also our field of study !
 
 \end{frame}
 
@@ -215,25 +223,39 @@ backgroundcolor=\color{lbcolor},
 
 \begin{frame}
 	\frametitle{Static/robust balance regions}
-	Put regions of Julien\footfullcite{roux2021icar} and Saeid\footfullcite{samadi2021ral}
-	These were improvements on the iterative projection algorithms to be able to compute this region in real time: instead
+	Other works at LIRMM expanded this 3D robust region: Roux\footfullcite{roux2021icar} (friction cones linearization) and Samadi\footfullcite{samadi2021ral} (computation of a Chebychev ball).
+	These were improvements to be able to compute this region in near real time (-100ms).
 	
 	\hfill \\
 
-	Basically enforcing this position criterion ensures balance.
+	Basically enforcing a CoM position inside of these ensures a force distribution for balance exists.
 \end{frame}
 
-
-\begin{frame}
-	\frametitle{The Divergent Component of Motion}
-	DCM VRP etc
-\end{frame}
 
 \section{Sit-to-Stand-to-Sit Assistance}
 \begin{frame}
 	\frametitle{Integrating a human in a controller}
 	\framesubtitle{Motion capture}
-	Explain xsens mocap
+	\begin{columns}[T]
+		\begin{column}{0.6\textwidth}
+			\begin{tikzpicture}
+				\node
+				[label={[font=\scriptsize, align=center]below:Motion capture integration of the human: \\ real life, xsens software, and controlled human model.}] 
+				{
+					\includegraphics[align=t,height=3cm]{figures/HugoIRLTpose.jpg}
+					\includegraphics[align=t,height=3cm]{figures/HugoXsensTpose.png}
+					\includegraphics[align=t,height=3cm]{figures/HugoRvizTpose.png}
+				};
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{itemize}
+				\item All rigid bodies' pose, velocity and acceleration are sent to the controller through a plugin.
+				\item A human model controlled as a virtual robot is actuated with transform tasks.
+				\item The human model is scaled to the real human from the bodies' lengths to correspond.
+			\end{itemize}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
@@ -243,22 +265,26 @@ backgroundcolor=\color{lbcolor},
 \end{frame}
 
 \begin{frame}
-	\frametitle{Towards a dynamic balance criterion}
+	\frametitle{Dynamic balance criterion}
 	\framesubtitle{The previous criteria are insufficient}
 	Show com outside when contact rupture but still balanced
 \end{frame}
 
 \begin{frame}
-	\frametitle{Towards a dynamic balance criterion}
-	\framesubtitle{The previous criteria are insufficient}
+	\frametitle{Dynamic balance criterion}
+	\framesubtitle{The Divergent Component of Motion}
+	DCM VRP etc
+\end{frame}
+
+\begin{frame}
+	\frametitle{Dynamic balance criterion}
 	Use DCM as new criterion
 \end{frame}
 
 \begin{frame}
 	\frametitle{Sit-to-stand-to-sit assistance}
 	\centering
-	% XXX not the correct video
-	\movie[autostart,width=8cm,height=5cm,poster,showcontrols]{}{movies/Honda2023.mp4}
+	\movie[autostart,width=8cm,height=5cm,poster,showcontrols]{}{movies/FullXP-27Mar-ForcesLimitsArrows.webm}
 
 \end{frame}
 
@@ -273,11 +299,41 @@ backgroundcolor=\color{lbcolor},
 	\end{itemize}
 \end{frame}
 
+\begin{frame}
+	\frametitle{Towards a dynamic balance region}
+	{\bf New idea:} using the DCM-VRP formulation, we get a linear relationship between the force space and the "position" space for our dynamic points.
+	\\
+	$\implies$ This means the force limits can define a new region to constraint our dynamic points.
+	\begin{equation}\label{Eq:VRP forces}
+		\VRP = \CoM - \frac{b^2}{m}\mathbf{F}_\text{ext} + b^2{\bf g}
+	\end{equation}
+\end{frame}
 
 \begin{frame}
 	\frametitle{Towards a dynamic balance region}
 	\framesubtitle{Contact friction cones}
+	We keep the non slippage and unilaterality constraints.
 
+	\hfill \\
+
+	\begin{columns}[T]
+		\begin{column}{0.48\textwidth}
+			\begin{equation}
+				\mathbf{u}_i^T \boldsymbol{f}_i \geq 0  \tag{\ref{Eq:Unilateral}}
+			\end{equation}
+			\begin{equation}
+				\|(\mathbb{I}-\mathbf{u}_i \mathbf{u}_i^T)\boldsymbol{f}_i \| \leq \mu_i \mathbf{u}_i^T \boldsymbol{f}_i \tag{\ref{Eq:Friction}}
+			\end{equation}
+		\end{column}
+		\begin{column}{0.48\textwidth}
+			They can be linearized as a set of hyperplanes or inequalities and form a polyhedral cone. They are easily used in a QP in this form.
+			
+			\hfill \\
+
+			By definition they are not bounded so friction only is insufficient.
+		\end{column}
+
+	\end{columns}
 	
 \end{frame}
 
@@ -285,15 +341,48 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Towards a dynamic balance region}
 	\framesubtitle{Actuation polytopes}
-
+	We can not apply infinite force along the contact normal: we want balance AND actuation consistency. \\
+	Orsolino et al. proposed to adress this with a force polytope\footfullcite{orsolino2020tro}.
+	\begin{equation}
+		\label{Forces set}
+		\begin{aligned}
+			\mathcal{A}_i = \lbrace &\textbf{f}_i \in \mathbb{R}^m | \exists \torque_i \in \mathbb{R}^{n_l} ~\text{s.t.}~
+			& \transpose{\boldsymbol{M}}_{bi}  \dot{\textbf{\textit{v}}} + \boldsymbol{M}_i \ddot{\textbf{q}}_i + \textbf{C}(\textbf{q}_i, \dot{\textbf{q}}_i) = \torque_i + \transpose{\jacobianVector(\textbf{q}_i)} \textbf{f}_i, \\
+			&~ \lowerBound{\torque}_i\leq\torque_i\leq\upperBound{\torque}_i \rbrace
+		\end{aligned}
+	\end{equation}
+	They assumed a static case to simplify the problem and found the following constraints
+	\begin{equation}
+		\mathcal{A}_i = \lbrace \textbf{f}_i \in \mathbb{R}^m |~ \bs{g}(\textbf{q}_i) + \lowerBound{\torque}_i \leq \transpose{\jacobianVector(\textbf{q}_i)} \textbf{f}_i \leq \bs{g}(\textbf{q}_i)+\upperBound{\torque}_i \rbrace
+	\end{equation}
 	
 \end{frame}
 
 
 \begin{frame}
 	\frametitle{Towards a dynamic balance region}
-	\framesubtitle{Minkowsky sum}
+	\framesubtitle{Actuation polytopes}
+	\begin{columns}[T]
+		\begin{column}{0.48\textwidth}
+			\begin{tikzpicture}
+				\node
+				[label={[font=\scriptsize, align=center]below:RHPS1 making 3 contacts and the associated \\ friction cones and force polytopes.}] 
+				{
+					\includegraphics[align=t,width=2cm]{figures/RHPS1_force_friction_transparent.png}
+					\includegraphics[align=t,width=2cm]{figures/RHPS1_intersection_transparent.png}
+				};
+			\end{tikzpicture}
+		\end{column}
+		
+	\end{columns}
+\end{frame}
 
+
+\begin{frame}
+	\frametitle{Towards a dynamic balance region}
+	\framesubtitle{Minkowsky sum}
+	Unlike the litterature we have a {\bf linear} dependance to the force space: no IP needed to compute the balance region. \\
+	We use the constraints as H-descriptions of polytopes in $\mathbb{R}^3$ to compute their minkowsky sum\footfullcite{delos2014corr}
 	
 \end{frame}
 
@@ -301,6 +390,13 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Usage}
 	Explain damping, bounding etc
+
+	
+\end{frame}
+
+\begin{frame}
+	\frametitle{Usage}
+	Show at least video of it working
 
 	
 \end{frame}
