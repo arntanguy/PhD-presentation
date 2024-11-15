@@ -11,7 +11,7 @@
 
 \usetheme{lirmm}
 
-\title{JRL Seminar}
+\title{Human-Humanoid assistance \\ in close contact interactions}
 \author{Hugo Lefèvre}
 \institute{LIRMM}{}
 \date{\today}
@@ -261,24 +261,80 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Integrating a human in a controller}
 	\framesubtitle{Region computation for the human model}
-	Show live region with chair blabla
+	\centering
+	\movie[autostart,showcontrols,width=8cm,height=5cm,poster,start=30s,duration=30s,loop]{}{movies/scalingHuman-compress.mp4}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Dynamic balance criterion}
 	\framesubtitle{The previous criteria are insufficient}
-	Show com outside when contact rupture but still balanced
+
+	This movement is too dynamic to watch only the CoM position: tests show balance without the criterion.
+
+	\begin{center}
+		\begin{tikzpicture}
+			\node
+				[label={[font=\scriptsize, align=center]below:The person's CoM is outside of the region \\ when the contact breaks, yet still balanced.}] 
+				{
+					\includegraphics[align=t,height=4cm]{figures/CoM_outside.png}
+				};
+		\end{tikzpicture}
+	\end{center}
+	
 \end{frame}
 
 \begin{frame}
 	\frametitle{Dynamic balance criterion}
 	\framesubtitle{The Divergent Component of Motion}
-	DCM VRP etc
+	\begin{columns}[T]
+		\begin{column}{0.48\textwidth}
+			\begin{equation*}
+				\begin{aligned}
+					\DCM = \CoM + b\dot{\CoM} \\
+					{\bf r}_\text{ecmp} = \CoM - \frac{b^2}{m}\mathbf{F}_\text{ext} \\
+					\VRP = {\bf r}_\text{ecmp} + b^2{\bf g} \\
+					\dot{\DCM} = \frac{1}{b}(\DCM - \VRP)
+				\end{aligned}
+			\end{equation*}
+			3D DCM introduced by Englesberger\footfullcite{englsberger2015tro}.
+		\end{column}
+		\begin{column}{0.48\textwidth}
+			\begin{tikzpicture}
+				\node
+					[label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human.}] 
+					{
+						\fontsize{25pt}{26pt}\selectfont
+						\resizebox{!}{4.5cm}{\input{figures/HumanPoints.pdf_tex}}
+						% \includegraphics[align=t,height=4cm]{figures/CoM_outside.png}
+					};
+			\end{tikzpicture}
+		\end{column}
+	\end{columns}
+	
 \end{frame}
 
 \begin{frame}
 	\frametitle{Dynamic balance criterion}
-	Use DCM as new criterion
+	\begin{columns}[T]
+		\begin{column}{0.48\linewidth}
+			\begin{itemize}
+				\item The DCM belonging in the region becomes the new criterion.
+				\item A DCM position error is easily transposed to a force error.
+				\item This force can be applied online by a robot on the human.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.48\linewidth}
+			\begin{tikzpicture}
+				\node
+					[label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human \\ with and without assistance.}] 
+					{
+						\fontsize{25pt}{26pt}\selectfont
+						\resizebox{!}{4.5cm}{\input{figures/HumanPointsWithRob.pdf_tex}}
+					};
+			\end{tikzpicture}
+		\end{column}
+	\end{columns}
+	
 \end{frame}
 
 \begin{frame}
@@ -342,7 +398,7 @@ backgroundcolor=\color{lbcolor},
 	\frametitle{Towards a dynamic balance region}
 	\framesubtitle{Actuation polytopes}
 	We can not apply infinite force along the contact normal: we want balance AND actuation consistency. \\
-	Orsolino et al. proposed to adress this with a force polytope\footfullcite{orsolino2020tro}.
+	Orsolino et al. proposed to adress this with a force polytope\footfullcite{orsolino2020tro} decoupling the EoM between the end-effectors.
 	\begin{equation}
 		\label{Forces set}
 		\begin{aligned}
@@ -355,23 +411,25 @@ backgroundcolor=\color{lbcolor},
 	\begin{equation}
 		\mathcal{A}_i = \lbrace \textbf{f}_i \in \mathbb{R}^m |~ \bs{g}(\textbf{q}_i) + \lowerBound{\torque}_i \leq \transpose{\jacobianVector(\textbf{q}_i)} \textbf{f}_i \leq \bs{g}(\textbf{q}_i)+\upperBound{\torque}_i \rbrace
 	\end{equation}
-	
 \end{frame}
 
 
 \begin{frame}
 	\frametitle{Towards a dynamic balance region}
 	\framesubtitle{Actuation polytopes}
-	\begin{columns}[T]
-		\begin{column}{0.48\textwidth}
+	\begin{columns}
+		\begin{column}{0.4\textwidth}
 			\begin{tikzpicture}
 				\node
 				[label={[font=\scriptsize, align=center]below:RHPS1 making 3 contacts and the associated \\ friction cones and force polytopes.}] 
 				{
-					\includegraphics[align=t,width=2cm]{figures/RHPS1_force_friction_transparent.png}
-					\includegraphics[align=t,width=2cm]{figures/RHPS1_intersection_transparent.png}
+					\includegraphics[align=t,width=2.5cm]{figures/RHPS1_force_friction_transparent.png}
+					\includegraphics[align=t,width=2.5cm]{figures/RHPS1_intersection_transparent.png}
 				};
 			\end{tikzpicture}
+		\end{column}
+		\begin{column}{0.48\textwidth}
+			The intersection of the friction cones and the force polytopes give us the {\bf actuation} polytopes.
 		\end{column}
 		
 	\end{columns}
@@ -382,21 +440,51 @@ backgroundcolor=\color{lbcolor},
 	\frametitle{Towards a dynamic balance region}
 	\framesubtitle{Minkowsky sum}
 	Unlike the litterature we have a {\bf linear} dependance to the force space: no IP needed to compute the balance region. \\
-	We use the constraints as H-descriptions of polytopes in $\mathbb{R}^3$ to compute their minkowsky sum\footfullcite{delos2014corr}
+	We can use the constraints as H-descriptions of polytopes in $\mathbb{R}^3$ to compute their minkowsky sum\footfullcite{delos2014corr}. \\
+	We get the set of feasible forces, that with a factor and a vertical offset is the set of feasible VRPs.
+	\begin{equation}
+		\VRP = \CoM - \frac{b^2}{m}\mathbf{F}_\text{ext} + b^2{\bf g} \tag{\ref{Eq:VRP forces}}
+	\end{equation}
 	
 \end{frame}
 
 
 \begin{frame}
 	\frametitle{Usage}
-	Explain damping, bounding etc
+	\begin{columns}
+		\begin{column}{0.4\linewidth}
+			\begin{tikzpicture}
+				\node
+				[label={[font=\scriptsize, align=center]below:RHPS1 with the computed minkowsky sum \\ of the feasible polytopes.}] 
+				{
+					\includegraphics[align=t,width=3cm]{figures/RHPS1_VRPregion.png}
+				};
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}{0.48\linewidth}
+			\begin{itemize}
+				\item This region is the set of feasible VRPs $\VRP$ in this configuration.
+				\item All DCMs $\DCM$ within are capturable.
+				\item Constraint on the DCM velocity $\dot{\DCM} = \frac{1}{b}(\DCM - \VRP)$ from the VRP variable enforces the DCM constraint.
+			\end{itemize}
+		\end{column}
+	\end{columns}
 
 	
 \end{frame}
 
 \begin{frame}
 	\frametitle{Usage}
-	Show at least video of it working
+	\begin{columns}
+		\begin{column}{0.48\linewidth}
+			\centering
+			\movie[autostart,width=5cm,height=5cm,poster,showcontrols,loop]{}{movies/DCM_VRPdemoFSM.mp4}
+		\end{column}
+		\begin{column}{0.48\linewidth}
+			\centering
+			\movie[autostart,width=5cm,height=5cm,poster,showcontrols,loop]{}{movies/DCM_VRPdemo1.mp4}
+		\end{column}
+	\end{columns}
 
 	
 \end{frame}
@@ -404,14 +492,29 @@ backgroundcolor=\color{lbcolor},
 
 \begin{frame}
 	\frametitle{Drawbacks and improvements}
-	GJK, Force poly problems
+	\begin{columns}[T]
+		\begin{column}{0.48\linewidth}
+			Problems:
+			\begin{itemize}
+				\item Constraining the decoupled forces assumes the max can be used on every contact at the same time.
+				\item Instead of assuming static case we could define zero contact acceleration. But this requires multiplying by $\jacobianVector$ which is not definite positive.
+			\end{itemize}
+		\end{column}
+		\begin{column}{0.48\linewidth}
+			Perspectives:
+			\begin{itemize}
+				\item This formulation allows to account for joint weakness of the human.
+				\item The fast computations can be plugged to an MPC for feasiblity.
+			\end{itemize}
+		\end{column}
+	\end{columns}
 
 	
 \end{frame}
 
 
 \begin{frame}
-	\frametitle{Next time}
+	\frametitle{Thank you !}
 	{\centering
 	\bf{Thank you for your attention !} \par}
 	

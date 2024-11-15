@@ -1,0 +1,76 @@
+%% Creator: Inkscape 1.3.2 (1:1.3.2+202311252150+091e20ef0f), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'HumanPointsWithRob.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{793.73192975bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.6642099)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/HumanPointsWithRob.pdf}}%
+    \put(0.13085484,0.4652797){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\dot{\DCM}$\end{tabular}}}}%
+    \put(0.17028193,0.39117177){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\DCM$\end{tabular}}}}%
+    \put(0.24807959,0.3891546){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\CoM$\end{tabular}}}}%
+    \put(0.19973902,0.4202973){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\dot{\CoM}$\end{tabular}}}}%
+    \put(0.23295053,0.45384216){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ddot{\CoM}$\end{tabular}}}}%
+    \put(0.18715131,0.1106161){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\boldsymbol{F}_\text{ext}$\end{tabular}}}}%
+    \put(0.25210765,0.28859583){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\VRP$\end{tabular}}}}%
+    \put(0.31324563,0.14800066){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta \text{z}$\end{tabular}}}}%
+    \put(0.2503145,0.02719094){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}${\bf r}_\text{ecmp}$\end{tabular}}}}%
+    \put(0.69499493,0.47346652){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\dot{\DCM}$\end{tabular}}}}%
+    \put(0.64836502,0.4260375){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\DCM$\end{tabular}}}}%
+    \put(0.73960414,0.39100527){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\CoM$\end{tabular}}}}%
+    \put(0.7066957,0.42464733){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\dot{\CoM}$\end{tabular}}}}%
+    \put(0.76200807,0.40993338){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\ddot{\CoM}$\end{tabular}}}}%
+    \put(0.68472746,0.13676956){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\boldsymbol{F}_\text{ext}$\end{tabular}}}}%
+    \put(0.64679668,0.28755231){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\VRP$\end{tabular}}}}%
+    \put(0.56756162,0.19001938){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta \text{z}$\end{tabular}}}}%
+    \put(0.6533532,0.03923351){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}${\bf r}_\text{ecmp}$\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
