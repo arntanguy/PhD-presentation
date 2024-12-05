@@ -11,7 +11,8 @@
 
 \usetheme{lirmm}
 
-\title{Human-Humanoid assistance \\ in close contact interactions}
+\title{CSI Committee}
+\subtitle{Human-Humanoid assistance \\ in close contact interactions}
 \author{Hugo Lefèvre}
 \institute{LIRMM}{}
 \date{\today}
@@ -319,7 +320,7 @@ backgroundcolor=\color{lbcolor},
 		\begin{column}{0.48\linewidth}
 			\begin{itemize}
 				\item The DCM belonging in the region becomes the new criterion.
-				\item A DCM position error is easily transposed to a force error.
+				\item A DCM position error is easily converted to a force error.
 				\item This force can be applied online by a robot on the human.
 			\end{itemize}
 		\end{column}
@@ -440,7 +441,7 @@ backgroundcolor=\color{lbcolor},
 	\frametitle{Towards a dynamic balance region}
 	\framesubtitle{Minkowsky sum}
 	Unlike the litterature we have a {\bf linear} dependance to the force space: no IP needed to compute the balance region. \\
-	We can use the constraints as H-descriptions of polytopes in $\mathbb{R}^3$ to compute their minkowsky sum\footfullcite{delos2014corr}. \\
+	We can use the constraints as H-descriptions of polytopes in $\mathbb{R}^3$, then compute their double description (HV) to compute their minkowsky sum\footfullcite{delos2014corr}. \\
 	We get the set of feasible forces, that with a factor and a vertical offset is the set of feasible VRPs.
 	\begin{equation}
 		\VRP = \CoM - \frac{b^2}{m}\mathbf{F}_\text{ext} + b^2{\bf g} \tag{\ref{Eq:VRP forces}}
@@ -476,16 +477,21 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Usage}
 	\begin{columns}
-		\begin{column}{0.48\linewidth}
+		\begin{column}{0.3\linewidth}
 			\centering
-			\movie[autostart,width=5cm,height=5cm,poster,showcontrols,loop]{}{movies/DCM_VRPdemoFSM.mp4}
+			\movie[autostart,width=4.9cm,height=5cm,poster,showcontrols,loop]{}{movies/DCM_VRPdemoFSM.mp4}
 		\end{column}
-		\begin{column}{0.48\linewidth}
+		\begin{column}{0.3\linewidth}
 			\centering
-			\movie[autostart,width=5cm,height=5cm,poster,showcontrols,loop]{}{movies/DCM_VRPdemo1.mp4}
+			\movie[autostart,width=4.9cm,height=5cm,poster,showcontrols,loop]{}{movies/DCM_VRPdemo1.mp4}
+		\end{column}
+		\begin{column}{0.3\linewidth}
+			\centering
+			\movie[autostart,width=4.9cm,height=5cm,poster,showcontrols,loop]{}{movies/DCM_VRPdemoPolytopes.mp4}
 		\end{column}
 	\end{columns}
-
+	\centering
+	
 	
 \end{frame}
 
@@ -511,6 +517,34 @@ backgroundcolor=\color{lbcolor},
 
 	
 \end{frame}
+
+\section{PhD progress}
+\begin{frame}
+	\frametitle{Courses and publication}
+	\begin{columns}[T]
+		\begin{column}{0.48\linewidth}
+			Courses this year:
+			\begin{itemize}
+				\item Japanese course (25h)
+				\item Writing and defending a PhD (13h)
+				\item To come: Doctorate and carrer (12h)
+			\end{itemize}
+			Total hours: 91h/100h, 103h after Doctorate and carrer
+		\end{column}
+		\begin{column}{0.48\linewidth}
+			Publications:
+			\begin{itemize}
+				\item IEEE RA-L journal paper on Sit-to-Stand-to-Sit Assistance (resubmitted after revisions in November).
+				\item Another journal paper targeted on dynamic polytopes (in writing).
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+% \begin{frame}
+% 	\frametitle{PhD thesis planned structure}
+% 	ecrire plan et sous parties
+% \end{frame} 
 
 
 \begin{frame}
