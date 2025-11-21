@@ -40,53 +40,45 @@
 {
   \vbox{}
   \vfill
-  \begingroup
-    \centering
-    \begin{beamercolorbox}[sep=8pt,center,#1]{title}
+  \begin{tikzpicture}[overlay, remember picture]
+    % logo graph chart
+    \node[inner sep=0pt,outer sep=0pt,anchor=north west] at (current page.north west)
+    {\includegraphics[height=\the\paperheight]{logos/Title_image.jpg}};
+    % logo cnrs
+    \node[inner sep=0pt,outer sep=0pt,anchor=east] at (14cm,2.5cm)
+    {\includegraphics[height=1.7cm]{logos/cnrs.png}};
+    % logo honda
+    \node[inner sep=0pt,outer sep=0pt,anchor=east] at (14.8cm,0.5cm)
+    {\includegraphics[height=1.5cm]{logos/honda_logo.png}};
+    % logo lirmm
+    \node[inner sep=0pt,outer sep=0pt,anchor=east] at (13.9cm,-1.5cm)
+    {\includegraphics[height=2cm]{logos/LIRMM_square.png}};
+    % logo umontpellier
+    \node[inner sep=0pt,outer sep=0pt,anchor=east] at (14.7cm,-3.5cm)
+    {\includegraphics[height=1cm]{logos/logo_UM.png}};
+    % title and subtitle
+    \node[inner sep=0pt,outer sep=0pt,anchor=north] at (7.2cm,2cm)
+    {\begin{beamercolorbox}[sep=8pt,wd=9cm,#1]{title}
       \usebeamerfont{title}\inserttitle\par%
       \ifx\insertsubtitle\@empty%
       \else%
         \vskip0.25em%
         {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
       \fi%     
-    \end{beamercolorbox}%
-    \vskip1em\par
-    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+    \end{beamercolorbox}};
+    % author
+    \node[inner sep=0pt,outer sep=0pt,anchor=south] at (9cm,-3cm)
+    {\begin{beamercolorbox}[sep=8pt,#1]{author}
       \usebeamerfont{author}\insertauthor
-    \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=8pt,center,#1]{institute}
-      \usebeamerfont{institute}\insertinstitute
-    \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=8pt,center,#1]{date}
+    \end{beamercolorbox}};
+    % date
+    \node[inner sep=0pt,outer sep=0pt,anchor=south] at (9cm,-3.5cm)
+    {\begin{beamercolorbox}[sep=8pt,#1]{date}
       \usebeamerfont{date}\insertdate
-    \end{beamercolorbox}\vskip0.5em
-    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
-  \endgroup
+    \end{beamercolorbox}};
+  \end{tikzpicture}
   \vfill
 }
-
-% Title page background logos
-\addtobeamertemplate{title page}
-{
-  \begin{tikzpicture}[overlay, remember picture]
-    % logo graph chart
-    \node[inner sep=0pt,outer sep=0pt,anchor=north west] at (current page.north west)
-    {\includegraphics[height=\the\paperheight]{logos/Title_image.jpg}};
-    % logo lirmm
-    \node[inner sep=0pt,outer sep=0pt,anchor=north east] at (14cm,1cm)
-    {\includegraphics[height=3cm]{logos/LIRMM_square.png}};
-    % logo cnrs
-    \node[inner sep=0pt,outer sep=0pt,anchor=east] at (13.75cm,-3.6cm)
-    {\includegraphics[height=2cm]{logos/cnrs.png}};
-    % logo honda
-    \node[inner sep=0pt,outer sep=0pt,anchor=south east] at (14cm,-6.9cm)
-    {\includegraphics[height=1.4cm]{logos/hri.jpg}};
-    % logo umontpellier
-    \node[inner sep=0pt,outer sep=0pt,anchor=south east] at (9.5cm,-7cm)
-    {\includegraphics[height=1.5cm]{logos/logo_UM.png}};
-  \end{tikzpicture}
-}
-
 
 % Default title template + add logo and offsets for title and subtitle
 % The % symbols and carriage returns all influence movements, this is a mess
