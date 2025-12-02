@@ -60,7 +60,7 @@ backgroundcolor=\color{lbcolor},
 	\frametitle{Human assistance}
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
-			This subject is very well known:
+			A well known subject:
 			\begin{itemize}
 				\item Aging populations with reduced autonomy
 				\item Dynamic movements become more difficult with frailty
@@ -75,6 +75,7 @@ backgroundcolor=\color{lbcolor},
 
 \begin{frame}
 	\frametitle{Human assistance}
+	\centering
 	\begin{columns}
 		\begin{column}{0.2\textwidth}
 			\includegraphics[height=3cm]{figures/caregiver_stock1.png}
@@ -87,21 +88,42 @@ backgroundcolor=\color{lbcolor},
 		\end{column}
 	\end{columns}
 	\vfill
-	Some repeatable/simple autonomy tasks could be executed by robots to free caregivers for more complex needs.
+	Robots can free caregivers from low added value tasks
 \end{frame}
 
 \begin{frame}
 	\frametitle{Human assistance}
+	\centering
 	Robots already interact with humans for assistance:
-	\begin{tikzpicture}
-		\node
-		[label={[font=\scriptsize, align=center]below:Robear~\footfullcite{ding2014aim}, Twendy-one~\footfullcite{iwata2009icra} and RHPS1~\footfullcite{benallegue2025ram} in nursing contexts.}] 
-		{
-			\includegraphics[height=3cm]{figures/Robear.jpg}
-			\includegraphics[height=3cm]{figures/Twendy-one.png}
-			\includegraphics[height=3cm]{figures/FriendsTeleop.png}
-		};
-	\end{tikzpicture}
+	\begin{columns}
+		\begin{column}{0.3\textwidth}
+			\begin{tikzpicture}
+				\node
+				[label={[font=\scriptsize, align=center]below:Robear~\footfullcite{ding2014aim}}] 
+				{
+					\includegraphics[height=3cm]{figures/Robear.jpg}
+				};
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}{0.3\textwidth}
+			\begin{tikzpicture}
+				\node
+				[label={[font=\scriptsize, align=center]below:Twendy-one~\footfullcite{iwata2009icra}}] 
+				{
+					\includegraphics[height=3cm]{figures/Twendy-one.png}
+				};
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}{0.4\textwidth}
+			\begin{tikzpicture}
+				\node
+				[label={[font=\scriptsize, align=center]below:RHPS1 Friends~\footfullcite{benallegue2025ram}}] 
+				{
+					\includegraphics[height=3cm]{figures/FriendsTeleop.png}
+				};
+			\end{tikzpicture}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 
@@ -113,7 +135,7 @@ backgroundcolor=\color{lbcolor},
 			\centering
 			\begin{tikzpicture}
 				\node
-				[label={[font=\scriptsize, align=center]below:A caregiver assisting an elderly person.}] 
+				[label={[font=\scriptsize, align=center]below:A caregiver assisting an elderly person}] 
 				{
 					\includegraphics[height=4.5cm]{figures/caregiver_stand_transparent.png}
 				};
@@ -123,28 +145,31 @@ backgroundcolor=\color{lbcolor},
 			\centering
 			\begin{tikzpicture}
 				\node
-				[label={[font=\scriptsize, align=center]below:RHPS1 assisting a human in simulation.}] 
+				[label={[font=\scriptsize, align=center]below:RHPS1 assisting a human in simulation}] 
 				{
 					\includegraphics[height=4.5cm]{figures/Friends_position_human3_transparent.png}
 				};
 			\end{tikzpicture}
 		\end{column}
 	\end{columns}
-	Anthropomorphic shape allows to take example from caregivers expertise : they never try to "lift" the person, they assist their movements.
+	\begin{itemize}
+		\item Anthropomorphic shape allows to take example from caregivers expertise
+		\item Never "lift" the person but assist their movements
+	\end{itemize}
 
 \end{frame}
 
 \begin{frame}
 	\frametitle{Human assistance}
 	\framesubtitle{How to assist?}
-	\underline{Main research question:} \\
-	\textbf{How should a humanoid robot provide assistance in close contact with a human?}
+	\underline{Main research problem:} \\
+	\textbf{Enabling humanoid robots to assist humans in close contact}
 	\vfill
-	It can be divided into three problems
+	It can be divided into three main bricks
 
 	\begin{itemize}
-		\item<2-> How should the robot perceive and model the human physical state to react to it?
-		\item<3-> How does the robot compute and provide the necessary assistance for balance in movements like standing and sitting?
+		\item<2-> How to best model the human to incorporate it in control?
+		\item<3-> How to enable the robot to compute and provide assistance for balance in movements like standing and sitting?
 		\item<4-> How can these balance critera be extended to dynamic movements?
 	\end{itemize}
 
@@ -152,24 +177,25 @@ backgroundcolor=\color{lbcolor},
 
 \begin{frame}
 	\frametitle{Human perception and modeling}
+	\centering
 	\begin{columns}
-		\begin{column}{0.4\textwidth}
+		\begin{column}{0.3\textwidth}
 			\centering
 			\begin{tikzpicture}
 				\node
-				[label={[font=\scriptsize, align=center]below:Vision-based identification of posture~\footfullcite{lan2023trhumas}.}] 
+				[label={[font=\scriptsize, align=center]below:Vision-based identification of posture~\footfullcite{lan2023trhumas}}] 
 				{
-					\includegraphics[height=3.5cm]{figures/VisionHuman.png}
+					\includegraphics[height=3cm]{figures/VisionHuman.png}
 				};
 			\end{tikzpicture}
 		\end{column}
-		\begin{column}{0.4\textwidth}
+		\begin{column}{0.6\textwidth}
 			\centering
 			\begin{tikzpicture}
 				\node
-				[label={[font=\scriptsize, align=center]below:Marker-based motion capture (source: ar-tracking.com)}] 
+				[label={[font=\scriptsize, align=center]below:Vision-based identification of posture~\footfullcite{zhang2025elec}}] 
 				{
-					\includegraphics[height=3.5cm]{figures/VisualMocap.jpg}
+					\includegraphics[height=3cm]{figures/PostureVideo.png}
 				};
 			\end{tikzpicture}
 		\end{column}
@@ -179,13 +205,23 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Human perception and modeling}
 	\begin{columns}
-		\begin{column}{0.8\textwidth}
+		\begin{column}{0.4\textwidth}
 			\centering
 			\begin{tikzpicture}
 				\node
-				[label={[font=\scriptsize, align=center]below:Musculo-skeletal models~\footfullcite{seth2018pcbi}.}] 
+				[label={[font=\scriptsize, align=center]below:Marker-based motion capture (source: ar-tracking.com)}] 
 				{
-					\includegraphics[height=5cm]{figures/OpenSim.png}
+					\includegraphics[height=4cm]{figures/VisualMocap.jpg}
+				};
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\node
+				[label={[font=\scriptsize, align=center]below:Musculo-skeletal models~\footfullcite{lugrís2023msd}}] 
+				{
+					\includegraphics[height=4cm]{figures/Musculoskeletal.png}
 				};
 			\end{tikzpicture}
 		\end{column}
@@ -196,38 +232,40 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Robot modeling}
 	\framesubtitle{Kinematic and dynamic models}
-	Robots are modelled as a set of rigid bodies articulated by joints.
+	Robots are modelled as a set of rigid bodies articulated by joints
 	\vfill
-	\begin{columns}
+	\begin{columns}[T]
 		\begin{column}{0.5\textwidth}
 			Joint space:
-			\begin{equation}
+			\begin{equation*}
 				\jointState = 
 				\begin{pmatrix}
 				\jointState_b \\
 				\jointState_j
 				\end{pmatrix}
 				\in \cross{\SE{3}}{\mathbb{R}^n}
-			\end{equation}
+			\end{equation*}
 		\end{column}
 		\begin{column}{0.5\textwidth}
 			Task space:
-			\begin{equation}
+			\vfill
+			\begin{equation*}
 				\dot{{\bf s}} = \mathbf{J}(\jointState)\jointVel
-			\end{equation}
+			\end{equation*}
 		\end{column}
 	\end{columns}
 	\vfill
-	A floating base robot making N contacts with its environment respects the equation of motion:
-	\begin{equation}
+	Equation of motion for a floating base robot making $N$ contacts with its environment:
+	\begin{equation*}
 		\boldsymbol{M}(\jointState)\jointAcc + \textbf{C}(\jointState, \jointVel) = \sum_{i = 1}^{N}\transpose{\jacobianVector_{i}(\jointState)}\force_i + \transpose{\boldsymbol{S}}\torque
-	\end{equation}
+	\end{equation*}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Robot modeling}
 	\framesubtitle{Reduced order models}
-	To simplify whole-body models, we often reduce the order and reason about the Center of Mass (CoM).
+	To simplify whole-body models we reduce the order and reason about the Center of Mass (CoM)
+	\vfill
 	The centroidal model gives the linear momentum
     \begin{equation}
       \label{Eq:NE_sum_forces}
@@ -243,11 +281,12 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Robot modeling}
 	\framesubtitle{Reduced order models}
-	Modeling movement in a linear way: 
-    \begin{columns}
+	Modeling movement in a linear way:
+	\vfill
+    \begin{columns}[T]
 		\begin{column}{0.5\textwidth}
-			Zero-Moment Point (ZMP):\\
-			Accumulates sum of wrenches at a virtual application point.
+			Zero-Moment Point (ZMP):
+			\vfill
 			For a given wrench $\wrench_0 = \transpose{(\torque_0, \force_0)}$ and a surface normal $\mathbf{n}$
 			\begin{equation}
 				\label{Eq:ZMP}
@@ -255,8 +294,8 @@ backgroundcolor=\color{lbcolor},
 			\end{equation}
 		\end{column}
 		\begin{column}{0.5\textwidth}
-			Linear Inverted Pendulum Mode (LIPM):\\
-			Two assumptions:
+			Linear Inverted Pendulum Mode (LIPM):
+			\vfill
 			\begin{enumerate}
 				\item $\boldsymbol{\dot{L}}=0$
 				\item Constant height
@@ -275,11 +314,11 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Balance and feasiblity}
 	\framesubtitle{2D regions}
-	With these models, with coplanar contacts the area where the ZMP can be placed is the convex hull of the contacts: these were the first 2D balance criteria.
+	With these models with coplanar contacts the area where the ZMP can be placed is the convex hull of the contacts: first 2D balance criteria
 	\begin{center}
 		\begin{tikzpicture}
 			\node
-			[label={[font=\scriptsize, align=center]below:Convex hull of two coplanar feet contacts.}] 
+			[label={[font=\scriptsize, align=center]below:Convex hull of two coplanar feet contacts}] 
 			{
 				\includegraphics[height=4.5cm]{figures/Supporting-convex-hull.png}
 			};
@@ -291,7 +330,8 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Balance and feasiblity}
 	\framesubtitle{3D regions}
-	What about when the contacts are not coplanar? Where should the CoM lie for balance?
+	In case of non coplanar contacts: 
+	\vfill
 	\begin{columns}[T]
 		\begin{column}{0.48\textwidth}
 			Newton-Euler: 
@@ -304,7 +344,7 @@ backgroundcolor=\color{lbcolor},
 		\end{column}
 		
 		\begin{column}{0.48\textwidth}
-			Unilateral contacts with non--slippage condition (friction cones) add:
+			Unilateral contacts with non--slippage condition (friction cones):
 			\begin{equation}\label{Eq:Unilateral}
 				\mathbf{u}_i^T \force_i \geq 0  
 			\end{equation}
@@ -314,8 +354,12 @@ backgroundcolor=\color{lbcolor},
 		\end{column}
 	\end{columns}
 	
-	\hfill \\
-	The set of contact wrenches $\wrench = (\torque,\force)$ and CoM positions $\CoM$ that respect equations \eqref{Eq:NEforce} to \eqref{Eq:Friction} balances the robot. If $\ddot{\CoM} = \mathbf{0}$ then the balance is said to be static.
+	\hfill
+	\begin{itemize}
+		\item Set of contact wrenches $\wrench = (\torque,\force)$ and CoM positions $\CoM$ that respect equations \eqref{Eq:NEforce} to \eqref{Eq:Friction} balances the robot
+		\item Static balance if $\ddot{\CoM} = \mathbf{0}$
+	\end{itemize}
+	
 \end{frame}
 
 \begin{frame}
@@ -349,24 +393,46 @@ backgroundcolor=\color{lbcolor},
 		\end{column}
 	\end{columns}
 	
-	Audren et al. proposed to cap $\ddot{\CoM}$ instead of setting it to zero to achieve a {\bf robust} balance. A 3D region for the CoM was computed through iterative projection (SOCP).
+	\begin{itemize}
+		\item Iterative projection to compute the 3D region (SOCP)
+		\item Capping $\ddot{\CoM}$ instead of setting it to zero gives a {\bf robust} balance
+	\end{itemize}
 	
 \end{frame}
 
 \begin{frame}
 	\frametitle{Balance and feasiblity}
 	\framesubtitle{3D regions}
-	Other works at LIRMM expanded this 3D robust region: Roux\footfullcite{roux2021icar} (friction cones linearization) and Samadi\footfullcite{samadi2021ral} (computation of a Chebychev ball).
-	These were improvements to be able to compute this region in near real time (-100ms).
-	
-	\hfill \\
+	Extensions for the 3D robust static balance region:
+	\vfill
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\node
+				[label={[font=\scriptsize, align=center]below:Chebychev ball\footfullcite{samadi2021ral}}] 
+				{
+					\includegraphics[height=4cm]{figures/ChebychevBall.png}
+				};
+			\end{tikzpicture}
+		\end{column}
+		\begin{column}{0.6\textwidth}
+			\centering
+			\begin{tikzpicture}
+				\node
+				[label={[font=\scriptsize, align=center]below:Friction cones linearization\footfullcite{roux2021icar}}] 
+				{
+					\includegraphics[height=4cm]{figures/Stabiliplus.png}
+				};
+			\end{tikzpicture}
+		\end{column}
+	\end{columns}
 
-	Basically enforcing a CoM position inside of these ensures a force distribution for balance exists.
 \end{frame}
 
 \begin{frame}
 	\frametitle{Quadratic programming for robotics}
-	For real-time robotic control we solve a Quadratic Problem (QP) at each control iteration.
+	For real-time robotic control we solve a Quadratic Problem (QP) at each control iteration
 	\begin{equation}
       \begin{aligned}
         \min_{\boldsymbol{x} \in \mathbb{R}^n} \quad & \frac{1}{2} ||\boldsymbol{A}\boldsymbol{x} + \boldsymbol{b}||^2_{\boldsymbol{W}} \\
@@ -378,12 +444,12 @@ backgroundcolor=\color{lbcolor},
 \end{frame}
 
 \begin{frame}
-	\frametitle{Current limitations}
+	\frametitle{Summary}
 
 	\begin{itemize}
 		\item Current pHRI methods do not fully exploit humanoid form factor
 		\item pHRI is limited to predetermined movements, not adaptive
-		\item Human movement is studied but not adapted to real time interaction
+		\item Human modeling is developed but not fit for real time interaction
 		\item Knowledge in balance from robotics is not transferred to pHRI
 	\end{itemize}
 \end{frame}
@@ -392,7 +458,7 @@ backgroundcolor=\color{lbcolor},
 
 \begin{frame}
 	\frametitle{Human perception and modeling}
-	How should the robot perceive and model the human physical state to react to it?
+	How to best model the human to incorporate it in control?
 \end{frame}
 
 \begin{frame}
@@ -403,7 +469,7 @@ backgroundcolor=\color{lbcolor},
 			\begin{itemize}
 				\item 17 inertial sensors placed on the body, updated at 60Hz
 				\item Animates a proprietary 23 segments biomechanical model
-				\item This model's movements can be extracted live (segment dynamics and CoM)
+				\item Model movements can be extracted live (segment dynamics and CoM)
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.6\textwidth}
@@ -469,9 +535,9 @@ backgroundcolor=\color{lbcolor},
 		\end{column}
 		\begin{column}{0.4\textwidth}
 			\begin{itemize}
-				\item We want to reason about the human motions in the controller but we need an internal representation.
-				\item Generic URDF model with 15 rigid bodies and 32 DoFs.
-				\item Predefined surfaces and convex shapes for interactions and collisions.
+				\item Need an internal representation for human motions in the controller
+				\item Generic URDF model with 15 rigid bodies and 32 DoFs
+				\item Predefined surfaces and convex shapes for interactions and collisions
 			\end{itemize}
 
 		\end{column}
@@ -485,8 +551,8 @@ backgroundcolor=\color{lbcolor},
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
 			\begin{itemize}
-				\item The real human motion data is measured and a human representation is present in the controller.
-				\item We want the human model to act as a digital twin.
+				\item Real human motion data is measured and a human representation is present in the controller
+				\item We want the human model to act as a digital twin
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.2\textwidth}
@@ -523,10 +589,10 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Incorporation in a multi-robot QP}
 	\framesubtitle{Model actuation}
-	The human model is actuated as a robot in the controller, retargeting the motion capture.
-
-	The measured pose $\PluckerPose_d,$ velocity $\dot{\PluckerPose}_d$ and acceleration $\ddot{\PluckerPose}_d$ of each real human segment are given as task-space objectives for each body of the human model as follows:
-
+	\begin{itemize}
+		\item Human model actuated as a robot in the controller and retargets motion capture
+		\item Measured pose $\PluckerPose_d$ velocity $\dot{\PluckerPose}_d$ and acceleration $\ddot{\PluckerPose}_d$ of each real human segment given as task-space objectives for each body of the human model
+	\end{itemize}
 	\begin{equation}
 		\label{Eq:TransformTask}
 		\begin{aligned}
@@ -551,7 +617,7 @@ backgroundcolor=\color{lbcolor},
 			\centering
 			\begin{tikzpicture}
 				\node
-				[label={[font=\scriptsize, align=center]below:Virtual body frames on a human arm \\ according to the Xsens convention.}] 
+				[label={[font=\scriptsize, align=center]below:Virtual body frames on a human arm \\ according to the Xsens convention}] 
 				{
 					\includegraphics[height=5cm]{figures/ArmFrames.png}
 				};
@@ -559,10 +625,10 @@ backgroundcolor=\color{lbcolor},
 		\end{column}
 		\begin{column}{0.5\textwidth}
 			\begin{itemize}
-				\item Depending on the subject, the URDF model may not be accurate.
-				\item The problem is the opposite of retargeting: instead of scaling measured movements to a fixed model, we can rescale the model to fit the measurements.
-				\item We can deduce real body dimensions online from joint-to-joint measurements.
-				\item The kinematic chain is rebuilt automatically to adapt the model while the controller runs.
+				\item Depending on the subject the URDF model may not be accurate
+				\item Opposite problem of retargeting: instead of scaling measured movements to a fixed model we rescale the model to fit the measurements
+				\item We deduce real body dimensions online from joint-to-joint measurements
+				\item Kinematic chain rebuilt automatically to adapt the model while the controller runs
 			\end{itemize}
 		\end{column}
 	\end{columns}
@@ -581,7 +647,7 @@ backgroundcolor=\color{lbcolor},
 			\centering
 			\begin{tikzpicture}
 				\node
-				[label={[font=\scriptsize, align=center]below:X axis CoM position error for unscaled and rescaled model on a stand-up motion.}] 
+				[label={[font=\scriptsize, align=center]below:X axis CoM position error for unscaled and rescaled model on a stand-up motion}] 
 				{
 					\includegraphics[width=0.8\textwidth]{figures/CoMerrorXaxis.png}
 				};
@@ -601,24 +667,24 @@ backgroundcolor=\color{lbcolor},
 
 \begin{frame}
 	\frametitle{Providing physical assistance}
-	How does the robot compute and provide the necessary assistance for balance in movements like standing and sitting?
+	How to enable the robot to compute and provide assistance for balance in movements like standing and sitting?
 \end{frame}
 
 \begin{frame}
 	\frametitle{Robust static balance polytope}
 	\begin{columns}
 		\begin{column}{0.4\textwidth}
-			Using previous human movement incorporation we compute the robust static balance polytope:
+			Computing robust static balance polytope from human presence:
 			\begin{itemize}
-				\item We know where the contact surfaces are (feet and bottom)
-				\item We know if a contact is established or not (force measurements and distance)
+				\item Active contacts
+				\item Contact positions
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.6\textwidth}
 			\centering
 			\begin{tikzpicture}
 				\node
-				[label={[font=\scriptsize, align=center]below:Real time computation of human balance region.}] 
+				[label={[font=\scriptsize, align=center]below:Real time computation of human balance region}] 
 				{
 					\includegraphics[height=5.5cm]{figures/HumanRobotScaled.png}
 				};
@@ -632,7 +698,7 @@ backgroundcolor=\color{lbcolor},
 	\frametitle{Dynamic balance criterion}
 	\framesubtitle{The previous criteria are insufficient}
 
-	This movement is too dynamic to watch only the CoM position: tests show balance without the criterion.
+	Movement too dynamic to watch only the CoM position: tests show balance without the criterion
 	\vfill
 	\begin{columns}
 		\begin{column}{0.25\textwidth}
@@ -664,12 +730,12 @@ backgroundcolor=\color{lbcolor},
 					\dot{\DCM}=\omega_{0}(\DCM-\VRP)
 				\end{aligned}
 			\end{equation*}
-			3D DCM introduced by Englesberger\footfullcite{englsberger2015tro}.
+			3D DCM introduced by Englesberger\footfullcite{englsberger2015tro}
 		\end{column}
 		\begin{column}{0.48\textwidth}
 			\begin{tikzpicture}
 				\node
-					[label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human.}] 
+					[label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human}] 
 					{
 						\fontsize{25pt}{26pt}\selectfont
 						\resizebox{!}{4.5cm}{\input{figures/HumanPoints.pdf_tex}}
@@ -695,12 +761,12 @@ backgroundcolor=\color{lbcolor},
 					\dot{\DCM}=\left(\omega-{\frac{\dot{\omega}}{\omega}}\right)\left(\DCM-{\VRP}\right) 
 				\end{aligned}
 			\end{equation*}
-			Time-varying natural frequency formulation\footfullcite{hopkins2014humanoids}.
+			Time-varying natural frequency formulation\footfullcite{hopkins2014humanoids}
 		\end{column}
 		\begin{column}{0.48\textwidth}
 			\begin{tikzpicture}
 				\node
-					[label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human.}] 
+					[label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human}] 
 					{
 						\fontsize{25pt}{26pt}\selectfont
 						\resizebox{!}{4.5cm}{\input{figures/HumanPoints.pdf_tex}}
@@ -718,15 +784,15 @@ backgroundcolor=\color{lbcolor},
 		\begin{column}{0.55\linewidth}
 			\centering
 			\begin{itemize}
-				\item The DCM belonging in the region becomes the new criterion.
-				\item A DCM position error is easily converted to a force error.
-				\item This force can be applied online by a robot on the human.
+				\item DCM belonging in the region becomes the new criterion
+				\item A DCM position error is easily converted to a force error
+				\item Force can be applied online by a robot on the human
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.48\linewidth}
 			\begin{tikzpicture}
 				\node
-					[label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human \\ with and without assistance.}] 
+					[label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human \\ with and without assistance}] 
 					{
 						\fontsize{25pt}{26pt}\selectfont
 						\resizebox{!}{4.5cm}{\input{figures/HumanPointsWithRob.pdf_tex}}
@@ -751,11 +817,11 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Human assistance computation}
 	\framesubtitle{Wrench computation}
-	From the computed reference VRP $\VRP_r$ and the VRP formulations there are two ways of computing the missing assistive wrench
+	Two ways to compute missing assistive force $\mathbf{F}_{r}$ from reference VRP $\VRP_r$:
 	\vfill
-	\begin{columns}
+	\begin{columns}[T]
 		\begin{column}{0.5\textwidth}
-			Measuring the wrench applied on the human and computing the missing force $\mathbf{F}_{r}$ at the CoM directly
+			Measuring the wrench applied on the human
 			\begin{equation}
 				\label{Eq:acceleration forces}
 				\mathbf{F}_\text{ext} = \mathbf{F}_{r} + {\bf f}_\text{LF} + {\bf f}_\text{RF}
@@ -769,7 +835,7 @@ backgroundcolor=\color{lbcolor},
 			\end{equation}
 		\end{column}
 		\begin{column}{0.5\textwidth}
-			Measuring the acceleration of the human's CoM, and deducing the force from the missing acceleration $\ddot{\CoM}_e$
+			Measuring human CoM acceleration and deducing the force from missing acceleration $\ddot{\CoM}_e$
 			\begin{equation}
 				\begin{aligned}
 				\label{Eq:Robot_hand_model}
@@ -887,9 +953,9 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Limitations}
 	\begin{itemize}
-		\item Region not designed for dynamic movements.
-		\item Slow computation ($\backsim$60ms for 3 contacts).
-		\item Not taking actuation capabilities into account (human weakness...).
+		\item Region not designed for dynamic movements
+		\item Slow computation ($\backsim$60ms for 3 contacts)
+		\item Not taking actuation capabilities into account (human weakness...)
 	\end{itemize}
 \end{frame}
 
@@ -907,18 +973,18 @@ backgroundcolor=\color{lbcolor},
 
 \begin{frame}
 	\frametitle{Feasible Contact Wrench Polytopes}
-	Feasible wrench polytopes have been developed to model actuation capabilities and get more coherent limits.
+	Feasible wrench polytopes include actuation capabilities
 	\begin{center}
 		\begin{tikzpicture}
 			\node
-			[label={[font=\scriptsize, align=center]below:Difference between friction cones contacts and feasible contacts\footfullcite{orsolino2017ral}.}] 
+			[label={[font=\scriptsize, align=center]below:Difference between friction cones contacts and feasible contacts\footfullcite{orsolino2017ral}}] 
 			{
 				\includegraphics[height=2.7cm]{figures/Orsolino1.png}
 				\includegraphics[height=2.7cm]{figures/Orsolino2.png}
 			};
 		\end{tikzpicture}
 	\end{center}
-	Their computation often relies on quasi-static assumptions to simplify.
+	Computations often rely on quasi-static assumptions to simplify
 
 \end{frame}
 
@@ -952,7 +1018,7 @@ backgroundcolor=\color{lbcolor},
 			\centering
 			\begin{tikzpicture}
 				\node
-					[label={[font=\scriptsize, align=center]below:Actuation polytope for left foot contact \\of RHPS1.}] 
+					[label={[font=\scriptsize, align=center]below:Actuation polytope for left foot contact \\of RHPS1}] 
 					{
 						\includegraphics[height=5cm]{figures/ActuationFriends.png}
 					};
@@ -970,15 +1036,15 @@ backgroundcolor=\color{lbcolor},
 	\begin{columns}
 		\begin{column}{0.7\textwidth}
 			\begin{itemize}
-				\item The combinations of 6D wrenches obtained from the torque limits give the vertices ($\mathcal{V}$-description) of the {\bf actuation} polytope of the contact.
-				\item A double-description algorithm can be used to convert it to a set of inequalities ($\mathcal{H}$-description).
+				\item The combinations of 6D wrenches from torque limits give vertices ($\mathcal{V}$-description) of the {\bf actuation} polytope of the contact
+				\item Double-description algorithm can convert it to a set of inequalities ($\mathcal{H}$-description)
 			\end{itemize}
 		\end{column}
 		\begin{column}{0.3\textwidth}
 			\centering
 			\begin{tikzpicture}
 				\node
-					[label={[font=\scriptsize, align=center]below:Actuation polytope for left foot contact \\of RHPS1.}] 
+					[label={[font=\scriptsize, align=center]below:Actuation polytope for left foot contact \\of RHPS1}] 
 					{
 						\includegraphics[height=5cm]{figures/ActuationFriends.png}
 					};
@@ -1016,20 +1082,23 @@ backgroundcolor=\color{lbcolor},
 		\end{column}
 	\end{columns}
 	\vfill
-	Friction cones can be linearized to be used in a QP, here into a 4-sided friction pyramid.
+	Friction cones can be linearized to be used in a QP, here into a 4-sided friction pyramid
 	
 \end{frame}
 
 \begin{frame}
 	\frametitle{Feasible Contact Wrench Polytopes}
 	\framesubtitle{CoP constraints}
-	In case of contact surfaces and not points, the application point of the force (Center of Pressure or CoP) can lie anywhere in the surface. This bounds the torque of the contact wrench. For rectangular surfaces this constraint is derived as \footfullcite{caron2015icra}
+	\begin{itemize}
+		\item In case of contact surfaces and not points, application point of the force (Center of Pressure or CoP) is constrained to the surface
+		\item For rectangular surfaces contact, torques constraints are derived as \footfullcite{caron2015icra}
+	\end{itemize}
 	\begin{align}
 		|\tau^x| &\leq Y f^z \\
 		|\tau^y| &\leq X f^z \\
 		|\tau^z| &\leq \mu(X + Y)f^z - |Yf^x + \mu\tau^x| - |Xf^y + \mu\tau^y|
 	\end{align}
-	These inequalities can be written as 12 constraints depending on the friction coefficient and the surface dimensions.
+	These inequalities can be written as 12 constraints depending on the friction coefficient and the surface dimensions
 \end{frame}
 
 \begin{frame}
@@ -1038,9 +1107,11 @@ backgroundcolor=\color{lbcolor},
 	
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
-			When writing all these sets as $\mathcal{H}$-descriptions, their intersection is simply done by stacking the inequalities. 
-
-			The intersection of the {\bf actuation} polytope and the friction related constraints gives the {\bf feasible} polytope.
+			\begin{itemize}
+				\item Intersection of $\mathcal{H}$-descriptions can be done by stacking inequalities
+				\item Intersection of the {\bf actuation} polytope and the friction related constraints gives the {\bf feasible} polytope
+			\end{itemize}
+			
 			\begin{equation}
 			\label{Eq:Feasible wrench polytope}
 			\begin{bmatrix}
@@ -1062,7 +1133,7 @@ backgroundcolor=\color{lbcolor},
 			\centering
 			\begin{tikzpicture}
 				\node
-					[label={[font=\scriptsize, align=center]below:Actuation and feasible polytopes for left foot contact of RHPS1.}] 
+					[label={[font=\scriptsize, align=center]below:Actuation and feasible polytopes for left foot contact of RHPS1}] 
 					{
 						\includegraphics[height=4.7cm]{figures/ActuationFeasibleFriends.png}
 					};
@@ -1101,23 +1172,23 @@ backgroundcolor=\color{lbcolor},
 		Wrench actuation polytope (6D) & 7.72 & 37.6 & 120.4 & 405.4 \\
 		\hline
 	\end{tabular}
-	\caption{Average computation times (ms) for the contact actuation polytopes depending on the polytopes dimensions and the DoFs involved in the contact.}
+	\caption{Average computation times (ms) for the contact actuation polytopes depending on the polytopes dimensions and the DoFs involved in the contact}
 	\label{Tab:Polytope timings}
 	\end{table}
 	\vfill
-	The computation cost depends on:
+	Computation cost depends on:
 	\begin{itemize}
-		\item The dimension of the contact polytope, force (3D) for point contacts or wrench (6D) for surface contacts.
-		\item The number of actuators between the contact and the floating base.
+		\item Dimension of the contact polytope, force (3D) for point contacts or wrench (6D) for surface contacts
+		\item Number of actuators between the contact and the floating base
 	\end{itemize} 
 \end{frame}
 
 \begin{frame}
 	\frametitle{Constrained DCM-VRP Control}
 	\framesubtitle{DCM capturability}
-	We wanted to design a region more suited to dynamic points like the DCM.
+	We wanted to design a region more suited to dynamic points like the DCM
 	\vfill
-	If we remind the DCM-VRP formulations we can derive two propositions
+	From DCM-VRP formulations we can derive two propositions
 	\begin{columns}
 		\begin{column}{0.5\textwidth}
 			\begin{equation}
@@ -1132,10 +1203,10 @@ backgroundcolor=\color{lbcolor},
 		\end{column}
 		\begin{column}{0.5\textwidth}
 			\begin{proposition}
-				Since the VRP repulses the DCM, see~\eqref{Eq:DCM-VRP}, the bounding set of the capturable DCM positions is the set of feasible VRPs.
+				VRP repulses the DCM \eqref{Eq:DCM-VRP} so the capturable DCM positions set is the feasible VRP set
 			\end{proposition}
 			\begin{proposition}
-				Since the VRP is a linear function of the sum of external forces~\eqref{Eq:eCMP-VRP} then the set of feasible VRPs is the set of feasible sum of external forces, scaled and offset in the cartesian space.
+				VRP is a linear function of the sum of external forces~\eqref{Eq:eCMP-VRP} so the feasible VRP set is the feasible set of external forces, scaled and offset in cartesian space
 			\end{proposition}
 		\end{column}
 	\end{columns}
@@ -1170,12 +1241,12 @@ backgroundcolor=\color{lbcolor},
 	\frametitle{Constrained DCM-VRP Control}
 	\framesubtitle{Full VRP region}
 	\begin{itemize}
-		\item We can not simply operate a Minkowski sum of the contact polytopes to get the full set of feasible external forces/wrenches: coupling of the equation of motion.
-		\item It could be computed using iterative projections~\footfullcite{audren2018tro} but it is costly.
+		\item Coupling of the equation of motion: set of feasible external forces/wrenches is not simply Minkowski sum of contact polytopes
+		\item It could be computed using iterative projections~\footfullcite{audren2018tro} but it is costly
 	\end{itemize}
 	
-	If we assume we have this set (or a single contact), we also have lineraly the VRP region.
-	Any command can be constrained in this region to ensure dynamic balance.
+	If we assume we have this set (or a single contact), we also have lineraly the VRP region
+	Any command can be constrained in this region to ensure dynamic balance
 	\begin{equation}
 		\begin{aligned}
 		\min_{\VRP} \quad & ||\VRP - \VRP_d||^2  \\
@@ -1232,10 +1303,11 @@ backgroundcolor=\color{lbcolor},
 			\end{align}
 		\end{column}
 		\begin{column}{0.4\textwidth}
-			How do we express these constraints without computing the full VRP region?
+			How to express these constraints without computing the full VRP region?
+			\vfill
 			\begin{itemize}
-				\item Solve the problem at the joint level.
-				\item Introduce virtual joints, torques and contact wrenches variables to formulate $\hat{\DCM}$ as a VRP.
+				\item Solve the problem at the joint level
+				\item Introduce virtual joints, torques and contact wrenches variables to formulate $\hat{\DCM}$ as a VRP
 			\end{itemize}
 		\end{column}
 	\end{columns}
@@ -1287,7 +1359,7 @@ backgroundcolor=\color{lbcolor},
 			\centering
 			\begin{tikzpicture}
 				\node
-				[label={[font=\scriptsize, align=center]below:Usual QP wrench distribution for a contact:\\ the contact forces are decomposed into lambda force variables.}] 
+				[label={[font=\scriptsize, align=center]below:Usual QP wrench distribution for a contact:\\ the contact forces are decomposed into lambda force variables}] 
 				{
 					\includegraphics[width=0.9\linewidth]{figures/contact_forceDistrib_lambdas.png}
 				};
@@ -1297,7 +1369,7 @@ backgroundcolor=\color{lbcolor},
 			\centering
 			\begin{tikzpicture}
 				\node
-				[label={[font=\scriptsize, align=center]below:Proposed QP wrench distribution for a contact:\\ single 6D wrench variable.}] 
+				[label={[font=\scriptsize, align=center]below:Proposed QP wrench distribution for a contact:\\ single 6D wrench variable}] 
 				{
 					\includegraphics[width=0.65\linewidth]{figures/contact_forceDistrib_wrenches.png}
 				};
@@ -1309,16 +1381,20 @@ backgroundcolor=\color{lbcolor},
 
 \begin{frame}
 	\frametitle{Optimal DCM computation}
-	Without a locomotion reference trajectory we want to just "remain balanced", i.e. compute automatically a target with the most robustness.
-	\vfill
-	The individual contact polytopes can be leveraged to determine this target according to the current posture.
+	\centering
+	\begin{itemize}
+		\item Without locomotion reference trajectory objective is to remain balanced
+		\vfill
+		\item Individual contact polytopes can be used to determine default target
+	\end{itemize}
+	
 \end{frame}
 
 \begin{frame}
 	\frametitle{Optimal DCM computation}
 	\framesubtitle{Robust static DCM}
 	\centering
-	The point with the most margin within a polytope can be found as the Chebychev center.
+	The point with the most margin within a polytope can be found as the Chebychev center
 
 	\begin{equation}
 	\begin{aligned}
@@ -1331,7 +1407,18 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Optimal DCM computation}
 	\framesubtitle{Robust static DCM}
-	We want to find the DCM position for which we can remain statically balanced, i.e. for $\transpose{\wrench_\text{static}} = \begin{bmatrix} 0 & 0 & 0 & 0 & 0 & mg\end{bmatrix}$.
+	DCM position for which there is static balance: $\transpose{\wrench_\text{static}} = \begin{bmatrix} 0 & 0 & 0 & 0 & 0 & mg\end{bmatrix}$
+	\vfill
+	\begin{equation}
+		\begin{bmatrix}
+			\underset{i = 1}{\overset{N}{\sum}} \torque_i + \underset{i = 1}{\overset{N}{\sum}} \cross{(\boldsymbol{r_i} - \CoM_\text{opti})}{\force_i} \\
+			\underset{i = 1}{\overset{N}{\sum}} \force_i
+		\end{bmatrix} \!=\!
+		\begin{bmatrix}
+			\torque_\text{static} \\ 
+			\mathbf{F}_\text{static}
+		\end{bmatrix}
+	\end{equation}
 	\begin{equation} \label{Eq:Optimal CoM-Wrenches}
 	\sum_{i = 1}^{N} \svaFT{i}{0}
 	\begin{bmatrix}
@@ -1363,15 +1450,16 @@ backgroundcolor=\color{lbcolor},
 						& -r_i \leq 0
 	\end{aligned}
 	\end{equation}
-	The resulting optimal CoM position $ \CoM_\text{opti}$ is given as a target to the balancing task.
+	The resulting optimal CoM position $ \CoM_\text{opti}$ is given as a target to the balancing task
 \end{frame}
 
 \begin{frame}
 	\frametitle{Optimal DCM computation}
 	\framesubtitle{Automatic contact transitions}
-	A secondary advantage of this formulation is that the contact polytopes $\mathcal{H}$-description can be scaled using a coefficient on the planes offsets.
-
-	As the automatic balance framework relies on their margin to target the DCM this can be used for automatic contact transitions.
+	\begin{itemize}
+		\item Contact polytopes $\mathcal{H}$-description can be scaled using a coefficient on the planes offsets
+		\item This can be used for automatic contact transitions
+	\end{itemize}	
 \end{frame}
 
 \begin{frame}
@@ -1441,9 +1529,9 @@ backgroundcolor=\color{lbcolor},
 \begin{frame}
 	\frametitle{Drawbacks and perspectives}
 	\begin{itemize}
-		\item The coupling of the wrench polytopes limits their use without the whole-body QP.
-		\item With studies on the average "torque limits" of impaired or elderly people, this exact framework could be used to better estimate the assitance needed.
-		\item The fast computations could be plugged to an MPC for feasiblity.
+		\item Coupling of the wrench polytopes limits their use without the whole-body QP
+		\item With studies on the average "torque limits" of impaired or elderly people, this exact framework could be used to better estimate the assitance needed
+		\item The fast computations could be plugged to an MPC for feasiblity
 	\end{itemize}
 	
 \end{frame}
@@ -1452,13 +1540,15 @@ backgroundcolor=\color{lbcolor},
 
 \begin{frame}
 	\frametitle{Conclusion}
-	This work started with a "simple" question: how do you assist someone ?
-	\vfill
-	Perception systems exist but few for real-time interaction or control. We opted for motion capture and force sensing but less invasive methods can be swapped.
-	\vfill
-	We can apply the robotics knowledge on balance and interactions to humans.
-	\vfill
-	Dynamic balance is still a work in progress, with a lot of perpectives.
+	\begin{itemize}
+		\item This work started with a "simple" question: how do you assist someone ?
+		\vfill
+		\item Instrumented perception for now, to be swapped with less invasive methods
+		\vfill
+		\item Robotics knowledge on balance and interactions can readily be applied to humans
+		\vfill
+		\item Dynamic balance offers a lot of perspectives including healthcare
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
