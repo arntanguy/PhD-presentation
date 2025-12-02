@@ -132,6 +132,9 @@
 \renewcommand\@makefnmark{\hbox{\usebeamercolor[fg]{footnote mark}\usebeamerfont*{normal text}[\@thefnmark]}}%
 \renewcommand\@makefntext[1]{\usebeamercolor[fg]{footnote mark}\usebeamerfont*{footnote mark}[\@thefnmark]\enspace\usebeamerfont*{footnote} #1}%
 
+% Removal of "Figure" prefix in figure captions
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}
+
 \setbeamerfont{title like}{shape=\scshape}
 \setbeamerfont{frametitle}{shape=\scshape}
 \setbeamerfont{section in head/foot}{shape=\scshape,size=\tiny}
@@ -139,7 +142,7 @@
 \setbeamerfont{footnote mark}{size=\tiny}
 
 \setbeamertemplate{navigation symbols}{} % decomment to hide bottom nav buttons
-\setbeamercovered{transparent} % don't hide strip-teased bullet points
+\setbeamercovered{invisible} % set to transparent for preview
 
 \definecolor{barcolor}{HTML}{3871c0} % lirmm blue
 % \setbeamercolor{lower separation line head}{bg=barcolor} 

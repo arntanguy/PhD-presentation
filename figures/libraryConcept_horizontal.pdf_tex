@@ -1,0 +1,99 @@
+%% Creator: Inkscape 1.3.2 (1:1.3.2+202311252150+091e20ef0f), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'figures/libraryConcept_horizontal.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{1040.31496063bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.34604905)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/libraryConcept_horizontal.pdf}}%
+    \put(0.02928476,0.02287861){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Polytopes library\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{figures/libraryConcept_horizontal.pdf}}%
+    \put(0.2660991,0.22750346){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Contact 1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{figures/libraryConcept_horizontal.pdf}}%
+    \put(0.4899346,0.22684316){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Contact 1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{figures/libraryConcept_horizontal.pdf}}%
+    \put(0.02734502,0.27776349){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Controller\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{figures/libraryConcept_horizontal.pdf}}%
+    \put(0.05898891,0.10112031){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Polytope 1\\Computation\end{tabular}}}}%
+    \put(0.94192804,0.30672978){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Time\end{tabular}}}}%
+    \put(0.02029352,0.32519629){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.22466775,0.32593383){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta$t\end{tabular}}}}%
+    \put(0.43982196,0.32611813){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$2\Delta$t\end{tabular}}}}%
+    \put(0.67012381,0.32681984){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$3\Delta$t\end{tabular}}}}%
+    \put(0.89421834,0.32724398){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$4\Delta$t\end{tabular}}}}%
+    \put(0.08850152,0.25193945){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Iteration 1\end{tabular}}}}%
+    \put(0.31223374,0.25025906){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Iteration 2\end{tabular}}}}%
+    \put(0.53572378,0.25135224){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Iteration 3\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{figures/libraryConcept_horizontal.pdf}}%
+    \put(0.59446812,0.2264242){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Contact 2\end{tabular}}}}%
+    \put(0.76930682,0.25039829){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Iteration 4\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{figures/libraryConcept_horizontal.pdf}}%
+    \put(0.7161644,0.22548609){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Contact 1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=8]{figures/libraryConcept_horizontal.pdf}}%
+    \put(0.822015,0.22513714){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Contact 2\end{tabular}}}}%
+    \put(0.04419127,0.22840592){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Contact 1\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=9]{figures/libraryConcept_horizontal.pdf}}%
+    \put(0.49539517,0.10373289){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Polytope 1\\Computation\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=10]{figures/libraryConcept_horizontal.pdf}}%
+    \put(0.50144647,0.04679218){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Polytope 2\\Computation\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=11]{figures/libraryConcept_horizontal.pdf}}%
+    \put(0.7233846,0.1025817){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Polytope 1\\Computation\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=12]{figures/libraryConcept_horizontal.pdf}}%
+    \put(0.04844087,0.16907418){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Robot state\\Contact 1\end{tabular}}}}%
+    \put(0.49007252,0.17913256){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Robot state\\Contact 1\\Contact 2\end{tabular}}}}%
+    \put(0.71532247,0.17435005){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Robot state\\Contact 1\end{tabular}}}}%
+    \put(0.14883338,0.17004561){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}No data\\ready\end{tabular}}}}%
+    \put(0.26939681,0.16969004){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}No data\\needed\end{tabular}}}}%
+    \put(0.35485789,0.17098496){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Result\\Polytope 1\end{tabular}}}}%
+    \put(0.58798467,0.17273506){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Result\\Polytope 1\end{tabular}}}}%
+    \put(0.81862983,0.17932744){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Result\\Polytope 1\\Polytope 2\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

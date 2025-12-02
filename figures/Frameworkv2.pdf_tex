@@ -1,0 +1,84 @@
+%% Creator: Inkscape 1.3.2 (1:1.3.2+202311252150+091e20ef0f), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Frameworkv2.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{528.38150024bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.27727586)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}% 
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{figures/Frameworkv2.pdf}}%
+    \put(0.35261561,0.06041423){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Joint commands\end{tabular}}}}%
+    \put(0.49993584,0.0289122){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Multi-robot QP\end{tabular}}}}%
+    \put(0.82915512,0.02933736){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Assistive force computation\end{tabular}}}}%
+    \put(0.08505966,0.26226406){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Human perception\end{tabular}}}}%
+    \put(0.27713801,0.1938963){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\CoM$, $\dot{\CoM}$, $\ddot{\CoM}$\end{tabular}}}}%
+    \put(0.40953561,0.00704709){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}mc\_rtc\end{tabular}}}}%
+    \put(0.49836432,0.16725793){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Human model\end{tabular}}}}%
+    \put(0.07799242,0.03008431){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Assisted person\end{tabular}}}}%
+    \put(0.27797593,0.1656618){\color[rgb]{0,0,0}\makebox(0,0)[t]{\smash{\begin{tabular}[t]{c}Segments\\dynamics\end{tabular}}}}%
+    \put(0.23430072,0.02959967){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Robot\end{tabular}}}}%
+    \put(0.27710011,0.2393167){\color[rgb]{0,0,0}\makebox(0,0)[t]{\smash{\begin{tabular}[t]{c}Shoes contact\\forces\end{tabular}}}}%
+    \put(0.17252352,0.06383382){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\mathbf{F}_{r}$\end{tabular}}}}%
+    \put(0.72800441,0.2136314){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.20000005}\smash{\begin{tabular}[t]{c}Polytope\\computation\end{tabular}}}}%
+    \put(0.49898285,0.05830875){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Robot model\end{tabular}}}}%
+    \put(0.06290982,0.00514803){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Real world\end{tabular}}}}%
+    \put(0.93210357,0.21268647){\color[rgb]{0,0,0}\makebox(0,0)[t]{\smash{\begin{tabular}[t]{c}DCM target\\choice\end{tabular}}}}%
+    \put(0.93449868,0.09514577){\color[rgb]{0,0,0}\makebox(0,0)[t]{\smash{\begin{tabular}[t]{c}VRP control\\law\end{tabular}}}}%
+    \put(0.72941512,0.10072658){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Wrench\\distribution QP\end{tabular}}}}%
+    \put(0.34994887,0.10217932){\color[rgb]{0,0,0}\makebox(0,0)[t]{\smash{\begin{tabular}[t]{c}Sensors contact\\forces\end{tabular}}}}%
+    \put(0.61742633,0.20066558){\color[rgb]{0,0,0}\makebox(0,0)[t]{\smash{\begin{tabular}[t]{c}Human\\model state\end{tabular}}}}%
+    \put(0.83264287,0.19940253){\color[rgb]{0,0,0}\makebox(0,0)[t]{\smash{\begin{tabular}[t]{c}3D balance\\region\end{tabular}}}}%
+    \put(0.91200094,0.14934152){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\DCM_{d}$\end{tabular}}}}%
+    \put(0.8441714,0.08409181){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$\mathbf{F}_{r}$\end{tabular}}}}%
+    \put(0.62155783,0.08192476){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}${\boldsymbol{w}}_\text{RH}$,${\boldsymbol{w}}_\text{LH}$\end{tabular}}}}%
+    \put(0.12127814,0.15815763){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Xsens model \end{tabular}}}}%
+    \put(0.01636337,0.15918721){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Force shoes\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
