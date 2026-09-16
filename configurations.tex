@@ -4,13 +4,12 @@
 % \usepackage{fancyhdr}
 % \usepackage{xparse}
 % \pagestyle{fancy}
-%%%%%%%%%%%%%%%%%%%%%%%%%%% Headers and footers 
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Headers and footers
 
 % \fancyhead{} % clear all header fields
 % % \renewcommand{\headrulewidth}{0pt} % no line in header area
 % \fancyfoot{} % clear all footer fields
 % % \fancyfoot[LE,RO]{\thepage}           % page number in "outer" position of footer line
-
 
 % \rfoot{\thepage\ of \pageref{LastPage}}
 % % Define the footer separation line
@@ -19,7 +18,7 @@
 % \geometry{a4paper, margin=2cm}
 
 % \usepackage[numbers]{natbib}
- % \usepackage[comma]{natbib}
+% \usepackage[comma]{natbib}
 % \usepackage[natbib=true]{biblatex}
 
 %\let\labelindent\relax
@@ -58,12 +57,10 @@
 \newcommand{\unitMS}{~ms\xspace}
 \newcommand{\unitFrequency}{~Hz\xspace}
 
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Table
 % \usepackage{multirow}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%% Font colour 
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Font colour
 
 % \usepackage[utf8]{inputenc}
 % \usepackage[english]{babel}
@@ -109,11 +106,9 @@
 % \usepackage{kantlipsum}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%% Adjust font size
-% \usepackage{setspace} 
+% \usepackage{setspace}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MATH:
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%% AMS packages:
 % \usepackage{mathtools}
@@ -126,10 +121,10 @@
 % \usepackage{subcaption}
 % \usepackage{url}
 % \usepackage{accents} %for symbols below a character, e.g. \underaccent{\bar}
-% \usepackage[colorlinks=true,hyperindex=true,bookmarksnumbered,bookmarks=true]{hyperref} % Turn on "bookmarks" and "hyperindex" to generate outlines. 
+% \usepackage[colorlinks=true,hyperindex=true,bookmarksnumbered,bookmarks=true]{hyperref} % Turn on
+% "bookmarks" and "hyperindex" to generate outlines.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%% Self-defined commands: 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%% Self-defined commands:
 
 \newcommand{\setDef}[2]{
   \defeq \{#1 : #2 \}
@@ -162,7 +157,7 @@
 \newcommand{\unitHz}{~Hz}
 \newcommand{\unitMs}{~ms}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%% LQR commands: 
+%%%%%%%%%%%%%%%%%%%%%%%%%% LQR commands:
 \newcommand{\costFunctional}{J}
 \newcommand{\stateWeight}{Q}
 
@@ -190,7 +185,6 @@
 
 \newcommand{\manifold}{\mathcal{S}}%
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%% Impact dynamics:
 % \usepackage{pifont}% http://ctan.org/pkg/pifont
 \newcommand{\cmark}{\ding{51}}%
@@ -200,17 +194,16 @@
 \newcommand{\contactVel}{\bs{v}}
 \newcommand{\nContactVel}{v}
 
-
-% notation of the impacting body 
+% notation of the impacting body
 \newcommand{\ib}{1}
 
-% notation of the object 
+% notation of the object
 \newcommand{\ob}{2}
 
 % virtual spring length
 \newcommand{\vSpringL}{x}
 \newcommand{\vSpringLd}{\dot{x}}
-% spring coefficient 
+% spring coefficient
 \newcommand{\vSpringC}{k}
 
 % The potential energy stored in the virtual spring
@@ -222,7 +215,6 @@
 
 \newcommand{\pEnergyd}{\dot{E}}
 
-
 % Impulse at the end of the impact process
 \newcommand{\impulseEnd}{\impulse_r}
 
@@ -232,8 +224,7 @@
 
 % \newcommand{\di}[1]{{\prime{#1}}}
 
-
-% Inverse inertia matrix 
+% Inverse inertia matrix
 \newcommand{\iim}{W}
 
 % Energetic coefficient of restitution
@@ -285,10 +276,8 @@
 
 \newcommand{\tpImpulse}{\tp{\impulse}}
 
-
 % Denote the tangential plane:
 \newcommand{\tp}[1]{{#1}_{\perp}}
-
 
 % The normal impulse when the compression phase ends
 \newcommand{\nImpulseCE}{\impulseScalar_{nc}}
@@ -306,16 +295,13 @@
 % The derivative of impulse w.r.t. normal impulse after I_ns
 \newcommand{\iDniA}{\bs{\sigma}}
 
-
 % The potential energy when compression phase ends
 \newcommand{\pEnergyC}{\pEnergy_{c}}
 
 % The potential energy when v_t = 0 first holds
 \newcommand{\pEnergyT}{\pEnergy_{s}}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%% MPC commands: 
+%%%%%%%%%%%%%%%%%%%%%%%%%% MPC commands:
 \definecolor{csrStateColor}{RGB}{255,255,153}
 \definecolor{scrStateColor}{RGB}{153,204,0}
 \definecolor{crStateColor}{RGB}{153,204,155}
@@ -329,7 +315,6 @@
 % footStep
 \newcommand{\footStep}{M}
 
-
 % footStep
 \newcommand{\stateVar}{\bs{x}}
 
@@ -340,20 +325,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Eigenvalue:
 \newcommand{\eigV}{
-\sigma
+  \sigma
 }
 
 \newcommand{\eigVec}{
-\bs{e}
+  \bs{e}
 }
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% Rigid body motion
 
-
 \newcommand{\Vee}[1]{\left(#1\right)^\vee}
-
 
 %%%%%%%%% Represent the derivative operator
 \newcommand{\derivative}[1]{\frac{d}{dt}(#1)}
@@ -376,7 +357,7 @@
 \newcommand{\jointPositiondd}{\ddot{\jointPosition}}
 \newcommand{\fbJointPosition}{\bs{\mathcal{X}}}
 
-% The frame defined by Christian Ott: 
+% The frame defined by Christian Ott:
 \newcommand{\coFrame}{\mathcal{C}}
 
 \newcommand{\hybridFrame}{H}
@@ -426,11 +407,11 @@
 %%%%%%%%%%%% Exponential Map given unit skew matrix and a real number
 %%% #1:input matrix
 \newcommand{\epMapDef}[1]{
-\identityMatrix + #1  + \frac{#1^2}{2!}  + \frac{#1^3}{3!} + \ldots
+  \identityMatrix + #1  + \frac{#1^2}{2!}  + \frac{#1^3}{3!} + \ldots
 }
-%%% #1:unit skew matrix #2 realnumber 
+%%% #1:unit skew matrix #2 realnumber
 \newcommand{\unitSkewExpDef}[2]{
-\identityMatrix + #1sin(#2) + #1^2(1-cos(#2))
+  \identityMatrix + #1sin(#2) + #1^2(1-cos(#2))
 }
 
 %%%%%%%%%%% -------------------------------------- Jacobian:
@@ -438,20 +419,20 @@
 \newcommand{\transformConfig}[3]{
   \textcolor{geometricColorVariable}{
     \transform{#1}{#2}(#3)
-  }}
+}}
 \newcommand{\transformConfigDef}[3]{
   \textcolor{geometricColorVariable}{
     \epMap{\twist{#1}{#2}#3} \transform{#1}{#2}(0)
-  }}
+}}
 
 \newcommand{\transformdConfigDef}[3]{
   \textcolor{geometricColorVariable}{
     \twist{#1}{#2} \dot{#3}\epMap{\twist{#1}{#2}#3} \transform{#1}{#2}(0)
-  }}
+}}
 \newcommand{\transformdConfigDefTwo}[3]{
   \textcolor{geometricColorVariable}{
     \epMap{\twist{#1}{#2}#3}\twist{#1}{#2} \dot{#3} \transform{#1}{#2}(0)
-  }}
+}}
 
 \newcommand{\transformddConfigDef}[3]{
   \textcolor{geometricColorVariable}{
@@ -459,51 +440,49 @@
     % +\twist \dot{#3}\twist \dot{#3}\epMap{\twist#3} \transform{#1}{#2}(0)
     (\twist{#1}{#2} \ddot{#3}%\epMap{\twist#3} \transform{#1}{#2}(0)
     +\twist{#1}{#2} \twist{#1}{#2} \dot{#3}^2)\epMap{\twist{#1}{#2}#3} \transform{#1}{#2}(0)
-  }}
+}}
 \newcommand{\transformddConfigDefTwo}[3]{
   \textcolor{geometricColorVariable}{
     % \twist \ddot{#3}\epMap{\twist#3} \transform{#1}{#2}(0)
     % +\twist \dot{#3}\twist \dot{#3}\epMap{\twist#3} \transform{#1}{#2}(0)
     \epMap{\twist{#1}{#2}#3} (\twist{#1}{#2} \ddot{#3}%\epMap{\twist#3} \transform{#1}{#2}(0)
     +\twist{#1}{#2} \twist{#1}{#2} \dot{#3}^2)\transform{#1}{#2}(0)
-  }}
+}}
 
 % #1:reference frame, #:2 end-effector frame
 \newcommand{\poeDef}[2]{
   \textcolor{geometricColorVariable}{
     \twistEp{#1}{1}{1}\twistEp{#1}{2}{2}\ldots\twistEp{#1}{#2}{#2}\transformConfig{#1}{#2}{\zeroVector}
-  }}
+}}
 \newcommand{\invPoeDef}[2]{
   \textcolor{geometricColorVariable}{
     \transformInvConfig{#1}{#2}{\zeroVector}\invTwistEp{#1}{#2}{#2}\ldots\invTwistEp{#1}{2}{2}\invTwistEp{#1}{1}{1}
-  }}
+}}
 
 %%%% #1 reference frame #2 body frame #3 joint angle
 \newcommand{\transformInvConfig}[3]{
   \textcolor{geometricColorVariable}{
     \transformInv{#1}{#2}(#3)
-  }}
+}}
 \newcommand{\transformdConfig}[3]{
   \textcolor{geometricColorVariable}{
     \transformd{#1}{#2}(#3)
-  }}
+}}
 \newcommand{\transformddConfig}[3]{
- \textcolor{geometricColorVariable}{
-   \transformdd{#1}{#2}(#3)
- }}
+  \textcolor{geometricColorVariable}{
+    \transformdd{#1}{#2}(#3)
+}}
 \newcommand{\transformInvConfigDef}[3]{
   \textcolor{geometricColorVariable}{
-  \transformInv{#1}{#2}(0) \epMap{-\twist{#1}{#2}#3}
-  }}
-
-
+    \transformInv{#1}{#2}(0) \epMap{-\twist{#1}{#2}#3}
+}}
 
 %%% Lie bracket
 \newcommand{\twoCases}[4]{
-\begin{dcases}
-  {#1} & {#2} \\
-  {#3} & {#4}
-\end{dcases}
+  \begin{dcases}
+    {#1} & {#2} \\
+    {#3} & {#4}
+  \end{dcases}
 }
 % \newcommand{\up}[1]{\skewMatrix{#1}}
 
@@ -513,15 +492,13 @@
 \newcommand{\liebraResult}[2]{
   \Vee{\liebraDefDef{#1}{#2}}
 }
-%%%% #1:linear velocity #2: angular velocity #3:linear velocity #4: angular velocity 
+%%%% #1:linear velocity #2: angular velocity #3:linear velocity #4: angular velocity
 \newcommand{\seLiebraResult}[4]{
-(\cross{#2}{#3} - \cross{#4}{#1}, \skewMatrix{#2}#4 - \skewMatrix{#4}#2 )
+  (\cross{#2}{#3} - \cross{#4}{#1}, \skewMatrix{#2}#4 - \skewMatrix{#4}#2 )
 }
 
-
-
 \newcommand{\liebraDef}[2]{
-  \skewMatrixTwo{\cross{#1}{#2}} 
+  \skewMatrixTwo{\cross{#1}{#2}}
 }
 
 \newcommand{\liebraDefDef}[2]{
@@ -532,16 +509,16 @@
 %%%%%%%%%%%% Transform defined by a screw
 %%% #1:axis, #2:theta, #3:point, #4:pitch(finite)
 \newcommand{\screwTransform}[4]{
-\matrixTwo{
-  \epMap{\skewMatrix{#1}#2}
-}{
-  (\identityMatrix - \epMap{\skewMatrix{#1}#2})#3
-  + #4 #1 #2
-}{
-\zeroVector
-}{
-1
-}
+  \matrixTwo{
+    \epMap{\skewMatrix{#1}#2}
+  }{
+    (\identityMatrix - \epMap{\skewMatrix{#1}#2})#3
+    + #4 #1 #2
+  }{
+    \zeroVector
+  }{
+    1
+  }
 }
 
 %%%%%%%%%%%% Wrench defined by a screw
@@ -566,12 +543,13 @@
 }
 
 \newcommand{\distance}{d}
-%%% #1:screw 1, #2:screw 2 
+%%% #1:screw 1, #2:screw 2
 \newcommand{\screwAngle}[2]{
   \alpha_{#1#2}
 }
 \newcommand{\screwAngleDef}[2]{
-atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \inner{\angularVel_{#1}}{\angularVel_{#2}} ).
+  atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}},
+  \inner{\angularVel_{#1}}{\angularVel_{#2}} ).
 }
 \newcommand{\unitVec}{\bs{n}}
 
@@ -591,8 +569,6 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   h
 }
 
-
-
 % Twist2Screw:  #1 linear vel #2 angular vel
 \newcommand{\pitchTwistDef}[2]{
   \frac{\innerP{#2}{#1}}{\twoNorm{#2}}
@@ -603,7 +579,6 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   \frac{\innerP{#1}{#2}}{\twoNorm{#1}}
 }
 
-
 \newcommand{\twoNorm}[1]{
   {{\left\lVert#1\right\rVert}^2}
 }
@@ -611,8 +586,8 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 \newcommand{\norm}[1]{
   {\left\lVert#1\right\rVert}
 }
-  \newcommand{\abs}[1]{\left\vert#1\right\vert}
-  \newcommand{\cross}[2]{ #1 \times #2 }
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\cross}[2]{ #1 \times #2 }
 \newcommand{\quantity}{\bs{d}}
 \newcommand{\quantityd}{\dot{\bs{d}}}
 \newcommand{\quantitydd}{\ddot{\bs{d}}}
@@ -628,24 +603,24 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   \{ #1 + \lambda#2 : \lambda \in \RRv{} \}
 }
 
-% When angularVel is Not zero: #1:linearVel, #2:angularVel, #3:lambda (scalar) 
+% When angularVel is Not zero: #1:linearVel, #2:angularVel, #3:lambda (scalar)
 \newcommand{\axisTwistDefThree}[3]{
-\frac{\cross{#2}{#1}}{\twoNorm{#2}} + \axisTwistDefTwo{#1}{#3}
+  \frac{\cross{#2}{#1}}{\twoNorm{#2}} + \axisTwistDefTwo{#1}{#3}
 }
 
-% When angularVel is zero: #1:linearVel, #2:lambda (scalar) 
+% When angularVel is zero: #1:linearVel, #2:lambda (scalar)
 \newcommand{\axisTwistDefTwo}[2]{
-   #1 #2
+  #1 #2
 }
 
-% When force is NOT zero: #1:force, #2:torque, #3:lambda (scalar) 
+% When force is NOT zero: #1:force, #2:torque, #3:lambda (scalar)
 \newcommand{\axisWrenchDefThree}[3]{
-\frac{\cross{#1}{#2}}{\twoNorm{#1}} + \axisWrenchDefTwo{#2}{#3}
+  \frac{\cross{#1}{#2}}{\twoNorm{#1}} + \axisWrenchDefTwo{#2}{#3}
 }
 
-% When force is zero: #1 torque #2: lambda (scalar) 
+% When force is zero: #1 torque #2: lambda (scalar)
 \newcommand{\axisWrenchDefTwo}[2]{
-   #1 #2
+  #1 #2
 }
 
 %%%%%%%%%%%% Magnitude:
@@ -660,11 +635,10 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 }
 %%%%%%%%%%%% Twist:
 
-% #1 axis #2 theta 
+% #1 axis #2 theta
 \newcommand{\twistE}[2]{
   e^{\skewMatrix{#1}#2}
 }
-
 
 % Computes the iner product
 \newcommand{\innerP}[2]{
@@ -676,8 +650,6 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   #1\transpose{#2}
 }
 
-
-
 % Calculates the reciprocal product between two twists
 % #1:v_1,  #2:w_1,  #3:v_2, #4:w_2.
 \newcommand{\recipVelDef}[4]{
@@ -685,7 +657,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 }
 
 % Calculates the reciprocal product between two wrenches
-% #1:force,  #2:torque,  #3:force, #4:torque. 
+% #1:force,  #2:torque,  #3:force, #4:torque.
 \newcommand{\recipWrenchDef}[4]{
   \innerP{#1}{#4} + \innerP{#3}{#2}
 }
@@ -694,9 +666,8 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 \newcommand{\screw}{S}
 %%% #1 screw notation
 \newcommand{\screwDef}[1]{
-(\screwM_{#1}, \pitch_{#1}, \point{#1}, \angularVel_{#1})
+  (\screwM_{#1}, \pitch_{#1}, \point{#1}, \angularVel_{#1})
 }
-
 
 % Detail the wrench along a screw
 \newcommand{\wrenchAS}[2]{S}
@@ -704,23 +675,21 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 % Detail the twist about a screw
 %%% #1:axis, #2:\point, #3 pitch
 \newcommand{\linearTwistAS}[3]{
--\cross{#1}{#2} + #3#1
+  -\cross{#1}{#2} + #3#1
 }
 
 \newcommand{\linearTwistASTwo}[3]{
   \cross{#2}{#1} + #3#1
 }
 
-% Detail the twist about a screw, when the pitch is zero: 
-%%% #1:axis, #2:\point, 
+% Detail the twist about a screw, when the pitch is zero:
+%%% #1:axis, #2:\point,
 \newcommand{\linearTwistASRevolute}[2]{
--\cross{#1}{#2}
+  -\cross{#1}{#2}
 }
 \newcommand{\linearTwistASRevoluteTwo}[2]{
-{#2}\cross{#1}
+  {#2}\cross{#1}
 }
-
-
 
 %%%%%%%%%%% Composite rigid body (CRB) algorithm:
 % \usepackage{algorithmicx}
@@ -752,8 +721,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   }
 }
 
-
-%%%%%%%%%%% 
+%%%%%%%%%%%
 
 \newcommand{\averageVel}{
   \bar{\systemVel}
@@ -770,36 +738,36 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 \newcommand{\equivalentMassDef}[2]{
   \inverse{\left(
       \spatialJacobian{#1}{#2} \inverse{\inertiaMatrix}_{#2}
-     \transpose{{\spatialJacobian{#1}{#2}}}
-   \right)}
+      \transpose{{\spatialJacobian{#1}{#2}}}
+  \right)}
 }
 
 \newcommand{\inertiaMatrixd}{\dot{\inertiaMatrix}}
 
 %%% #1:row index, #2:column index
 \newcommand{\inertiaMatrixComponentDef}[2]{
-\sum^\dof_{l = max(#1,#2)}{
-  \transpose{
-    \twistC{S}{#1}(t_0)
-  }\transpose{
-    \twistTransform{#1}{l}
+  \sum^\dof_{l = max(#1,#2)}{
+    \transpose{
+      \twistC{S}{#1}(t_0)
+    }\transpose{
+      \twistTransform{#1}{l}
+    }
+    \spatialGInertia{S}{\com_l}(t_0)
+    \twistTransform{#2}{l}\twistC{S}{#2}(t_0)
   }
-  \spatialGInertia{S}{\com_l}(t_0)
-  \twistTransform{#2}{l}\twistC{S}{#2}(t_0)
-}
 }
 
 \newcommand{\inertiaMatrixComponentDefTwo}[2]{
-\sum^\dof_{l = max(#1,#2)}{
-  \transpose{
-    \twistC{S}{#1}(t_0)
-  }\transpose{
-    \adg{l}{#1}
+  \sum^\dof_{l = max(#1,#2)}{
+    \transpose{
+      \twistC{S}{#1}(t_0)
+    }\transpose{
+      \adg{l}{#1}
+    }
+    \spatialGInertia{S}{\com_l}(t_0)
+    \adg{l}{#2}
+    \twistC{S}{#2}(t_0)
   }
-  \spatialGInertia{S}{\com_l}(t_0)
-  \adg{l}{#2}
-  \twistC{S}{#2}(t_0)
-}
 }
 
 %%%%%%%%%%%%%%%%%% inertiaMatrix partial derivative:
@@ -829,29 +797,25 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   }
 }
 
-
-
 \newcommand{\cMatrix}{C(\jointPosition, \jointPositiond)}
 \newcommand{\nVector}{N}
 \newcommand{\rpTransform}{\mathcal{T}}
 \newcommand{\rpTransformd}[1]{\mathcal{#1}}
 
 \newcommand{\coordinateTransformed}[2]{
-\transpose{{\inverse{#2}}} #1 \inverse{#2}
+  \transpose{{\inverse{#2}}} #1 \inverse{#2}
 }
-
-
 
 \newcommand{\cristoffelSymbol}[3]{\Gamma_{#1#2#3}}
 
 %%% #1 Reference frame: #2 notation
 \newcommand{\twist}[2]{
-  \textcolor{spatialVelColor}{  
+  \textcolor{spatialVelColor}{
     \skewMatrix{\xi}_{#1#2}
   }
 }
 
-%%% #1: infinitesimal translation generator #2:so{3} 
+%%% #1: infinitesimal translation generator #2:so{3}
 \newcommand{\twistDef}[2]{
   \matrixTwo{
     #2
@@ -879,29 +843,27 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 }
 %% #1: reference frame, #2 twist notation #3 theta notation
 \newcommand{\twistEp}[3]{
-\epMap{\twist{#1}{#2} \theta_{#3}}
+  \epMap{\twist{#1}{#2} \theta_{#3}}
 }
 %% #1: reference frame, #2 twist notation #3 theta notation
 \newcommand{\invTwistEp}[3]{
-\epMap{-\twist{#1}{#2} \theta_{#3}}
+  \epMap{-\twist{#1}{#2} \theta_{#3}}
 }
-
 
 %%%%%%%%%%%%%%%%%%%%%% Dynamics
 %%% #1:index, #2:last index, #3 component
 \newcommand{\agg}[3]{
-\sum^{#2}_{#1=1}{#3}
+  \sum^{#2}_{#1=1}{#3}
 }
 
 %%% #1:index, #2:last index, #3 component
 \newcommand{\union}[3]{
-\bigcup^{#2}_{#1=1}{#3}
+  \bigcup^{#2}_{#1=1}{#3}
 }
-
 
 % %%%%%%%%%%% #1:row index, #2:column index
 % \newcommand{\cMatrixComponentDef}[2]{
-%   \agg{k}{\dof}{\cMatrixComponent{#1}{#2}{k}\dot{\jointPosition}_k} 
+%   \agg{k}{\dof}{\cMatrixComponent{#1}{#2}{k}\dot{\jointPosition}_k}
 % }
 
 %%%%%%%%%%% #1:row index, #2:column index, #3 index (between 1 and dof)
@@ -917,91 +879,89 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   \right)
 }
 
-
-
 %%% The twist coordinate
 % \newcommand{\twistC}{\xi}
-% #1:reference frame, #2:notation of the twist 
+% #1:reference frame, #2:notation of the twist
 % \newcommand{\twistC}{\xi}
 
-% #1:reference frame, #2:notation of the twist 
+% #1:reference frame, #2:notation of the twist
 \newcommand{\twistC}[2]{
   \textcolor{spatialVelColor}{
     \xi_{#1#2}
   }
 }
 
-% #1:reference frame, #2:notation of the twist 
+% #1:reference frame, #2:notation of the twist
 \newcommand{\twistCd}[2]{
   \textcolor{spatialVelColor}{
     \dot{\xi}_{#1#2}
   }
 }
 
-% #1:reference frame, #2:notation of the twist 
+% #1:reference frame, #2:notation of the twist
 \newcommand{\spatialTwist}[2]{
   \textcolor{spatialVelColor}{
     \hat{\xi}'_{#1#2}
-  }}
+}}
 
-% #1:reference frame, #2:notation of the twist 
+% #1:reference frame, #2:notation of the twist
 \newcommand{\spatialTwistC}[2]{
   \textcolor{spatialVelColor}{
     \xi'_{#1#2}
-  }}
+}}
 
-% #1:reference frame, #2:notation of the twist 
+% #1:reference frame, #2:notation of the twist
 \newcommand{\spatialTwistCd}[2]{
   \textcolor{spatialVelColor}{
     \dot{\xi}'_{#1#2}
-  }}
+}}
 
-% #1:reference frame, #2:notation of the twist 
+% #1:reference frame, #2:notation of the twist
 \newcommand{\bodyTwistC}[2]{
   \textcolor{bodyVelColor}{
     \xi^{\dagger}_{#1#2}
-  }}
-% #1:reference frame, #2:index of the twist 
+}}
+% #1:reference frame, #2:index of the twist
 \newcommand{\bodyTwistCd}[2]{
   \textcolor{bodyVelColor}{
     \dot{\xi}^{\dagger}_{#1#2}
-  }}
+}}
 
 \newcommand{\bodyTwist}[2]{
   \textcolor{bodyVelColor}{
     \hat{\xi}^{\dagger}_{#1#2}
-  }}
+}}
 
 % #1:reference frame, #2:index  of the twist, #3:index of the starting link
 %%% t_0 means that starting time.
 \newcommand{\spatialTwistCDef}[3]{
   \textcolor{spatialVelColor}{
     Ad_{\epMap{\twist{#1}{#3(t_0)} \theta_{#3}}\ldots \epMap{\twist{s}{#2-1(t_0)} \theta_{#2-1}} }\twistC{#1}{#2(t_0)}
-    }
+  }
 }
 
 % #1:reference frame, #2:index of the twist, #3:index of the last link
 \newcommand{\bodyTwistCDef}[3]{
   \textcolor{bodyVelColor}{
-    Ad^{-1}_{\epMap{\twist{#1}{#2(t_0)} \theta_{#2}}\ldots \epMap{\twist{s}{#3(t_0)} \theta_{#3}}\transformConfig{s}{#3}{0} }\twistC{#1}{#2(t_0)}
-    }
+    Ad^{-1}_{\epMap{\twist{#1}{#2(t_0)} \theta_{#2}}\ldots \epMap{\twist{s}{#3(t_0)}
+    \theta_{#3}}\transformConfig{s}{#3}{0} }\twistC{#1}{#2(t_0)}
+  }
 }
 
-
 %%% The twist coordinate
-%%% #1: notation of the joint 
+%%% #1: notation of the joint
 \newcommand{\twistCRevolute}[1]{
-\vectorTwo{
-  \linearTwistASRevolute{\angularVel_{#1}}{\point{1}}
+  \vectorTwo{
+    \linearTwistASRevolute{\angularVel_{#1}}{\point{1}}
   }{
     \angularVel_{#1}
   }
 }
 
-%%% #1: notation of the joint 
+%%% #1: notation of the joint
 \newcommand{\twistCPrismatic}[1]{
-\vectorTwo{
-  \linearVel_{#1}
+  \vectorTwo{
+    \linearVel_{#1}
   }{
     \zeroVector
   }
@@ -1010,7 +970,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 %%% #1:linearVel, #2: angularVel
 \newcommand{\twistCDef}[2]{(#1, #2)}
 
-%%% #1:notation of screw 
+%%% #1:notation of screw
 \newcommand{\twistFromScrew}[1]{
   \screwM_{#1}\vectorTwo{
     \linearTwistAS{\angularVel_{#1}}{\point{1}}{\pitch_{#1}}
@@ -1029,13 +989,11 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 
 \newcommand{\vc}[1]{\bs{#1}}
 
-
-
 \newcommand{\vectorTwo}[2]{
   \begin{bmatrix}
     #1\\
     #2
-\end{bmatrix}
+  \end{bmatrix}
 }
 
 \newcommand{\vectorThree}[3]{
@@ -1043,7 +1001,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     #1\\
     #2\\
     #3
-\end{bmatrix}
+  \end{bmatrix}
 }
 \newcommand{\vectorFour}[4]{
   \begin{bmatrix}
@@ -1051,7 +1009,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     #2\\
     #3\\
     #4
-\end{bmatrix}
+  \end{bmatrix}
 }
 \newcommand{\vectorTwoRow}[2]{
   [#1^\top, #2^\top]^\top
@@ -1064,7 +1022,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   \begin{bmatrix}
     #1 & #2\\
     #3 & #4
-\end{bmatrix}
+  \end{bmatrix}
 }
 
 \newcommand{\matrixThree}[9]{
@@ -1072,7 +1030,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     #1 & #2 & #3\\
     #4 & #5 & #6\\
     #7 & #8 & #9
-\end{bmatrix}
+  \end{bmatrix}
 }
 
 \newcommand{\translationVel}{
@@ -1080,7 +1038,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 }
 
 \newcommand{\linearVel}{
-\translationVel
+  \translationVel
 }
 \newcommand{\linearVelScalar}{
   v
@@ -1094,43 +1052,39 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   w
 }
 
-
-
 %%% #1 reference frame #2 body frame
 \newcommand{\spatialVel}[2]{
   \textcolor{spatialVelColor}{
     \vc{V}^{s}_{#1#2}
-  }}
+}}
 
 %%% #1 reference frame #2 body frame
 \newcommand{\spatialVelDef}[2]{
   \textcolor{spatialVelColor}{
-\vectorTwo{
-  \spatialTVDef{#1}{#2}
-  }{
-    % (\rotationd{#1}{#2}\rotationInv{#1}{#2})^{\vee}
-    \spatialRVDef{#1}{#2}
-  }
+    \vectorTwo{
+      \spatialTVDef{#1}{#2}
+    }{
+      % (\rotationd{#1}{#2}\rotationInv{#1}{#2})^{\vee}
+      \spatialRVDef{#1}{#2}
+    }
 }}
 
 \newcommand{\spatialVelTwistDefTwo}[2]{
   \textcolor{spatialVelColor}{
     \transformdConfig{#1}{#2}{\theta}\transformInvConfig{#1}{#2}{\theta}
-  }}
+}}
 
 \newcommand{\bodyVelTwistDefTwo}[2]{
   \textcolor{spatialVelColor}{
     \transformInvConfig{#1}{#2}{\theta}\transformdConfig{#1}{#2}{\theta}
 }}
 
-
 % Defines the reference frame and body frame of the angular velocity
 %%% #1 reference frame #2 body frame
 \newcommand{\hybridVel}[2]{
   \textcolor{spatialVelColor}{
     \vc{V}^{h}_{#1#2}
-  }}
-
+}}
 
 \newcommand{\hybridVelDef}[2]{
   \textcolor{spatialVelColor}{
@@ -1139,7 +1093,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     }{
       \spatialRV{#1}{#2}
     }
-  }}
+}}
 \newcommand{\hybridVelDefDef}[2]{
   \textcolor{spatialVelColor}{
     \vectorTwo{
@@ -1147,7 +1101,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     }{
       \spatialRVDef{#1}{#2}
     }
-  }}
+}}
 %%%%%%%%%%%%%%%% Convert hybrid vel to body vel
 %%% #1 Reference frame  #2 body frame
 \newcommand{\hTwoB}[2]{
@@ -1168,7 +1122,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 %%%%%%%%%%%%%%%% Convert hybrid vel to body vel
 \newcommand{\spatialTV}[2]{
   \textcolor{spatialVelColor}{
-  \translationVel^{s}_{#1#2}
+    \translationVel^{s}_{#1#2}
 }}
 \newcommand{\spatialTVDef}[2]{
   \textcolor{spatialVelColor}{
@@ -1177,43 +1131,44 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 \newcommand{\spatialTA}[2]{
   \textcolor{spatialVelColor}{
     \dot{\translationVel}^{s}_{#1#2}
-  }}
+}}
 \newcommand{\spatialTADef}[2]{
   \textcolor{spatialVelColor}{
     \translationdd{#1}{#2} - \spatialRATwist{#1}{#2}\translation{#1}{#2} - \spatialRVTwist{#1}{#2}\translationd{#1}{#2}
-  }}
+}}
 \newcommand{\spatialTADefDef}[2]{
   \textcolor{spatialVelColor}{
-\translationdd{#1}{#2} -\rotationdd{#1}{#2}\rotationInv{#1}{#2} \translation{#1}{#2}  
--\rotationd{#1}{#2} \rotationInvD{#1}{#2} \translation{#1}{#2} - \rotationd{#1}{#2}\rotationInv{#1}{#2}\translationd{#1}{#2}
-  }}
+    \translationdd{#1}{#2} -\rotationdd{#1}{#2}\rotationInv{#1}{#2} \translation{#1}{#2}
+    -\rotationd{#1}{#2} \rotationInvD{#1}{#2} \translation{#1}{#2} -
+    \rotationd{#1}{#2}\rotationInv{#1}{#2}\translationd{#1}{#2}
+}}
 \newcommand{\spatialRADef}[2]{
   \textcolor{spatialVelColor}{
     \rotationdd{#1}{#2}\rotationInv{#1}{#2} + \rotationd{#1}{#2}\rotationInvD{#1}{#2}
-  }}
+}}
 \newcommand{\bodyRADef}[2]{
   \textcolor{bodyVelColor}{
     \rotationInv{#1}{#2}\rotationdd{#1}{#2} + \rotationInvD{#1}{#2}\rotationd{#1}{#2}
-  }}
+}}
 \newcommand{\spatialAcc}[2]{
   \textcolor{spatialVelColor}{
     \dot{\vc{V}}^{s}_{#1#2}
-  } 
+  }
 }
 \newcommand{\spatialAccTwist}[2]{
   \textcolor{spatialVelColor}{
     \skewMatrix{\dot{\vc{V}}}^{s}_{#1#2}
-  } 
+  }
 }
 \newcommand{\bodyAcc}[2]{
   \textcolor{bodyVelColor}{
     \dot{\vc{V}}^{b}_{#1#2}
-  } 
+  }
 }
 \newcommand{\bodyAccTwist}[2]{
   \textcolor{bodyVelColor}{
     \skewMatrix{\dot{\vc{V}}}^{b}_{#1#2}
-  } 
+  }
 }
 \newcommand{\bodyAccTwistDef}[2]{
   \textcolor{bodyVelColor}{
@@ -1226,7 +1181,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     }{
       0
     }
-  } 
+  }
 }
 \newcommand{\spatialAccTwistDef}[2]{
   \textcolor{spatialVelColor}{
@@ -1239,34 +1194,36 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     }{
       0
     }
-  } 
+  }
 }
 \newcommand{\spatialAccDef}[2]{
   \textcolor{spatialVelColor}{
     \matrixTwo{
       \spatialRATwist{#1}{#2}
     }{
-      \translationdd{#1}{#2} - \spatialRATwist{#1}{#2}\translation{#1}{#2} - \spatialRVTwist{#1}{#2}\translationd{#1}{#2}
+      \translationdd{#1}{#2} - \spatialRATwist{#1}{#2}\translation{#1}{#2} -
+      \spatialRVTwist{#1}{#2}\translationd{#1}{#2}
     }{
       \zeroVector
     }{
       0
     }
-  }}
+}}
 
 \newcommand{\spatialAccDefDef}[2]{
   \textcolor{spatialVelColor}{
     \matrixTwo{
       \rotationdd{#1}{#2}\rotationInv{#1}{#2} + \rotationd{#1}{#2}\rotationInvD{#1}{#2}
     }{
-      \translationdd{#1}{#2} -\rotationdd{#1}{#2}\rotationInv{#1}{#2} \translation{#1}{#2}  
-      -\rotationd{#1}{#2} \rotationInvD{#1}{#2} \translation{#1}{#2} - \rotationd{#1}{#2}\rotationInv{#1}{#2}\translationd{#1}{#2}
+      \translationdd{#1}{#2} -\rotationdd{#1}{#2}\rotationInv{#1}{#2} \translation{#1}{#2}
+      -\rotationd{#1}{#2} \rotationInvD{#1}{#2} \translation{#1}{#2} -
+      \rotationd{#1}{#2}\rotationInv{#1}{#2}\translationd{#1}{#2}
     }{
       \zeroVector
     }{
       0
     }
-  }}
+}}
 \newcommand{\bodyAccDefDef}[2]{
   \textcolor{bodyVelColor}{
     \matrixTwo{
@@ -1278,7 +1235,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     }{
       0
     }
-  }}
+}}
 \newcommand{\bodyAccDef}[2]{
   \textcolor{bodyVelColor}{
     \matrixTwo{
@@ -1290,26 +1247,25 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     }{
       0
     }
-  }}
-
+}}
 
 \newcommand{\spatialRA}[2]{
   \textcolor{spatialVelColor}{
     \dot{\angularVel}^{s}_{#1#2}
-  }}
+}}
 \newcommand{\spatialRATwist}[2]{
   \textcolor{spatialVelColor}{
     \skewMatrix{\dot{\angularVel}}^{s}_{#1#2}
-  }}
+}}
 \newcommand{\bodyRATwist}[2]{
   \textcolor{bodyVelColor}{
     \skewMatrix{\dot{\angularVel}}^{b}_{#1#2}
-  }}
+}}
 
 \newcommand{\spatialRV}[2]{
   \textcolor{spatialVelColor}{
     \angularVel^{s}_{#1#2}
-  }}
+}}
 
 \newcommand{\spatialRVDef}[2]{
   \textcolor{spatialVelColor}{
@@ -1333,7 +1289,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 \newcommand{\spatialVelTwist}[2]{
   \textcolor{spatialVelColor}{
     \skewMatrix{\vc{V}}^{s}_{#1#2}
-  }}
+}}
 
 % \newcommand{\spatialVelTwistInv}[2]{
 %   \textcolor{uncertainColor}{
@@ -1355,7 +1311,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 }}
 % \newcommand{\spatialVelTwistInvDef}[2]{
 %   \textcolor{uncertainColor}{
-    
+
 % }}
 
 \newcommand{\spatialTVTwist}[2]{
@@ -1369,51 +1325,47 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 \newcommand{\spatialRVdTwist}[2]{
   \textcolor{spatialVelColor}{
     \skewMatrix{\dot{\vc{w}}}^{s}_{#1#2}
-  }}
+}}
 
 %%% #1 Representation frame, #2 Base frame, and #3 Body frame
 \newcommand{\vel}[3]{
   \textcolor{velColor}{
     \vc{V}^{#1}_{#2#3}
-  }}
+}}
 \newcommand{\velJacobian}[3]{
   \textcolor{velColor}{
     \jacobian^{#1}_{#2#3}
-  }}
+}}
 \newcommand{\tV}[3]{
   \textcolor{velColor}{
     \vc{v}^{#1}_{#2#3}
-  }}
+}}
 
 \newcommand{\rV}[3]{
   \textcolor{velColor}{
     \vc{w}^{#1}_{#2#3}
-  }}
-
+}}
 
 %%% #1 Reference frame #2 Body frame
 \newcommand{\bodyVel}[2]{
   \textcolor{bodyVelColor}{
     \vc{V}^{b}_{#1#2}
-  }}
+}}
 %%% #1 Reference frame #2 Body frame
 \newcommand{\bodyTVDef}[2]{
   \textcolor{bodyVelColor}{
     \rotationInv{#1}{#2}\translationd{#1}{#2}
-  }}
+}}
 %%% #1 Reference frame #2 Body frame
 \newcommand{\bodyRVDef}[2]{
   \textcolor{bodyVelColor}{
-      (\rotationInv{#1}{#2}\rotationd{#1}{#2})^{\vee}
-  }}
-
+    (\rotationInv{#1}{#2}\rotationd{#1}{#2})^{\vee}
+}}
 
 \newcommand{\bodyRVDefTwo}[2]{
   \textcolor{bodyVelColor}{
     \rotationInv{#1}{#2}\rotationd{#1}{#2}
-  }}
-
-
+}}
 
 %%% #1 Reference frame #2 Body frame
 \newcommand{\bodyVelDef}[2]{
@@ -1423,36 +1375,34 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     }{
       \bodyRVDef{#1}{#2}
     }
-  }}
+}}
 
 %%% #1:Reference frame of the screw, #2:Body frame attached to the screw motion, #3: angle
 \newcommand{\screwBodyAcc}[3]{
   \textcolor{bodyVelColor}{
     \Vee{\twistTransform{#1}{#2(0)}  \twistC{#1}{#2}}\ddot{#3}
-  }}
+}}
 %%% #1:Reference frame of the screw, #2:Body frame attached to the screw motion, #3: angle
 \newcommand{\screwBodyVel}[3]{
   \textcolor{bodyVelColor}{
     \Vee{\twistTransform{#1}{#2(0)}  \twistC{#1}{#2}}\dot{#3}
-  }}
+}}
 %%% #1:Reference frame of the screw, #2:Body frame attached to the screw motion, #3: angle
 \newcommand{\screwSpatialAcc}[3]{
   \textcolor{spatialVelColor}{
     \twistC{#1}{#2}\ddot{#3}
-  }}
+}}
 
 %%% #1:Reference frame of the screw, #2:Body frame attached to the screw motion, #3: angle
 \newcommand{\screwSpatialVel}[3]{
   \textcolor{spatialVelColor}{
     \twistC{#1}{#2}\dot{#3}
-  }}
-
-
+}}
 
 \newcommand{\bodyVelTwist}[2]{
   \textcolor{bodyVelColor}{
     \skewMatrix{\vc{V}}^{b}_{#1#2}
-  }}
+}}
 % \newcommand{\bodyVelTwistInv}[2]{
 %   \textcolor{uncertainColor}{
 %     \skewMatrix{\vc{V}}^{-b}_{#1#2}
@@ -1470,7 +1420,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     }{
       0
     }
-  }}
+}}
 \newcommand{\bodyVelTwistDefDef}[2]{
   \textcolor{bodyVelColor}{
     \matrixTwo
@@ -1487,25 +1437,24 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 \newcommand{\bodyTV}[2]{
   \textcolor{bodyVelColor}{
     \vc{v}^{b}_{#1#2}
-  }}
+}}
 \newcommand{\bodyTA}[2]{
   \textcolor{bodyVelColor}{
     \dot{\vc{v}}^{b}_{#1#2}
-  }}
+}}
 \newcommand{\bodyTADef}[2]{
   \textcolor{bodyVelColor}{
     \bodyTV{#1}{#2} + \rotationInv{#1}{#2}\translationdd{#1}{#2}
-  }}
+}}
 \newcommand{\bodyTADefDef}[2]{
   \textcolor{bodyVelColor}{
-      \rotationInv{#1}{#2}\translationd{#1}{#2} + \rotationInv{#1}{#2}\translationdd{#1}{#2}
-  }}
-
+    \rotationInv{#1}{#2}\translationd{#1}{#2} + \rotationInv{#1}{#2}\translationdd{#1}{#2}
+}}
 
 \newcommand{\bodyRA}[2]{
   \textcolor{bodyVelColor}{
     \dot{\angularVel}^{b}_{#1#2}
-  }}
+}}
 % \newcommand{\bodyRADef}[2]{
 %   \textcolor{bodyVelColor}{
 %     \rotationInv{#1}{#2}\rotationdd{#1}{#2}
@@ -1529,10 +1478,10 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 }}
 
 \newcommand{\bodyForce}{
-\force^{b}
+  \force^{b}
 }
 \newcommand{\bodyTorque}{
-\torque^{b}
+  \torque^{b}
 }
 
 \newcommand{\bodyRVTwist}[2]{
@@ -1540,16 +1489,12 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     \skewMatrix{\vc{w}}^{b}_{#1#2}
 }}
 
-
-
 \newcommand{\jointAngle}{\theta}
 \newcommand{\jointAngled}{\dot{\jointAngle}}
 \newcommand{\jointAngles}{\bs{\theta}}
 \newcommand{\epMap}[1]{e^{#1}}
 
 \newcommand{\rotation}[2]{^{#2}\bs{E}_{#1}}
-
-
 
 \newcommand{\rotationInv}[2]{R^{\top}_{#1 #2}}
 \newcommand{\rotationInvD}[2]{\dot{R}^{\top}_{#1 #2}}
@@ -1564,25 +1509,24 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     \pointer{#1}{#2} =  #2 - #1
 }}
 
-
 \newcommand{\translation}[2]{
   ^{#2}\vc{r}_{#1}
 }
 
 \newcommand{\translationInv}[2]{
-   \textcolor{geometricColorVariable}{
-     \translation{#2}{#1}
-     }
+  \textcolor{geometricColorVariable}{
+    \translation{#2}{#1}
+  }
 }
 \newcommand{\translationInvSkew}[2]{
-   \textcolor{geometricColorVariable}{
-     \translationSkew{#2}{#1}
-     }
+  \textcolor{geometricColorVariable}{
+    \translationSkew{#2}{#1}
+  }
 }
 \newcommand{\translationInvDef}[2]{
-   \textcolor{geometricColorVariable}{
-     -\rotationInv{#1}{#2}\translation{#1}{#2}
-     }
+  \textcolor{geometricColorVariable}{
+    -\rotationInv{#1}{#2}\translation{#1}{#2}
+  }
 }
 
 \newcommand{\translationSkew}[2]{\skewMatrix{\translation{#1}{#2}}}
@@ -1611,58 +1555,57 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   - \twoNorm{#1} \skewMatrix{#1}
 }
 
-
 \newcommand{\transform}[2]{
   \textcolor{geometricColorVariable}{
     g_{#1#2}
-  }}
+}}
 
 \newcommand{\transformd}[2]{
- \textcolor{geometricColorVariable}{
-   \dot{g}_{#1#2}
- }}
+  \textcolor{geometricColorVariable}{
+    \dot{g}_{#1#2}
+}}
 \newcommand{\transformdDef}[2]{
- \textcolor{geometricColorVariable}{
-   \matrixTwo{
-     \rotationd{#1}{#2}
-   }{
-     \translationd{#1}{#2}
-   }{
-     \zeroVector
-   }{
-     0
-   }
- }}
+  \textcolor{geometricColorVariable}{
+    \matrixTwo{
+      \rotationd{#1}{#2}
+    }{
+      \translationd{#1}{#2}
+    }{
+      \zeroVector
+    }{
+      0
+    }
+}}
 \newcommand{\transformdd}[2]{
- \textcolor{geometricColorVariable}{
-   \ddot{g}_{#1#2}
- }}
+  \textcolor{geometricColorVariable}{
+    \ddot{g}_{#1#2}
+}}
 \newcommand{\transformddDef}[2]{
- \textcolor{geometricColorVariable}{
-   \matrixTwo{
-     \rotationdd{#1}{#2}
-   }{
-     \translationdd{#1}{#2}
-   }{
-     \zeroVector
-   }{
-     0
-   }
- }}
+  \textcolor{geometricColorVariable}{
+    \matrixTwo{
+      \rotationdd{#1}{#2}
+    }{
+      \translationdd{#1}{#2}
+    }{
+      \zeroVector
+    }{
+      0
+    }
+}}
 \newcommand{\transformInv}[2]{
   \textcolor{geometricColorVariable}{
     g^{-1}_{#1#2}
-  }}
+}}
 \newcommand{\transformInvD}[2]{
   \textcolor{geometricColorVariable}{
     % \dot{g}^{-1}_{#1#2}
     \derivative{g^{-1}_{#1#2}}
-  }}
+}}
 \newcommand{\transformInvDConfig}[3]{
   \textcolor{geometricColorVariable}{
     % \dot{g}^{-1}_{#1#2}
     \derivative{g^{-1}_{#1#2}(#3)}
-  }}
+}}
 \newcommand{\transformInvDDef}[2]{
   \textcolor{geometricColorVariable}{
     \matrixTwo{
@@ -1674,7 +1617,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     }{
       0
     }
-  }}
+}}
 
 \newcommand{\transformDef}[2]{
   \textcolor{geometricColorVariable}{
@@ -1695,7 +1638,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
     \matrixTwo{
       \rotationInv{#1}{#2}
     }{
-      -\rotationInv{#1}{#2} \translation{#1}{#2} 
+      -\rotationInv{#1}{#2} \translation{#1}{#2}
     }{
       \zeroVector
     }{
@@ -1706,7 +1649,6 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 \newcommand{\mapDef}[2]{
   : #1 \rightarrow #2
 }
-
 
 % transform a twist coordinate from coordinate #1 to coordinate #2
 \newcommand{\twistCTransform}[2]{
@@ -1767,9 +1709,9 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 \newcommand{\twistTransform}[2]{
   \textcolor{geometricColorVariable}{
     \adgInv{#1}{#2}
-    }
   }
-  
+}
+
 
 \newcommand{\twistTransformDef}[2]{
   \adgInvDef{#1}{#2}
@@ -1777,16 +1719,13 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 \newcommand{\twistTransformd}[2]{
   \textcolor{geometricColorVariable}{
     \derivative{\twistTransform{#1}{#2}}
-    }
+  }
 }
 \newcommand{\twistTransformdDef}[2]{
   \textcolor{geometricColorVariable}{
     -\twistTransform{#1}{#2}(\spatialVel{#1}{#2}\times)
-    }
+  }
 }
-
-
-
 
 % #1: reference frame , #2 link(body) frame, and #3: New reference frame.
 \newcommand{\spatialVelTransform}[3]{
@@ -1799,10 +1738,11 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 \newcommand{\spatialAccTransform}[3]{
   \textcolor{spatialVelColor}{
     % \spatialVel{#3}{#1} + \spatialVelStaticTransform{#3}{#1}\spatialVel{#1}{#2}
-    \spatialAcc{#3}{#1} 
-    +\twistTransform{#1}{#3} (\spatialVelTwist{#1}{#2}\spatialVelTwist{#1}{#3} - \spatialVelTwist{#1}{#3}\spatialVelTwist{#1}{#2})^\vee
+    \spatialAcc{#3}{#1}
+    +\twistTransform{#1}{#3} (\spatialVelTwist{#1}{#2}\spatialVelTwist{#1}{#3} -
+    \spatialVelTwist{#1}{#3}\spatialVelTwist{#1}{#2})^\vee
     % +\twistTransform{#1}{#3} (\bodyVelTwist{#3}{#1}\bodyVelTwist{#2}{#1})^\vee
-    + \twistTransform{#1}{#3}\spatialAcc{#1}{#2} 
+    + \twistTransform{#1}{#3}\spatialAcc{#1}{#2}
   }
 }
 % #1: reference frame , #2 link(body) frame, and #3: New reference frame.
@@ -1810,7 +1750,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   \textcolor{spatialVelColor}{
     \spatialAcc{#3}{#1}
     +\twistTransform{#1}{#3}\cross{\spatialVel{#1}{#2}}{\spatialVel{#1}{#3}}
-    + \twistTransform{#1}{#3}\spatialAcc{#1}{#2} 
+    + \twistTransform{#1}{#3}\spatialAcc{#1}{#2}
   }
 }
 
@@ -1835,8 +1775,8 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   \textcolor{bodyVelColor}{
     \bodyAcc{#1}{#2}
     + \twistTransform{#1}{#2}(
-    \bodyVelTwist{#2}{#1}\bodyVelTwist{#3}{#1}
-    -\bodyVelTwist{#3}{#1}\bodyVelTwist{#2}{#1}
+      \bodyVelTwist{#2}{#1}\bodyVelTwist{#3}{#1}
+      -\bodyVelTwist{#3}{#1}\bodyVelTwist{#2}{#1}
     )^{\vee}
     +\twistTransform{#1}{#2}\bodyAcc{#3}{#1}
   }
@@ -1873,7 +1813,6 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   }
 }
 
-
 % % transform body velocity in frame #1 to spatial velocity expressed in frame #2:
 % % #1 body frame, #2 spatial frame
 % \newcommand{\bodyVelToSpatialVel}[2]{
@@ -1892,38 +1831,37 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 % \adgInvDef{#1}{#2}
 % }
 
-
-% Transform from #1 to #2 
+% Transform from #1 to #2
 \newcommand{\svaTransform}[2]{
   \textcolor{svaColorVariable}{
     {^{#2}T_{#1}}
   }
 }
-% Transform from #1 to #2 
+% Transform from #1 to #2
 \newcommand{\svaTransformDef}[2]{
   \textcolor{svaColorVariable}{
-  \matrixTwo{
-    \rotation{#2}{#1}
-  }{
-    -\rotation{#2}{#1}\translation{#1}{#2}
-  }{
-    \zeroVector
-  }{
-    1
-  }
+    \matrixTwo{
+      \rotation{#2}{#1}
+    }{
+      -\rotation{#2}{#1}\translation{#1}{#2}
+    }{
+      \zeroVector
+    }{
+      1
+    }
   }
 }
 \newcommand{\svaTransformDefTwo}[2]{
   \textcolor{svaColorVariable}{
-  \matrixTwo{
-    \rotationInv{#1}{#2}
-  }{
-    -\rotationInv{#1}{#2}\translation{#1}{#2}
-  }{
-    \zeroVector
-  }{
-    1
-  }
+    \matrixTwo{
+      \rotationInv{#1}{#2}
+    }{
+      -\rotationInv{#1}{#2}\translation{#1}{#2}
+    }{
+      \zeroVector
+    }{
+      1
+    }
   }
 }
 
@@ -1936,12 +1874,12 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 % Transform from #1 to #2 (#2 is represented in #1)
 \newcommand{\svaVT}[2]{
   \textcolor{svaColorVariable}{
-  {^{#2}\svaT_{#1}}
-  % \svaT{#1}{#2}
+    {^{#2}\svaT_{#1}}
+    % \svaT{#1}{#2}
   }
 }
 
-% Transform Vel from #1 to #2 
+% Transform Vel from #1 to #2
 \newcommand{\svaVTDef}[2]{
   % eq.~2.24 of FeatherStone
   % \matrixTwo{
@@ -1953,41 +1891,41 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   %   \rotationInv{#1}{#2}
   % }
   \textcolor{svaColorVariable}{
-  \matrixTwo{
-    \rotation{#2}{#1}
-  }{\zeroMatrix}{
-    -\rotation{#2}{#1}\translationSkew{#1}{#2}
-  }
-  {
-    \rotation{#2}{#1}
-  }
+    \matrixTwo{
+      \rotation{#2}{#1}
+    }{\zeroMatrix}{
+      -\rotation{#2}{#1}\translationSkew{#1}{#2}
+    }
+    {
+      \rotation{#2}{#1}
+    }
   }
 }
 
-% Transform Vel from #1 to #2 
+% Transform Vel from #1 to #2
 \newcommand{\svaVTDefTwo}[2]{
   % eq.~2.26 of FeatherStone
   \textcolor{svaColorVariable}{
-  \matrixTwo{
-    \rotationInv{#1}{#2}
-  }{\zeroMatrix
-  }{
-    \translationSkew{#2}{#1}\rotationInv{#1}{#2}
-  }
-  {
-    \rotationInv{#1}{#2}
-  }
+    \matrixTwo{
+      \rotationInv{#1}{#2}
+    }{\zeroMatrix
+    }{
+      \translationSkew{#2}{#1}\rotationInv{#1}{#2}
+    }
+    {
+      \rotationInv{#1}{#2}
+    }
   }
 }
 
-% Transform from #1 to #2 
+% Transform from #1 to #2
 \newcommand{\svaFT}[2]{
   \textcolor{svaColorVariable}{
     {^{#2}\svaT^{*}_{#1}}
   }
 }
 
-% Transform from #1 to #2 
+% Transform from #1 to #2
 % \newcommand{\svaFTDef}[2]{
 \newcommand{\svaFTDef}[2]{
   % Following eq.2.27 of Featherstone
@@ -2000,18 +1938,18 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   % }
   %   {\rotationInv{#2}{#1}}
   \textcolor{svaColorVariable}{
-  \matrixTwo
-  {\rotationInv{#1}{#2}}
-  {
-    \translationSkew{#2}{#1}\rotationInv{#1}{#2}
-  }{
-    \zeroMatrix
-  }
-  {\rotationInv{#1}{#2}}
+    \matrixTwo
+    {\rotationInv{#1}{#2}}
+    {
+      \translationSkew{#2}{#1}\rotationInv{#1}{#2}
+    }{
+      \zeroMatrix
+    }
+    {\rotationInv{#1}{#2}}
   }
 }
 
-% Transform from #1 to #2 
+% Transform from #1 to #2
 \newcommand{\svaFTDefTwo}[2]{
   % Following eq.2.25 of Featherstone
   % \matrixTwo{
@@ -2023,18 +1961,18 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   % }
   %   {\rotationInv{#1}{#2}}
   \textcolor{svaColorVariable}{
-  \matrixTwo{
-    \rotation{#1}{#2}
-  }{
-    -\rotation{#1}{#2}\translationSkew{#1}{#2}
-  }{
-    \zeroMatrix
-  }
-  {\rotation{#1}{#2}}
+    \matrixTwo{
+      \rotation{#1}{#2}
+    }{
+      -\rotation{#1}{#2}\translationSkew{#1}{#2}
+    }{
+      \zeroMatrix
+    }
+    {\rotation{#1}{#2}}
   }
 }
 
-% Reference frame: #1, link frame: #2 
+% Reference frame: #1, link frame: #2
 \newcommand{\adg}[2]{
   \textcolor{geometricColorVariable}{
     Ad_{g_{#1#2}}
@@ -2043,61 +1981,60 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 
 \newcommand{\adgDef}[2]{
   \textcolor{geometricColorVariable}{
-  \begin{bmatrix}
-    \rotation{#1}{#2} & \translationSkew{#1}{#2}\rotation{#1}{#2} \\
-    \zeroMatrix & \rotation{#1}{#2}
-  \end{bmatrix}
+    \begin{bmatrix}
+      \rotation{#1}{#2} & \translationSkew{#1}{#2}\rotation{#1}{#2} \\
+      \zeroMatrix & \rotation{#1}{#2}
+    \end{bmatrix}
 }}
 
 \newcommand{\adgInv}[2]{
   \textcolor{geometricColorVariable}{
-  Ad^{-1}_{g_{#1#2}}
+    Ad^{-1}_{g_{#1#2}}
 }}
 \newcommand{\adgTwoInv}[2]{
   \textcolor{geometricColorVariable}{
-  Ad_{g^{-1}_{#1#2}}
+    Ad_{g^{-1}_{#1#2}}
 }}
 
 \newcommand{\adgTrans}[2]{
   \textcolor{geometricColorVariable}{
-  Ad^{\top}_{g_{#1#2}}
+    Ad^{\top}_{g_{#1#2}}
 }}
 \newcommand{\adgTransDef}[2]{
   \textcolor{geometricColorVariable}{
-  \begin{bmatrix}
-    \rotationInv{#1}{#2} & \zeroMatrix \\
-     -\rotationInv{#1}{#2}\translationSkew{#1}{#2} & \rotationInv{#1}{#2}
-\end{bmatrix}
+    \begin{bmatrix}
+      \rotationInv{#1}{#2} & \zeroMatrix \\
+      -\rotationInv{#1}{#2}\translationSkew{#1}{#2} & \rotationInv{#1}{#2}
+    \end{bmatrix}
 }}
-
 
 \newcommand{\adgInvDefTwo}[2]{
   \textcolor{geometricColorVariable}{
-  \begin{bmatrix}
-    \rotationInv{#1}{#2} & -(\rotationInv{#1}{#2}\translation{#1}{#2})^{\skewMatrix{}}\rotationInv{#1}{#2} \\
-    \zeroMatrix & \rotationInv{#1}{#2}
-\end{bmatrix}
+    \begin{bmatrix}
+      \rotationInv{#1}{#2} & -(\rotationInv{#1}{#2}\translation{#1}{#2})^{\skewMatrix{}}\rotationInv{#1}{#2} \\
+      \zeroMatrix & \rotationInv{#1}{#2}
+    \end{bmatrix}
 }}
 \newcommand{\adgInvDef}[2]{
   \textcolor{geometricColorVariable}{
-  \begin{bmatrix}
-    \rotationInv{#1}{#2} & -\rotationInv{#1}{#2}\translationSkew{#1}{#2} \\
-    \zeroMatrix & \rotationInv{#1}{#2}
-\end{bmatrix}
+    \begin{bmatrix}
+      \rotationInv{#1}{#2} & -\rotationInv{#1}{#2}\translationSkew{#1}{#2} \\
+      \zeroMatrix & \rotationInv{#1}{#2}
+    \end{bmatrix}
 }}
 
-% From frame #1 to frame #2 
+% From frame #1 to frame #2
 \newcommand{\geometricFTDef}[2]{
   \textcolor{geometricColorVariable}{
     \adgInvTransDef{#2}{#1}
   }
-%   \begin{bmatrix}
-%     \rotation{#1}{#2} & \zeroMatrix \\
-%     \translationSkew{#1}{#2}\rotation{#1}{#2}  & \rotation{#1}{#2}
-% \end{bmatrix}
+  %   \begin{bmatrix}
+  %     \rotation{#1}{#2} & \zeroMatrix \\
+  %     \translationSkew{#1}{#2}\rotation{#1}{#2}  & \rotation{#1}{#2}
+  % \end{bmatrix}
 }
 
-% From frame #1 to frame #2 
+% From frame #1 to frame #2
 \newcommand{\geometricFTTwo}[2]{
   \textcolor{geometricColorVariable}{
     \adgTrans{#1}{#2}
@@ -2109,31 +2046,29 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   }
 }
 
-% From frame #1 to frame #2 
+% From frame #1 to frame #2
 \newcommand{\geometricFT}[2]{
   \textcolor{geometricColorVariable}{
     \adgInvTrans{#2}{#1}
-  }}
+}}
 
 \newcommand{\adgInvTrans}[2]{
   \textcolor{geometricColorVariable}{
-  Ad^{\top}_{g^{-1}_{#1#2}}
+    Ad^{\top}_{g^{-1}_{#1#2}}
 }}
 
 \newcommand{\adgInvTransDef}[2]{
   \textcolor{geometricColorVariable}{
-  \begin{bmatrix}
-    \rotation{#1}{#2} & \zeroMatrix \\
-    \translationSkew{#1}{#2}\rotation{#1}{#2}  & \rotation{#1}{#2}
-  \end{bmatrix}
+    \begin{bmatrix}
+      \rotation{#1}{#2} & \zeroMatrix \\
+      \translationSkew{#1}{#2}\rotation{#1}{#2}  & \rotation{#1}{#2}
+    \end{bmatrix}
   }
 }
 
-
-
 \newcommand{\adgTransform}[3]{
   \textcolor{geometricColorVariable}{
-  \transform{#1}{#2} \skewMatrix{#3} \transformInv{#1}{#2}
+    \transform{#1}{#2} \skewMatrix{#3} \transformInv{#1}{#2}
 }}
 \newcommand{\wrench}{\bs{w}}
 % The contact wrench cone:
@@ -2150,7 +2085,6 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 \newcommand{\normalCone}{{^{\surfaceNormal}K}}
 \newcommand{\impulseGenerator}{\bs{\lambda}}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%% Inertia and momentum:
 % #1 body frame name, the COM and body inertia are calculated in its own coordinate frame
 % \newcommand{\bodyGInertia}[1]{
@@ -2159,18 +2093,14 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 %   #1 reference frame name, #2 body frame name
 %  locally, we can specify: #1 body frame: F_i  #2 the local centroidal frame: F_com_i
 \newcommand{\bodyGInertia}[2]{
-\textcolor{bodyVelColor}{
-  \body{\gInertia}_{#1 #2}
+  \textcolor{bodyVelColor}{
+    \body{\gInertia}_{#1 #2}
   }
 }
-
 
 \newcommand{\mechanicalConnection}{
   \bs{A}
 }
-
-
-
 
 % #1 reference frame name, #2 body frame name, the COM and body inertia are calculated in its own coordinate frame
 % \newcommand{\bodyGInertiaDef}[1]{
@@ -2184,14 +2114,13 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 }
 
 % \newcommand{\bodyMetaInertiaDef}[2]{
-%   \rotation 
+%   \rotation
 % }
 \newcommand{\svaBodyGInertiaDef}[2]{
   \textcolor{svaColorVariable}{
     \matrixTwo{\bodyMetaInertia{#1}{#2} }{\zeroMatrix}{\zeroMatrix}{\mass_{#2} \identityMatrix}
   }
 }
-
 
 % #1 Reference frame #2 body frame
 \newcommand{\spatialGInertia}[2]{
@@ -2208,7 +2137,8 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 
 \newcommand{\spatialGInertiadDef}[2]{
   \textcolor{spatialVelColor}{
-    -\transpose{(\cross{\spatialVel{#1}{#2}}{})} \spatialGInertia{#1}{#2} - \spatialGInertia{#1}{#2}\cross{\spatialVel{#1}{#2}}{}
+    -\transpose{(\cross{\spatialVel{#1}{#2}}{})} \spatialGInertia{#1}{#2} -
+    \spatialGInertia{#1}{#2}\cross{\spatialVel{#1}{#2}}{}
   }
 }
 
@@ -2228,15 +2158,12 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   \transpose{\svaVTDef{#2}{#1}}
 }
 
-
 % #1 and #2 defines the spatial generalized inertia to be transformed.
-% #1 Reference frame #2 body frame 
+% #1 Reference frame #2 body frame
 % #3 defines the new reference frame
 \newcommand{\spatialGInertiaTransform}[3]{
   \transpose{\twistTransform{#3}{#1}}\spatialGInertia{#1}{#2}\twistTransform{#3}{#1}
 }
-
-
 
 \newcommand{\svaSpatialGInertiaTransform}[3]{
   \transpose{\svaVT{#3}{#1}}\spatialGInertia{#1}{#2}\svaVT{#3}{#1}
@@ -2257,7 +2184,6 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   #3
   \svaVT{#1}{#2}
 }
-
 
 % #1 Reference frame #2 body frame
 \newcommand{\spatialGInertiaDef}[2]{
@@ -2292,30 +2218,31 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 % #1 Reference frame #2 body frame
 \newcommand{\spatialGInertiaDetail}[2]{
   \textcolor{spatialVelColor}{
-\matrixTwo{
-  \mass_{#2} \identityMatrix
-}{
-  \mass_{#2}\transpose{\translationSkew{#1}{#2}}
-}{
-  \mass\translationSkew{#1}{#2}
-}{
-  \mass \translationSkew{#1}{#2} \transpose{\translationSkew{#1}{#2}} + \rotation{#1}{#2}\bodyMetaInertia{#1}{#2}\rotationInv{#1}{#2}
-}
-}
+    \matrixTwo{
+      \mass_{#2} \identityMatrix
+    }{
+      \mass_{#2}\transpose{\translationSkew{#1}{#2}}
+    }{
+      \mass\translationSkew{#1}{#2}
+    }{
+      \mass \translationSkew{#1}{#2} \transpose{\translationSkew{#1}{#2}} +
+      \rotation{#1}{#2}\bodyMetaInertia{#1}{#2}\rotationInv{#1}{#2}
+    }
+  }
 }
 % #1 Reference frame #2 body frame
 \newcommand{\spatialGInertiaDiagonalDetail}[2]{
   \textcolor{spatialVelColor}{
-\matrixTwo{
-  \mass_{#2} \identityMatrix
-}{
-  \zeroMatrix
-}{
-  \zeroMatrix
-}{
-  \rotation{#1}{#2}\bodyMetaInertia{#1}{#2}\rotationInv{#1}{#2}
-}
-}
+    \matrixTwo{
+      \mass_{#2} \identityMatrix
+    }{
+      \zeroMatrix
+    }{
+      \zeroMatrix
+    }{
+      \rotation{#1}{#2}\bodyMetaInertia{#1}{#2}\rotationInv{#1}{#2}
+    }
+  }
 }
 
 % #1 Reference frame #2 body frame
@@ -2332,24 +2259,21 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   }
 }
 
-
 \newcommand{\metaInertia}{\mathcal{I}}
-
-
 
 % #1: the reference frame and #2 the link frame
 \newcommand{\spatialMetaInertia}[2]
 {
-\textcolor{spatialVelColor}{ 
-  \spatial{\metaInertia}_{{#1}{#2}}
-}
+  \textcolor{spatialVelColor}{
+    \spatial{\metaInertia}_{{#1}{#2}}
+  }
 }
 % #1: the reference frame and #2 the link frame
 \newcommand{\bodyMetaInertia}[2]
 {
-  \textcolor{bodyVelColor}{ 
+  \textcolor{bodyVelColor}{
     \body{\metaInertia}_{{#1 #2}}
-    }
+  }
 }
 \newcommand{\spatialInertia}{\mathcal{I}^{\prime}}
 
@@ -2379,28 +2303,27 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 %%% #1: link index
 \newcommand{\lagREquationsDef}[1]{
   \agg{j}{\dof}{
-  (\inertiaMatrixd_{#1j}\jointPositiond_j  + \inertiaMatrix_{#1j}\jointPositiondd_j)
-}
-- \frac{1}{2}\agg{#1}{\dof}
-{
-  \pd{\inertiaMatrix_{#1j}}{\jointPosition_#1} \jointPositiond_#1\jointPositiond_j
-  - \pd{\potentialEnergy}{\jointPosition_#1}
-}
+    (\inertiaMatrixd_{#1j}\jointPositiond_j  + \inertiaMatrix_{#1j}\jointPositiondd_j)
+  }
+  - \frac{1}{2}\agg{#1}{\dof}
+  {
+    \pd{\inertiaMatrix_{#1j}}{\jointPosition_#1} \jointPositiond_#1\jointPositiond_j
+    - \pd{\potentialEnergy}{\jointPosition_#1}
+  }
   = \torque_{#1}
 }
-
 
 \newcommand{\lagREquationsDefDef}[1]{
   \agg{j}{\dof}{
     \inertiaMatrix_{#1j}\jointPositiondd_j
   }
   + \frac{1}{2}\agg{j,k}{\dof}{(
-    \pd{\inertiaMatrix_{#1j}}{\jointPosition_k}
-    +\pd{\inertiaMatrix_{#1k}}{\jointPosition_j}
-    - \pd{\inertiaMatrix_{kj}}{\jointPosition_#1}
-    % \christoffelSymbolDef{#1}{j}{k}
+      \pd{\inertiaMatrix_{#1j}}{\jointPosition_k}
+      +\pd{\inertiaMatrix_{#1k}}{\jointPosition_j}
+      - \pd{\inertiaMatrix_{kj}}{\jointPosition_#1}
+      % \christoffelSymbolDef{#1}{j}{k}
   )\jointPositiond_k\jointPositiond_j}
-+ \pd{\potentialEnergy}{\jointPosition_#1}
+  + \pd{\potentialEnergy}{\jointPosition_#1}
   = \torque_{#1}
 }
 %%%% #1 link index #2,#3 iteration index
@@ -2411,21 +2334,20 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   \frac{1}{2}(
     \pd{\inertiaMatrix_{#1#2}}{\jointPosition_#3}
     +\pd{\inertiaMatrix_{#1#3}}{\jointPosition_#2}
-    - \pd{\inertiaMatrix_{#3#2}}{\jointPosition_#1})
+  - \pd{\inertiaMatrix_{#3#2}}{\jointPosition_#1})
 }
-
 
 % The argument are: force, torque
 \newcommand{\wrenchC}[2]{
-\begin{bmatrix}
-#1\\
-#2
-\end{bmatrix}
+  \begin{bmatrix}
+    #1\\
+    #2
+  \end{bmatrix}
 }
 
 % The argument are: force, torque
 \newcommand{\wrenchR}[2]{
-[#1^\top, #2^\top]^\top
+  [#1^\top, #2^\top]^\top
 }
 
 \newcommand{\bodyJacobian}[2]{
@@ -2440,7 +2362,6 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
   }
 }
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%% QP Control law
 
 % #1 velocity #2 mass
@@ -2449,7 +2370,7 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 \newcommand{\desired}[1]{#1^{*}}
 \newcommand{\reff}[1]{#1^{\text{ref}}}
 
-% integration error 
+% integration error
 \newcommand{\iError}[1]{\int{\bs{e}_{#1}}}
 \newcommand{\iErrorDef}[1]{\int{\errorDef{#1}}dt}
 
@@ -2470,654 +2391,621 @@ atan2(\inner{(\cross{\angularVel_{#1}}{\angularVel_{#2}})}{\unitVec_{#1#2}}, \in
 
 %% #1 upper bound, #2 middle #3 lower bound
 \newcommand{\saturation}[3]{
-\left\{
-  \begin{array}{lr}
-    #1 \\
-    #2 \\
-    #3
-  \end{array}
-\right.
-}
-% #1 velocity #2 mass
-\newcommand{\quadratic}[2]{\frac{1}{2} #1^\top #2 #1}
-\newcommand{\objF}{J}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%% Cross product 
-\newcommand{\paral}[2]{#1 \parallel #2}
-\newcommand{\perpen}[2]{#1 \perp #2}
-
-\newcommand{\bs}{\boldsymbol}
-\newcommand{\backfill}{\hfill\(\blacksquare\)}
-
-\newcommand{\skewMatrix}[1]{#1\times}
-
-\newcommand{\skewMatrixTwo}[1]{({#1})^{\widehat{~}}}
-
-
-\newcommand{\vectriple}[3]{#1\times(#2 \times #3)} 
-\newcommand{\vectripleexpan}[3]{
-(\inner{#1}{#3}){#2} - (\innerP{#1}{#2}){#3}
-}
-\newcommand{\vectripleexpannegate}[3]{
--(\inner{#1}{#3}){#2} + (\innerP{#1}{#2}){#3}
-} 
-\newcommand{\scalartriple}[3]{{#1}\bullet({#2} \times {#3})}
-\newcommand{\vcd}[3]{({#1}\bullet{#3}){#2} - ({#1}\bullet{#2}) {#3}}  % Vector cross product definition  
-
-\newcommand{\inner}[2]{#1\cdot#2} % Inner product 
-\newcommand{\innerDef}[2]{\transpose{{#1}}#2} % Inner product 
-\newcommand{\normal}[1]{\overline{{#1}}}
-
-\newcommand{\nc}[1]{\frac{#1}{| #1| }}% normal calc
-
-\newcommand{\transpose}[1]{{#1}^\top}
-\newcommand{\transInverse}[1]{#1^{-\top}}
-%% \newcommand{\pseudoInverse}[1]{#1^{\dagger}}
-%% \newcommand{\inverse}[1]{{#1}^{-1}}
-
-
-\newcommand{\pseudoInverse}[1]{{#1}^{+}}
-% When  #row >  #column
-\newcommand{\pseudoInverseColumnDef}[1]{\inverse{( \transpose{#1} #1 )}\transpose{#1}}
-% When  #column >  #row
-\newcommand{\pseudoInverseRowDef}[1]{\transpose{#1}\inverse{( #1 \transpose{#1} )}}
-
-\newcommand{\weightedPseudoInverse}[1]{#1^{\dagger}}
-% % #1 Jacobian #2 The weight, e.g., the inertia matrix. 
-\newcommand{\weightedPseudoInverseRowDef}[2]{\inverse{#2}\transpose{#1}\inverse{( #1 \inverse{#2} \transpose{#1} )}}
-\newcommand{\weightedPseudoInverseColumnDef}[2]{\inverse{( \transpose{#1} \inverse{#2} #1 )}\transpose{#1}\inverse{#2}}
-\newcommand{\inverse}[1]{{#1}^{-1}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%% Resultant torque
-% The argument are: force, torque, application point of the input wrench, application point of the resultant wrench. 
-\newcommand{\resultantTorque}[4]{#2 + (#3 - #4)\times #1}
-\newcommand{\resultantTorqueTwo}[4]{#2 + \pointer{#4}{#3}\times #1}
-\newcommand{\torqueFrame}[2]{{\torque_{#1#2}}}
-
-
-
-% \boldsymbol{#1} + (\boldsymbol{#2} - \boldsymbol{#3})\times \boldsymbol{#4}}
-
-% The argument is frame name. 
-\newcommand{\cframe}[1]{\mathcal{F}_{#1}}
-
-% Denotes the origin of a coordinate frame
-\newcommand{\origin}[1]{#1_{o}}
-\newcommand{\todo}[1]{To do:~
-\textcolor{bodyVelColor}{
-  #1
+  \left\{
+    \begin{array}{lr}
+      #1 \\
+      #2 \\
+      #3
+    \end{array}
+    \right.
   }
-}
-% \newcommand{\wrench}{\bs{W}} %TODO choose a small character because it is a vector
+  % #1 velocity #2 mass
+  \newcommand{\quadratic}[2]{\frac{1}{2} #1^\top #2 #1}
+  \newcommand{\objF}{J}
 
+  %%%%%%%%%%%%%%%%%%%%%%%%%% Cross product
+  \newcommand{\paral}[2]{#1 \parallel #2}
+  \newcommand{\perpen}[2]{#1 \perp #2}
 
-\newcommand{\numEE}{m}
+  \newcommand{\bs}{\boldsymbol}
+  \newcommand{\backfill}{\hfill\(\blacksquare\)}
 
-\newcommand{\forceJacobian}[2]{\jacobian_{#1 #2}}
+  \newcommand{\skewMatrix}[1]{#1\times}
 
-\newcommand{\configurationFrame}[2]{g_{#1 #2}}
+  \newcommand{\skewMatrixTwo}[1]{({#1})^{\widehat{~}}}
 
-
-
-\newcommand{\bodyFrame}[1]{{^b#1}}
-
-\newcommand{\spatialJacobian}[2]{
-  \textcolor{spatialVelColor}{
-    \spatial{\jacobian}_{#1 #2}
+  \newcommand{\vectriple}[3]{#1\times(#2 \times #3)}
+  \newcommand{\vectripleexpan}[3]{
+    (\inner{#1}{#3}){#2} - (\innerP{#1}{#2}){#3}
   }
-}
-
-\newcommand{\spatialJacobiand}[2]{
-  \textcolor{spatialVelColor}{
-    \dot{\spatial{\jacobian}}_{#1 #2}
+  \newcommand{\vectripleexpannegate}[3]{
+    -(\inner{#1}{#3}){#2} + (\innerP{#1}{#2}){#3}
   }
-}
+  \newcommand{\scalartriple}[3]{{#1}\bullet({#2} \times {#3})}
+  \newcommand{\vcd}[3]{({#1}\bullet{#3}){#2} - ({#1}\bullet{#2}) {#3}}  % Vector cross product definition
 
-\newcommand{\forceJacobianDef}[2]{
-\begin{bmatrix}
-  \rotation{#1}{#2} \\
-  \pointer{#1}{#2} \times \rotation{#1}{#2}
-\end{bmatrix}}
+  \newcommand{\inner}[2]{#1\cdot#2} % Inner product
+  \newcommand{\innerDef}[2]{\transpose{{#1}}#2} % Inner product
+  \newcommand{\normal}[1]{\overline{{#1}}}
 
-% Transform from #1 to #2 
-\newcommand{\svaForceJacobianDef}[2]{
-  \textcolor{svaColorVariable}{  
-    \vectorTwo{
-      \translationSkew{#2}{#1}\rotationInv{#1}{#2}    
-    }{
-      {\rotationInv{#1}{#2}}
+  \newcommand{\nc}[1]{\frac{#1}{| #1| }}% normal calc
+
+  \newcommand{\transpose}[1]{{#1}^\top}
+  \newcommand{\transInverse}[1]{#1^{-\top}}
+  %% \newcommand{\pseudoInverse}[1]{#1^{\dagger}}
+  %% \newcommand{\inverse}[1]{{#1}^{-1}}
+
+  \newcommand{\pseudoInverse}[1]{{#1}^{+}}
+  % When  #row >  #column
+  \newcommand{\pseudoInverseColumnDef}[1]{\inverse{( \transpose{#1} #1 )}\transpose{#1}}
+  % When  #column >  #row
+  \newcommand{\pseudoInverseRowDef}[1]{\transpose{#1}\inverse{( #1 \transpose{#1} )}}
+
+  \newcommand{\weightedPseudoInverse}[1]{#1^{\dagger}}
+  % % #1 Jacobian #2 The weight, e.g., the inertia matrix.
+  \newcommand{\weightedPseudoInverseRowDef}[2]{\inverse{#2}\transpose{#1}\inverse{( #1 \inverse{#2} \transpose{#1} )}}
+  \newcommand{\weightedPseudoInverseColumnDef}[2]{\inverse{( \transpose{#1} \inverse{#2} #1
+  )}\transpose{#1}\inverse{#2}}
+  \newcommand{\inverse}[1]{{#1}^{-1}}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%% Resultant torque
+  % The argument are: force, torque, application point of the input wrench, application point of the resultant wrench.
+  \newcommand{\resultantTorque}[4]{#2 + (#3 - #4)\times #1}
+  \newcommand{\resultantTorqueTwo}[4]{#2 + \pointer{#4}{#3}\times #1}
+  \newcommand{\torqueFrame}[2]{{\torque_{#1#2}}}
+
+  % \boldsymbol{#1} + (\boldsymbol{#2} - \boldsymbol{#3})\times \boldsymbol{#4}}
+
+  % The argument is frame name.
+  \newcommand{\cframe}[1]{\mathcal{F}_{#1}}
+
+  % Denotes the origin of a coordinate frame
+  \newcommand{\origin}[1]{#1_{o}}
+  \newcommand{\todo}[1]{To do:~
+    \textcolor{bodyVelColor}{
+      #1
     }
   }
-}
-% Transform from #1 to #2 
-\newcommand{\svaForceJacobianDefTwo}[2]{
-  \textcolor{svaColorVariable}{
-    \vectorTwo{
-      -\rotation{#2}{#1}\translationSkew{#1}{#2}
-    }{
-      {\rotation{#2}{#1}}
+  % \newcommand{\wrench}{\bs{W}} %TODO choose a small character because it is a vector
+
+  \newcommand{\numEE}{m}
+
+  \newcommand{\forceJacobian}[2]{\jacobian_{#1 #2}}
+
+  \newcommand{\configurationFrame}[2]{g_{#1 #2}}
+
+  \newcommand{\bodyFrame}[1]{{^b#1}}
+
+  \newcommand{\spatialJacobian}[2]{
+    \textcolor{spatialVelColor}{
+      \spatial{\jacobian}_{#1 #2}
     }
   }
-}
 
-
-\newcommand{\mass}{\text{m}}
-
-\newcommand{\numContacts}{{\text{m}_{\text{sc}}}}
-\newcommand{\numImpacts}{{m_2}}
-\newcommand{\numFree}{\numEE - \numContacts -\numImpacts }
-\newcommand{\contactPoint}{\bs{p}}
-
-\newcommand{\ee}{\text{e}}
-
-
-
-% The argument is point name. 
-\newcommand{\point}[1]{\boldsymbol{q}_{#1}}
-
-\newcommand{\force}{\bs{f}}
-\newcommand{\forceScalar}{f}
-% The arguments are: (1) frame (2) Application point. 
-% \newcommand{\forceFrame}[2]{{^{#1}\bs{f}_{#2}}}
-\newcommand{\forceFrame}[2]{{^{#1}\force_{#2}}}
-\newcommand{\impulseFrame}[2]{{\impulse_{#1#2}}}
-
-% The arguments are: (1) Equivalent frame name (2) Application point of the force 
-\newcommand{\forceGraspMatrix}[2]{
-\begin{bmatrix}
-    \rotation{\bs{#1}}{#2}^\top \\
-    \pointer{#1}{#2} \times \rotation{#1}{#2}^\top 
-  \end{bmatrix}
-}
-\newcommand{\graspMatrix}[2]{
-  {G_{#1#2}}
-}
-
-\newcommand{\graspMatrixDef}[2]{
-\begin{bmatrix}
-  \rotation{#1}{#2} & 0\\
-  \pointer{#1}{#2} \times \rotation{#1}{#2} & \rotation{#1}{#2}
-\end{bmatrix}
-}
-\newcommand{\comPlane}{\com_{x,y}}
-\newcommand{\pendulumC}{\text{w}}
-\newcommand{\pendulumCDef}{\sqrt{\frac{g}{\com_z}}}
-\newcommand{\comVel}{\dot{\com}}
-\newcommand{\comVelPlane}{\dot{\com}_{x,y}}
-\newcommand{\comVelPlaneLowerBound}{\ubar{\dot{\com}}_{x,y}}
-\newcommand{\comVelPlaneUpperBound}{\bar{\dot{\com}}_{x,y}}
-\newcommand{\comAcc}{\ddot{\com}}
-\newcommand{\comAccPlane}{\ddot{\com}_{x,y}}
-
-\newcommand{\torque}{\bs{\tau}}
-\newcommand{\ankleTorque}{{^a\bs{\tau}}}
-
-% The arguments are: origin(or a point), surface normal
-\newcommand{\plane}[2]{\Pi(#1, #2)}
-
-% It rotates from frame #1 to #2. 
-
-
-\newcommand{\eeVel}{\dot{\bs{x}}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%% Momenta
-\newcommand{\pGain}{k_p}
-\newcommand{\dGain}{k_d}
-\newcommand{\iGain}{k_i}
-
-% #1:index of the pole
-\newcommand{\pole}[1]{p_{#1}}
-
-% The system momentum matrix
-\newcommand{\smm}{
-  \textcolor{bodyVelColor}{
-    \bs{A}
+  \newcommand{\spatialJacobiand}[2]{
+    \textcolor{spatialVelColor}{
+      \dot{\spatial{\jacobian}}_{#1 #2}
+    }
   }
-}
 
-\newcommand{\systemMomenta}{
-  \textcolor{bodyVelColor}{
-    \bs{h}
+  \newcommand{\forceJacobianDef}[2]{
+    \begin{bmatrix}
+      \rotation{#1}{#2} \\
+      \pointer{#1}{#2} \times \rotation{#1}{#2}
+  \end{bmatrix}}
+
+  % Transform from #1 to #2
+  \newcommand{\svaForceJacobianDef}[2]{
+    \textcolor{svaColorVariable}{
+      \vectorTwo{
+        \translationSkew{#2}{#1}\rotationInv{#1}{#2}
+      }{
+        {\rotationInv{#1}{#2}}
+      }
+    }
   }
-}
-
-
-% Composite rigid body inertia
-%%% #1:reference frame, #2:link index
-\newcommand{\crbInertia}[2]{
-  \textcolor{spatialVelColor}{
-    \spatialGInertia[#1][#2]
+  % Transform from #1 to #2
+  \newcommand{\svaForceJacobianDefTwo}[2]{
+    \textcolor{svaColorVariable}{
+      \vectorTwo{
+        -\rotation{#2}{#1}\translationSkew{#1}{#2}
+      }{
+        {\rotation{#2}{#1}}
+      }
+    }
   }
-}
-\newcommand{\systemVel}{
-  \textcolor{bodyVelColor}{
-    \bs{V}
+
+  \newcommand{\mass}{\text{m}}
+
+  \newcommand{\numContacts}{{\text{m}_{\text{sc}}}}
+  \newcommand{\numImpacts}{{m_2}}
+  \newcommand{\numFree}{\numEE - \numContacts -\numImpacts }
+  \newcommand{\contactPoint}{\bs{p}}
+
+  \newcommand{\ee}{\text{e}}
+
+  % The argument is point name.
+  \newcommand{\point}[1]{\boldsymbol{q}_{#1}}
+
+  \newcommand{\force}{\bs{f}}
+  \newcommand{\forceScalar}{f}
+  % The arguments are: (1) frame (2) Application point.
+  % \newcommand{\forceFrame}[2]{{^{#1}\bs{f}_{#2}}}
+  \newcommand{\forceFrame}[2]{{^{#1}\force_{#2}}}
+  \newcommand{\impulseFrame}[2]{{\impulse_{#1#2}}}
+
+  % The arguments are: (1) Equivalent frame name (2) Application point of the force
+  \newcommand{\forceGraspMatrix}[2]{
+    \begin{bmatrix}
+      \rotation{\bs{#1}}{#2}^\top \\
+      \pointer{#1}{#2} \times \rotation{#1}{#2}^\top
+    \end{bmatrix}
   }
-}
-\newcommand{\systemJacobian}{
-  \textcolor{bodyVelColor}{
-    \bs{J}
+  \newcommand{\graspMatrix}[2]{
+    {G_{#1#2}}
   }
-}
 
-\newcommand{\momentum}{\bs{h}}
-\newcommand{\momentumd}{\dot{\bs{h}}}
-
-%%% #1 reference frame, #2 link index
-\newcommand{\momentumFrame}[2]{\bs{h}_{#1#2}}
-
-%%% The canonical momenta: 
-\newcommand{\canoMomenta}{{\bs{h}_{J}}}
-
-%%% The system momentum per link
-\newcommand{\sMomentum}{{\bs{h}_{s}}}
-
-%%% The contact momentum per contact
-\newcommand{\cMomentum}{{\bs{h}_{c}}}
-
-% #1:reference frame, #2:contact index
-\newcommand{\cMomentumDef}[2]{
-  \equivalentMass_{#2} \spatialVel{#1}{#2}
-}
-
-\newcommand{\cMomentumDefDef}[2]{
-  {\equivalentMassDef{#1}{#2}} \spatialVel{#1}{#2}
-}
-
-
-\newcommand{\cmmMomenta}{
-  \textcolor{bodyVelColor}{
-  \bs{h}_{\cmmFrame}
- }
-}
-\newcommand{\cmmInertia}{
-  \textcolor{bodyVelColor}{
-    \bs{I}_{\cmmFrame}
+  \newcommand{\graspMatrixDef}[2]{
+    \begin{bmatrix}
+      \rotation{#1}{#2} & 0\\
+      \pointer{#1}{#2} \times \rotation{#1}{#2} & \rotation{#1}{#2}
+    \end{bmatrix}
   }
-}
-\newcommand{\cmmInertiaDef}{
-  \agg{i}{\dof}{\spatialGInertia{\cmmFrame}{i}}
-}
+  \newcommand{\comPlane}{\com_{x,y}}
+  \newcommand{\pendulumC}{\text{w}}
+  \newcommand{\pendulumCDef}{\sqrt{\frac{g}{\com_z}}}
+  \newcommand{\comVel}{\dot{\com}}
+  \newcommand{\comVelPlane}{\dot{\com}_{x,y}}
+  \newcommand{\comVelPlaneLowerBound}{\ubar{\dot{\com}}_{x,y}}
+  \newcommand{\comVelPlaneUpperBound}{\bar{\dot{\com}}_{x,y}}
+  \newcommand{\comAcc}{\ddot{\com}}
+  \newcommand{\comAccPlane}{\ddot{\com}_{x,y}}
 
-\newcommand{\cmmInertiaDefTwo}{
-  \agg{i}{\dof}{\spatialGInertia{\cmmFrame}{i}}
-}
+  \newcommand{\torque}{\bs{\tau}}
+  \newcommand{\ankleTorque}{{^a\bs{\tau}}}
 
-\newcommand{\cmmInertiaDetail}{
-  \textcolor{bodyVelColor}{
-    \bs{I}_{\cmmFrame}
+  % The arguments are: origin(or a point), surface normal
+  \newcommand{\plane}[2]{\Pi(#1, #2)}
+
+  % It rotates from frame #1 to #2.
+
+  \newcommand{\eeVel}{\dot{\bs{x}}}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%% Momenta
+  \newcommand{\pGain}{k_p}
+  \newcommand{\dGain}{k_d}
+  \newcommand{\iGain}{k_i}
+
+  % #1:index of the pole
+  \newcommand{\pole}[1]{p_{#1}}
+
+  % The system momentum matrix
+  \newcommand{\smm}{
+    \textcolor{bodyVelColor}{
+      \bs{A}
+    }
   }
-}
-\newcommand{\angularMomentum}{\mathcal{L}}
-\newcommand{\angularMomentumD}{\dot{\angularMomentum}}
-\newcommand{\linearMomentum}{P}
-\newcommand{\linearMomentumD}{\dot{\linearMomentum}}
 
-\newcommand{\impactDuration}{\delta t}
+  \newcommand{\systemMomenta}{
+    \textcolor{bodyVelColor}{
+      \bs{h}
+    }
+  }
 
+  % Composite rigid body inertia
+  %%% #1:reference frame, #2:link index
+  \newcommand{\crbInertia}[2]{
+    \textcolor{spatialVelColor}{
+      \spatialGInertia[#1][#2]
+    }
+  }
+  \newcommand{\systemVel}{
+    \textcolor{bodyVelColor}{
+      \bs{V}
+    }
+  }
+  \newcommand{\systemJacobian}{
+    \textcolor{bodyVelColor}{
+      \bs{J}
+    }
+  }
 
+  \newcommand{\momentum}{\bs{h}}
+  \newcommand{\momentumd}{\dot{\bs{h}}}
 
-\newcommand{\nextState}[1]{{#1}_{t_{k+1}}}
-\newcommand{\nextStateB}[2]{{#1}_{#2,t_{k+1}}}
-\newcommand{\nextStateTwo}[1]{{#1(t_{k+1})}}
+  %%% #1 reference frame, #2 link index
+  \newcommand{\momentumFrame}[2]{\bs{h}_{#1#2}}
 
+  %%% The canonical momenta:
+  \newcommand{\canoMomenta}{{\bs{h}_{J}}}
 
-\newcommand{\selectionMatrix}{S}
+  %%% The system momentum per link
+  \newcommand{\sMomentum}{{\bs{h}_{s}}}
 
-\newcommand{\uncertain}[1]{\widetilde{#1}}
+  %%% The contact momentum per contact
+  \newcommand{\cMomentum}{{\bs{h}_{c}}}
 
-\newcommand{\samplingPeriod}{\Delta t}
+  % #1:reference frame, #2:contact index
+  \newcommand{\cMomentumDef}[2]{
+    \equivalentMass_{#2} \spatialVel{#1}{#2}
+  }
 
+  \newcommand{\cMomentumDefDef}[2]{
+    {\equivalentMassDef{#1}{#2}} \spatialVel{#1}{#2}
+  }
 
-% %%%%%%%%%%%%%%%%%%%%%%%%% EQUATION VARIABLES:
+  \newcommand{\cmmMomenta}{
+    \textcolor{bodyVelColor}{
+      \bs{h}_{\cmmFrame}
+    }
+  }
+  \newcommand{\cmmInertia}{
+    \textcolor{bodyVelColor}{
+      \bs{I}_{\cmmFrame}
+    }
+  }
+  \newcommand{\cmmInertiaDef}{
+    \agg{i}{\dof}{\spatialGInertia{\cmmFrame}{i}}
+  }
 
-\newcommand{\cmm}{
-  % \textcolor{bodyVelColor}{
+  \newcommand{\cmmInertiaDefTwo}{
+    \agg{i}{\dof}{\spatialGInertia{\cmmFrame}{i}}
+  }
+
+  \newcommand{\cmmInertiaDetail}{
+    \textcolor{bodyVelColor}{
+      \bs{I}_{\cmmFrame}
+    }
+  }
+  \newcommand{\angularMomentum}{\mathcal{L}}
+  \newcommand{\angularMomentumD}{\dot{\angularMomentum}}
+  \newcommand{\linearMomentum}{P}
+  \newcommand{\linearMomentumD}{\dot{\linearMomentum}}
+
+  \newcommand{\impactDuration}{\delta t}
+
+  \newcommand{\nextState}[1]{{#1}_{t_{k+1}}}
+  \newcommand{\nextStateB}[2]{{#1}_{#2,t_{k+1}}}
+  \newcommand{\nextStateTwo}[1]{{#1(t_{k+1})}}
+
+  \newcommand{\selectionMatrix}{S}
+
+  \newcommand{\uncertain}[1]{\widetilde{#1}}
+
+  \newcommand{\samplingPeriod}{\Delta t}
+
+  % %%%%%%%%%%%%%%%%%%%%%%%%% EQUATION VARIABLES:
+
+  \newcommand{\cmm}{
+    % \textcolor{bodyVelColor}{
     A_{\cmmFrame}(\jangles)
-  % }
-}
-
-\newcommand{\cmmLinear}{A_{\bs{v}\cmmFrame}}
-\newcommand{\cmmXY}{A^{x,y}_{\cmmFrame}}
-
-\newcommand{\cmmDot}{
-  \textcolor{bodyVelColor}{
-  \dot{A}_{\cmmFrame}(\jointAngles)
-}
-}
-
-\newcommand{\cmmPlane}{
-  \textcolor{bodyVelColor}{
-    A_{\cmmFrame_{x,y}}
+    % }
   }
-}
 
-\newcommand{\jump}{\Delta}
-\newcommand{\impactduration}{\delta t}
-\newcommand{\sampletime}{\Delta t}
-\newcommand{\eeposition}{\bs{x}}
-\newcommand{\eevelocity}{\bs{\dot{x}}}
-\newcommand{\eeacceleration}{\bs{\ddot{x}}}
-\newcommand{\optVars}{\bs{u}}
-\newcommand{\argmin}[2]{\underset{#1}{\text{argmin}}{(#2)}}
-\newcommand{\argmax}[2]{\underset{#1}{\text{argmax}}{(#2)}}
+  \newcommand{\cmmLinear}{A_{\bs{v}\cmmFrame}}
+  \newcommand{\cmmXY}{A^{x,y}_{\cmmFrame}}
 
+  \newcommand{\cmmDot}{
+    \textcolor{bodyVelColor}{
+      \dot{A}_{\cmmFrame}(\jointAngles)
+    }
+  }
 
-\newcommand{\gravity}{\mathbf{g}}
+  \newcommand{\cmmPlane}{
+    \textcolor{bodyVelColor}{
+      A_{\cmmFrame_{x,y}}
+    }
+  }
 
-\newcommand{\jointState}{\mathbf{q}}
-\newcommand{\jointVel}{\dot{\jointState}}
-\newcommand{\jointAcc}{\ddot{\jointState}}
+  \newcommand{\jump}{\Delta}
+  \newcommand{\impactduration}{\delta t}
+  \newcommand{\sampletime}{\Delta t}
+  \newcommand{\eeposition}{\bs{x}}
+  \newcommand{\eevelocity}{\bs{\dot{x}}}
+  \newcommand{\eeacceleration}{\bs{\ddot{x}}}
+  \newcommand{\optVars}{\bs{u}}
+  \newcommand{\argmin}[2]{\underset{#1}{\text{argmin}}{(#2)}}
+  \newcommand{\argmax}[2]{\underset{#1}{\text{argmax}}{(#2)}}
+
+  \newcommand{\gravity}{\mathbf{g}}
 
+  \newcommand{\jointState}{\mathbf{q}}
+  \newcommand{\jointVel}{\dot{\jointState}}
+  \newcommand{\jointAcc}{\ddot{\jointState}}
 
-\newcommand{\Id}{\mathbb{I}}
+  \newcommand{\Id}{\mathbb{I}}
+
+  % The center of pressure (COP) point
+  \newcommand{\cop}{{\bs{c}_{p}}}
 
+  % The zero-tilting moment point (ZMP)
+  \newcommand{\zmp}{{\text{\bf z}}}
 
-% The center of pressure (COP) point
-\newcommand{\cop}{{\bs{c}_{p}}}
+  \newcommand{\height}[1]{{d_{#1}}}
+
+  \newcommand{\zmpd}{{\dot{\zmp}}}
 
-% The zero-tilting moment point (ZMP)
-\newcommand{\zmp}{{\text{\bf z}}}
+  \newcommand{\zmpx}{{\zmp_x}}
+  \newcommand{\zmpxd}{{\zmpd_x}}
 
-\newcommand{\height}[1]{{d_{#1}}}
-
-\newcommand{\zmpd}{{\dot{\zmp}}}
-
-\newcommand{\zmpx}{{\zmp_x}}
-\newcommand{\zmpxd}{{\zmpd_x}}
-
-\newcommand{\zmpy}{{\zmp_y}}
-\newcommand{\zmpyd}{{\zmpd_y}}
-
-% The centroidal moment point/pivot (CMP)
-\newcommand{\cmp}{{\bs{c}_{mp}}}
-
-% The divergent component of motion (DCM) or the instantaneous capture point (ICP)
-\newcommand{\dcm}{{\bs{\xi}}}
-\newcommand{\dcmd}{{\dot{\bs{\xi}}}}
-\newcommand{\dcmDef}{{\com + \frac{\comVel}{\pendulumC}}}
-\newcommand{\dcmxDef}{{\com_x + \frac{\comVel_x}{\pendulumC}}}
-
-\newcommand{\CoM}{\boldsymbol{c}}
-\newcommand{\VRP}{\boldsymbol{v}}
-\newcommand{\eCMP}{\boldsymbol{e}}
-\newcommand{\DCM}{\boldsymbol{\xi}}
-\newcommand{\PluckerPose}{\boldsymbol{p}}
-\newcommand{\ZMP}{\mathbf{p}_z}
-
-% The center of mass (COM)
-\newcommand{\com}{{\text{\bf c}}}
-\newcommand{\comd}{{\dot{\com}}}
-\newcommand{\comdxy}{\comd_{xy}}
-\newcommand{\comdPlane}{{\dot{\com}_{x,y}}}
-\newcommand{\comddPlane}{{\ddot{\com}_{x,y}}}
-
-\newcommand{\picomdxy}{\postImpact{\comd}_{xy}}
-\newcommand{\picomdSet}{\set{\postImpact{\comd}_{xy}}}
-\newcommand{\picomdVertex}[1]{\set{\postImpact{\comd}_{xy},#1}}
-\newcommand{\comdd}{{\ddot{\com}}}
-
-\newcommand{\comx}{{\bs{c}_x}}
-\newcommand{\comxd}{{\comd_x}}
-
-\newcommand{\comy}{{\bs{c}_y}}
-\newcommand{\comyd}{{\comd_y}}
-
-% stance foot location
-\newcommand{\stanceFL}{{\bs{p}_s}}
-% capture foot location
-\newcommand{\captureFL}{{\bs{p}_c}}
-
-% The arguments are: (1) starting point (2) the ending point. For instance: \vec{a} - \vec{b} = \pointer{b}{a}. 
-\newcommand{\pointer}[2]{\overrightarrow{#1#2}}
-\newcommand{\pointerDef}[2]{\bs{#2}  - \bs{#1}}
-
-\newcommand{\pointerPerp}[2]{\overrightarrow{#1#2}_{\perp}}
-
-
-\newcommand{\impulse}{\bs{\iota}} %TODO similar to identityMatrix
-\newcommand{\impulseScalar}{\iota} %TODO similar to identityMatrix
-
-\newcommand{\specialJac}{\mathcal{J}}
-\newcommand{\specialJacTwo}{\mathcal{C}}
-\newcommand{\constant}{C}
-
-\newcommand{\constantVector}{\bs{c}}
-
-\newcommand{\supportPolygon}{\set{\mathcal{S}}}
-\newcommand{\zmpArea}{{\set{[\zmp]}}}
-\newcommand{\comArea}{{\set{[\com]}}}
-
-\newcommand{\comdArea}{\set{[\comd_{xy}]} }
-
-\newcommand{\controlArea}{{\mathcal{S}_{\com\zmp}}}
-\newcommand{\contactArea}{{\mathcal{S}_{\contactPoint}}}
-
-% #1 joint number
-\newcommand{\svaJointJac}[1]{\bf{\Phi}_{#1}}
-\newcommand{\svaJointJacDef}[1]{\bf{\Phi}_{#1}}
-
-
-\newcommand{\jangles}{\mathbf{q}}
-\newcommand{\jvelocities}{\mathbf{\dot{q}}}
-\newcommand{\jaccelerations}{\mathbf{\ddot{q}}}
-\newcommand{\jtorques}{\boldsymbol{\tau}}
-\newcommand{\omegaVector}{\boldsymbol{\omega}}
-\newcommand{\tsInertia}{\boldsymbol{\Lambda}}
-\newcommand{\jacobian}{J}
-\newcommand{\comJacobian}{J_{\com}}
-\newcommand{\comJacobiand}{\dot{J}_{\com}}
-
-\newcommand{\jacobianVector}{\bs{J}}
-
-\newcommand{\jacobiand}{\dot{\bs{J}}}
-\newcommand{\Kinv}{\bs{K}^{-1}}
-\newcommand{\JEstimate}{\bs{K}_{\jvelocitiesJump}}
-\newcommand{\JpinvEstimate}{\Kinv_{\jvelocitiesJump}}
-\newcommand{\LambdaINVEstimate}{\bs{K}_{\impulse}}
-\newcommand{\LambdaEstimate}{\Kinv_{\impulse}}
-
-\newcommand{\weightMatrix}[1]{\mathbb{#1}}
-\newcommand{\weight}{w}
-
-\newcommand{\weightmatrixH}{\mathbf{H}}
-\newcommand{\weightmatrixW}{\mathbf{W}}
-\newcommand{\weightmatrixQ}{\mathbf{Q}}
-
-
-\newcommand{\matrixA}{\mathbf{A}}
-
-\newcommand{\quantityJump}{\jump \quantity}
-\newcommand{\jtorquesJump}{\jump \jtorques}
-\newcommand{\janglesJump}{\jump \jangles}
-\newcommand{\jvelocitiesJump}{\jump \jvelocities}
-\newcommand{\eevelocityJump}{\jump \eevelocity}
-\newcommand{\forceJump}{\jump \force}
-\newcommand{\dcmJump}{\jump \dcm}
-\newcommand{\zmpJump}{\jump \zmp}
-
-\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
-\newcommand{\jangle}{q}
-
-\newcommand{\lowerBound}[1]{\underline{#1}}
-\newcommand{\upperBound}[1]{\overline{#1}}
-\newcommand{\doubleBound}[1]{\ubar{\bar{#1}}}
-
-
-
-
-\newcommand{\jvelocitiesUpperBound}{\mathbf{\dot{\bar{\jangle}}}}
-\newcommand{\jvelocitiesLowerBound}{\mathbf{\dot{\ubar{\jangle}}}}
-\newcommand{\jvelocitiesJumpUpperBound}{\jump \jvelocitiesUpperBound}
-\newcommand{\jvelocitiesJumpLowerBound}{\jump \jvelocitiesLowerBound}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \newtheorem{theorem}{Theorem}
-% \newtheorem{Lemma}{Lemma}
-\newtheorem{remark}{Remark}[section]
-\newtheorem{assumption}{assumption}
-\newtheorem{hypothesis}{hypothesis}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{property}[section]{property}
-% \newtheorem{property}[theorem]{property}
-% \newtheorem{corollary}[theorem]{corollary}
-% \newtheorem{Example}[theorem]{Example}
-% \newtheorem{problem}[theorem]{Problem}
-% \newtheorem{problem}{Problem}
-\newtheorem{Solution}{Solution}
-% \newtheorem{Definition}{Definition}
-
-
-% -----------------------------------------------------------------
-\newtheorem{thm}{Theorem}[section]
-\newtheorem{cor}[thm]{Corollary}
-\newtheorem{lem}[thm]{Lemma}
-\newtheorem{prop}[thm]{Proposition}
-\theoremstyle{definition}
-\newtheorem{defn}[thm]{Definition}
-\theoremstyle{remark}
-\newtheorem{rem}[thm]{Remark}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%% Def equal
-
-% \usepackage{mathtools}
-\newcommand{\defeq}{\vcentcolon=}
-\newcommand{\eqdef}{=\vcentcolon}
-
-
-% Operators
-% New operators must defined as such to have them typeset
-% correctly. As an example we define the Jacobian:
-% -----------------------------------------------------------------
-% \DeclareMathOperator{\Jac}{Jac}
-
-
-% Shortcuts.
-% One can define new commands to shorten frequently used
-% constructions. As an example, this defines the R and Z used
-% for the real and integer numbers.
-% -----------------------------------------------------------------
-\def\RR{\mathbb{R}}
-\def\ZZ{\mathbb{Z}}
-
-\newcommand{\RRv}[1]{\mathbb{R}^{#1}}
-\newcommand{\RRm}[2]{\mathbb{R}^{#1 \times #2}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%% Impact-handling
-
-\newcommand{\current}[1]{{#1}_{t_{k}}}
-\newcommand{\currentTwo}[1]{#1(t_{k})}
-\newcommand{\nextTwo}[1]{{#1(t_{k+1})}}
-\newcommand{\previous}[1]{{#1}_{t_{k-1}}}
-
-
-\newcommand{\surfaceNormal}{\bs{n}}
-\newcommand{\projection}{P}
-
-\newcommand{\projectionDef}[1]{{#1}{#1}^{\top}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%% Algorithm
-
-% \usepackage[ruled,lined,linesnumbered]{algorithm}
-% \usepackage[ruled,lined]{algorithm}
-% \usepackage[noend]{algpseudocode}
-% \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
-% \include{pythonlisting}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%% C++ code
-
-\definecolor{dkgreen}{rgb}{0,0.6,0}
-\definecolor{gray}{rgb}{0.5,0.5,0.5}
-\definecolor{mauve}{rgb}{0.58,0,0.82}
-
-\lstset{frame=tb,
-  language=C++,
-  backgroundcolor=\color{black!5}, % set backgroundcolor
-  basicstyle=\footnotesize,% basic font setting
-  aboveskip=3mm,
-  belowskip=3mm,
-  showstringspaces=false,
-  columns=flexible,
-  numbers=none,
-  numberstyle=\tiny\color{gray},
-  keywordstyle=\color{blue},
-  commentstyle=\color{dkgreen},
-  stringstyle=\color{mauve},
-  breaklines=true,
-  breakatwhitespace=true,
-  tabsize=3
-}
-
-
-% \NewDocumentCommand{\cpp}{v}{%
-% \texttt{\textcolor{blue}{#1}}%
-% }
-
-% %%%%%%%%%%%%%%%%%%%%%%%%%%%%% New reference command:
-% \NewDocumentCommand{\probRef}{v}{%
-% Problem~\ref{#1}}
-
-% \NewDocumentCommand{\secRef}{v}{%
-% Sec.~\ref{#1}}
-
-% \NewDocumentCommand{\remarkRef}{v}{%
-% Remark~\ref{#1}}
-
-% \NewDocumentCommand{\tableRef}{v}{%
-% Table~\ref{#1}}
-
-% \NewDocumentCommand{\algRef}{v}{%
-% Algorithm~\ref{#1}}
-
-% \NewDocumentCommand{\lemmaRef}{v}{%
-% Lemma~\ref{#1}}
-
-% \NewDocumentCommand{\theoremRef}{v}{%
-% Theorem~\ref{#1}}
-
-% \NewDocumentCommand{\figRef}{v}{%
-%   Fig.~\ref{#1}}
-
-% \NewDocumentCommand{\appRef}{v}{%
-%   Appendix~\ref{#1}}
-
-% \NewDocumentCommand{\exRef}{v}{%
-% Experiment.~\ref{#1}}
-
-% \NewDocumentCommand{\simRef}{v}{%
-% Simulation.~\ref{#1}}
-
-
-% \NewDocumentCommand{\orderedS}\TwoArgs{mm}{v}{%
-%   <#1, #2, #3>
-% }
-% \NewDocumentCommand\orderedS{m{}m{}O{}}{
-% % <#1, #2, #3>
-% }
-% \NewDocumentCommand\TwoOptOfThree{O{}O{}m}%
-%   {Text with #3 and perhaps #1 and #2}
-% \NewDocumentCommand\orderedTwoS{mm}%
-%   {$<$#1,#2$>$}
-% \NewDocumentCommand\orderedThreeS{mmm}%
-%   {$<$#1,#2,#3$>$}
-
-% \usepackage{xcolor}
-\definecolor{svaColor}{RGB}{7, 160, 2}
-\definecolor{uncertainColor}{RGB}{255, 0, 0}
-
-\definecolor{spatialVelColor}{RGB}{189, 38, 96}
-\definecolor{geometricColor}{RGB}{66, 126, 245}
-\definecolor{bodyVelColor}{RGB}{13, 191, 191}
-
-\definecolor{velColor}{RGB}{50, 205, 50}
-
-
-\colorlet{svaColorVariable}{black}%{svaColor}
-\colorlet{geometricColorVariable}{geometricColor}
-
-% %%%%%%%%%%%%%%%%%%%%%%%%% comment
-\newif\ifBlockComment
-\BlockCommentfalse %\BlockCommenttrue
-% %%%%%%%%%%%%%%%%%%%%%%%%% 
+  \newcommand{\zmpy}{{\zmp_y}}
+  \newcommand{\zmpyd}{{\zmpd_y}}
+
+  % The centroidal moment point/pivot (CMP)
+  \newcommand{\cmp}{{\bs{c}_{mp}}}
+
+  % The divergent component of motion (DCM) or the instantaneous capture point (ICP)
+  \newcommand{\dcm}{{\bs{\xi}}}
+  \newcommand{\dcmd}{{\dot{\bs{\xi}}}}
+  \newcommand{\dcmDef}{{\com + \frac{\comVel}{\pendulumC}}}
+  \newcommand{\dcmxDef}{{\com_x + \frac{\comVel_x}{\pendulumC}}}
+
+  \newcommand{\CoM}{\boldsymbol{c}}
+  \newcommand{\VRP}{\boldsymbol{v}}
+  \newcommand{\eCMP}{\boldsymbol{e}}
+  \newcommand{\DCM}{\boldsymbol{\xi}}
+  \newcommand{\PluckerPose}{\boldsymbol{p}}
+  \newcommand{\ZMP}{\mathbf{p}_z}
+
+  % The center of mass (COM)
+  \newcommand{\com}{{\text{\bf c}}}
+  \newcommand{\comd}{{\dot{\com}}}
+  \newcommand{\comdxy}{\comd_{xy}}
+  \newcommand{\comdPlane}{{\dot{\com}_{x,y}}}
+  \newcommand{\comddPlane}{{\ddot{\com}_{x,y}}}
+
+  \newcommand{\picomdxy}{\postImpact{\comd}_{xy}}
+  \newcommand{\picomdSet}{\set{\postImpact{\comd}_{xy}}}
+  \newcommand{\picomdVertex}[1]{\set{\postImpact{\comd}_{xy},#1}}
+  \newcommand{\comdd}{{\ddot{\com}}}
+
+  \newcommand{\comx}{{\bs{c}_x}}
+  \newcommand{\comxd}{{\comd_x}}
+
+  \newcommand{\comy}{{\bs{c}_y}}
+  \newcommand{\comyd}{{\comd_y}}
+
+  % stance foot location
+  \newcommand{\stanceFL}{{\bs{p}_s}}
+  % capture foot location
+  \newcommand{\captureFL}{{\bs{p}_c}}
+
+  % The arguments are: (1) starting point (2) the ending point. For instance: \vec{a} - \vec{b} = \pointer{b}{a}.
+  \newcommand{\pointer}[2]{\overrightarrow{#1#2}}
+  \newcommand{\pointerDef}[2]{\bs{#2}  - \bs{#1}}
+
+  \newcommand{\pointerPerp}[2]{\overrightarrow{#1#2}_{\perp}}
+
+  \newcommand{\impulse}{\bs{\iota}} %TODO similar to identityMatrix
+  \newcommand{\impulseScalar}{\iota} %TODO similar to identityMatrix
+
+  \newcommand{\specialJac}{\mathcal{J}}
+  \newcommand{\specialJacTwo}{\mathcal{C}}
+  \newcommand{\constant}{C}
+
+  \newcommand{\constantVector}{\bs{c}}
+
+  \newcommand{\supportPolygon}{\set{\mathcal{S}}}
+  \newcommand{\zmpArea}{{\set{[\zmp]}}}
+  \newcommand{\comArea}{{\set{[\com]}}}
+
+  \newcommand{\comdArea}{\set{[\comd_{xy}]} }
+
+  \newcommand{\controlArea}{{\mathcal{S}_{\com\zmp}}}
+  \newcommand{\contactArea}{{\mathcal{S}_{\contactPoint}}}
+
+  % #1 joint number
+  \newcommand{\svaJointJac}[1]{\bf{\Phi}_{#1}}
+  \newcommand{\svaJointJacDef}[1]{\bf{\Phi}_{#1}}
+
+  \newcommand{\jangles}{\mathbf{q}}
+  \newcommand{\jvelocities}{\mathbf{\dot{q}}}
+  \newcommand{\jaccelerations}{\mathbf{\ddot{q}}}
+  \newcommand{\jtorques}{\boldsymbol{\tau}}
+  \newcommand{\omegaVector}{\boldsymbol{\omega}}
+  \newcommand{\tsInertia}{\boldsymbol{\Lambda}}
+  \newcommand{\jacobian}{J}
+  \newcommand{\comJacobian}{J_{\com}}
+  \newcommand{\comJacobiand}{\dot{J}_{\com}}
+
+  \newcommand{\jacobianVector}{\bs{J}}
+
+  \newcommand{\jacobiand}{\dot{\bs{J}}}
+  \newcommand{\Kinv}{\bs{K}^{-1}}
+  \newcommand{\JEstimate}{\bs{K}_{\jvelocitiesJump}}
+  \newcommand{\JpinvEstimate}{\Kinv_{\jvelocitiesJump}}
+  \newcommand{\LambdaINVEstimate}{\bs{K}_{\impulse}}
+  \newcommand{\LambdaEstimate}{\Kinv_{\impulse}}
+
+  \newcommand{\weightMatrix}[1]{\mathbb{#1}}
+  \newcommand{\weight}{w}
+
+  \newcommand{\weightmatrixH}{\mathbf{H}}
+  \newcommand{\weightmatrixW}{\mathbf{W}}
+  \newcommand{\weightmatrixQ}{\mathbf{Q}}
+
+  \newcommand{\matrixA}{\mathbf{A}}
+
+  \newcommand{\quantityJump}{\jump \quantity}
+  \newcommand{\jtorquesJump}{\jump \jtorques}
+  \newcommand{\janglesJump}{\jump \jangles}
+  \newcommand{\jvelocitiesJump}{\jump \jvelocities}
+  \newcommand{\eevelocityJump}{\jump \eevelocity}
+  \newcommand{\forceJump}{\jump \force}
+  \newcommand{\dcmJump}{\jump \dcm}
+  \newcommand{\zmpJump}{\jump \zmp}
+
+  \newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+  \newcommand{\jangle}{q}
+
+  \newcommand{\lowerBound}[1]{\underline{#1}}
+  \newcommand{\upperBound}[1]{\overline{#1}}
+  \newcommand{\doubleBound}[1]{\ubar{\bar{#1}}}
+
+  \newcommand{\jvelocitiesUpperBound}{\mathbf{\dot{\bar{\jangle}}}}
+  \newcommand{\jvelocitiesLowerBound}{\mathbf{\dot{\ubar{\jangle}}}}
+  \newcommand{\jvelocitiesJumpUpperBound}{\jump \jvelocitiesUpperBound}
+  \newcommand{\jvelocitiesJumpLowerBound}{\jump \jvelocitiesLowerBound}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%
+
+  % \newtheorem{theorem}{Theorem}
+  % \newtheorem{Lemma}{Lemma}
+  \newtheorem{remark}{Remark}[section]
+  \newtheorem{assumption}{assumption}
+  \newtheorem{hypothesis}{hypothesis}
+  \newtheorem{proposition}[theorem]{Proposition}
+  \newtheorem{property}[section]{property}
+  % \newtheorem{property}[theorem]{property}
+  % \newtheorem{corollary}[theorem]{corollary}
+  % \newtheorem{Example}[theorem]{Example}
+  % \newtheorem{problem}[theorem]{Problem}
+  % \newtheorem{problem}{Problem}
+  \newtheorem{Solution}{Solution}
+  % \newtheorem{Definition}{Definition}
+
+  % -----------------------------------------------------------------
+  \newtheorem{thm}{Theorem}[section]
+  \newtheorem{cor}[thm]{Corollary}
+  \newtheorem{lem}[thm]{Lemma}
+  \newtheorem{prop}[thm]{Proposition}
+  \theoremstyle{definition}
+  \newtheorem{defn}[thm]{Definition}
+  \theoremstyle{remark}
+  \newtheorem{rem}[thm]{Remark}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%% Def equal
+
+  % \usepackage{mathtools}
+  \newcommand{\defeq}{\vcentcolon=}
+  \newcommand{\eqdef}{=\vcentcolon}
+
+  % Operators
+  % New operators must defined as such to have them typeset
+  % correctly. As an example we define the Jacobian:
+  % -----------------------------------------------------------------
+  % \DeclareMathOperator{\Jac}{Jac}
+
+  % Shortcuts.
+  % One can define new commands to shorten frequently used
+  % constructions. As an example, this defines the R and Z used
+  % for the real and integer numbers.
+  % -----------------------------------------------------------------
+  \def\RR{\mathbb{R}}
+  \def\ZZ{\mathbb{Z}}
+
+  \newcommand{\RRv}[1]{\mathbb{R}^{#1}}
+  \newcommand{\RRm}[2]{\mathbb{R}^{#1 \times #2}}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%% Impact-handling
+
+  \newcommand{\current}[1]{{#1}_{t_{k}}}
+  \newcommand{\currentTwo}[1]{#1(t_{k})}
+  \newcommand{\nextTwo}[1]{{#1(t_{k+1})}}
+  \newcommand{\previous}[1]{{#1}_{t_{k-1}}}
+
+  \newcommand{\surfaceNormal}{\bs{n}}
+  \newcommand{\projection}{P}
+
+  \newcommand{\projectionDef}[1]{{#1}{#1}^{\top}}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%% Algorithm
+
+  % \usepackage[ruled,lined,linesnumbered]{algorithm}
+  % \usepackage[ruled,lined]{algorithm}
+  % \usepackage[noend]{algpseudocode}
+  % \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+  % \include{pythonlisting}
+
+  %%%%%%%%%%%%%%%%%%%%%%%%%%% C++ code
+
+  \definecolor{dkgreen}{rgb}{0,0.6,0}
+  \definecolor{gray}{rgb}{0.5,0.5,0.5}
+  \definecolor{mauve}{rgb}{0.58,0,0.82}
+
+  \lstset{frame=tb,
+    language=C++,
+    backgroundcolor=\color{black!5}, % set backgroundcolor
+    basicstyle=\footnotesize,% basic font setting
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    numbers=none,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3
+  }
+
+  % \NewDocumentCommand{\cpp}{v}{%
+  % \texttt{\textcolor{blue}{#1}}%
+  % }
+
+  % %%%%%%%%%%%%%%%%%%%%%%%%%%%%% New reference command:
+  % \NewDocumentCommand{\probRef}{v}{%
+  % Problem~\ref{#1}}
+
+  % \NewDocumentCommand{\secRef}{v}{%
+  % Sec.~\ref{#1}}
+
+  % \NewDocumentCommand{\remarkRef}{v}{%
+  % Remark~\ref{#1}}
+
+  % \NewDocumentCommand{\tableRef}{v}{%
+  % Table~\ref{#1}}
+
+  % \NewDocumentCommand{\algRef}{v}{%
+  % Algorithm~\ref{#1}}
+
+  % \NewDocumentCommand{\lemmaRef}{v}{%
+  % Lemma~\ref{#1}}
+
+  % \NewDocumentCommand{\theoremRef}{v}{%
+  % Theorem~\ref{#1}}
+
+  % \NewDocumentCommand{\figRef}{v}{%
+  %   Fig.~\ref{#1}}
+
+  % \NewDocumentCommand{\appRef}{v}{%
+  %   Appendix~\ref{#1}}
+
+  % \NewDocumentCommand{\exRef}{v}{%
+  % Experiment.~\ref{#1}}
+
+  % \NewDocumentCommand{\simRef}{v}{%
+  % Simulation.~\ref{#1}}
+
+  % \NewDocumentCommand{\orderedS}\TwoArgs{mm}{v}{%
+  %   <#1, #2, #3>
+  % }
+  % \NewDocumentCommand\orderedS{m{}m{}O{}}{
+  % % <#1, #2, #3>
+  % }
+  % \NewDocumentCommand\TwoOptOfThree{O{}O{}m}%
+  %   {Text with #3 and perhaps #1 and #2}
+  % \NewDocumentCommand\orderedTwoS{mm}%
+  %   {$<$#1,#2$>$}
+  % \NewDocumentCommand\orderedThreeS{mmm}%
+  %   {$<$#1,#2,#3$>$}
+
+  % \usepackage{xcolor}
+  \definecolor{svaColor}{RGB}{7, 160, 2}
+  \definecolor{uncertainColor}{RGB}{255, 0, 0}
+
+  \definecolor{spatialVelColor}{RGB}{189, 38, 96}
+  \definecolor{geometricColor}{RGB}{66, 126, 245}
+  \definecolor{bodyVelColor}{RGB}{13, 191, 191}
+
+  \definecolor{velColor}{RGB}{50, 205, 50}
+
+  \colorlet{svaColorVariable}{black}%{svaColor}
+  \colorlet{geometricColorVariable}{geometricColor}
+
+  % %%%%%%%%%%%%%%%%%%%%%%%%% comment
+  \newif\ifBlockComment
+  \BlockCommentfalse %\BlockCommenttrue
+  % %%%%%%%%%%%%%%%%%%%%%%%%%

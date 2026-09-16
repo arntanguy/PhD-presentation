@@ -10,8 +10,16 @@
     tex-fmt.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, flake-utils, treefmt-nix, tex-fmt }:
-    flake-utils.lib.eachDefaultSystem (system:
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-utils,
+      treefmt-nix,
+      tex-fmt,
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
 
@@ -20,10 +28,15 @@
           settings.global.excludes = [ ".envrc" ];
           settings.formatter.tex-fmt = {
             command = "${tex-fmt.packages.${system}.default}/bin/tex-fmt";
-            includes = [ "*.tex" "*.bib" ];
+            includes = [
+              "*.tex"
+              "*.bib"
+            ];
             options = [
-              "--tabsize" "2"
-              "--wraplen" "120"
+              "--tabsize"
+              "2"
+              "--wraplen"
+              "120"
             ];
           };
           programs = {
@@ -53,7 +66,11 @@
           pname = "presentation";
           version = "1.0.0";
           src = ./.;
-          buildInputs = [ tex pkgs.biber pkgs.coreutils ];
+          buildInputs = [
+            tex
+            pkgs.biber
+            pkgs.coreutils
+          ];
 
           buildPhase = ''
             mkdir -p build

@@ -16,39 +16,37 @@
 % \institute{\inst{1} First institute \and \inst{2} Second institute \and \inst{3} Third}
 \date{04/12/2025}
 
-
 \addbibresource{bib/biblio.bib}
 
 \usetikzlibrary{positioning}
-
 
 \input{./configurations.tex}
 
 \definecolor{listinggray}{gray}{0.9}
 \definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
 \lstset{
-backgroundcolor=\color{lbcolor},
-	tabsize=2,
-	%   rulecolor=,
-	language=C++,
-	basicstyle=\scriptsize,
-	upquote=true,
-	aboveskip={0.5\baselineskip},
-	% columns=fixed,
-	showstringspaces=false,
-	extendedchars=false,
-	breaklines=true,
-	prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
-	frame=single,
-	showtabs=false,
-	showspaces=false,
-	showstringspaces=false,
-	identifierstyle=\ttfamily,
-	keywordstyle=\color[rgb]{0,0,1},
-	commentstyle=\color[rgb]{0.026,0.512,0.095},
-	stringstyle=\color[rgb]{0.627,0.126,0.941},
-	numberstyle=\color[rgb]{0.205, 0.142, 0.73},
-	%        \lstdefinestyle{C++}{language=C++,style=numbers}’.
+  backgroundcolor=\color{lbcolor},
+  tabsize=2,
+  %   rulecolor=,
+  language=C++,
+  basicstyle=\scriptsize,
+  upquote=true,
+  aboveskip={0.5\baselineskip},
+  % columns=fixed,
+  showstringspaces=false,
+  extendedchars=false,
+  breaklines=true,
+  prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+  frame=single,
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  identifierstyle=\ttfamily,
+  keywordstyle=\color[rgb]{0,0,1},
+  commentstyle=\color[rgb]{0.026,0.512,0.095},
+  stringstyle=\color[rgb]{0.627,0.126,0.941},
+  numberstyle=\color[rgb]{0.205, 0.142, 0.73},
+  %        \lstdefinestyle{C++}{language=C++,style=numbers}’.
 }
 
 \begin{document}
@@ -57,1530 +55,1585 @@ backgroundcolor=\color{lbcolor},
 \section{Context and related works}
 
 \begin{frame}
-	\frametitle{Human assistance}
-	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			A well known subject:
-			\begin{itemize}
-				\item Aging populations with reduced autonomy
-				\item Dynamic movements become more difficult with frailty
-				\item Lack in number of caregivers
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.6\textwidth}
-			\includegraphics[height=6cm]{figures/worlds_aging_population_vs_young_population.png}	
-		\end{column}
-	\end{columns}
+  \frametitle{Human assistance}
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      A well known subject:
+      \begin{itemize}
+        \item Aging populations with reduced autonomy
+        \item Dynamic movements become more difficult with frailty
+        \item Lack in number of caregivers
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \includegraphics[height=6cm]{figures/worlds_aging_population_vs_young_population.png}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Human assistance}
-	\centering
-	\begin{columns}
-		\begin{column}{0.2\textwidth}
-			\includegraphics[height=3cm]{figures/caregiver_stock1.png}
-		\end{column}
-		\begin{column}{0.3\textwidth}
-			\includegraphics[height=3cm]{figures/caregiver_stock2.png}
-		\end{column}
-		\begin{column}{0.3\textwidth}
-			\includegraphics[height=3cm]{figures/caregiver_stock3.png}
-		\end{column}
-	\end{columns}
-	\vfill
-	Robots can free caregivers from low added value tasks
+  \frametitle{Human assistance}
+  \centering
+  \begin{columns}
+    \begin{column}{0.2\textwidth}
+      \includegraphics[height=3cm]{figures/caregiver_stock1.png}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \includegraphics[height=3cm]{figures/caregiver_stock2.png}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \includegraphics[height=3cm]{figures/caregiver_stock3.png}
+    \end{column}
+  \end{columns}
+  \vfill
+  Robots can free caregivers from low added value tasks
 \end{frame}
 
 \begin{frame}
-	\frametitle{Human assistance}
-	\centering
-	Robots already interact with humans for assistance:
-	\begin{columns}
-		\begin{column}{0.3\textwidth}
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Robear~\footfullcite{ding2014aim}}] 
-				{
-					\includegraphics[height=3cm]{figures/Robear.jpg}
-				};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.3\textwidth}
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Twendy-one~\footfullcite{iwata2009icra}}] 
-				{
-					\includegraphics[height=3cm]{figures/Twendy-one.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.4\textwidth}
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:RHPS1 Friends~\footfullcite{benallegue2025ram}}] 
-				{
-					\includegraphics[height=3cm]{figures/FriendsTeleop.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-
-\begin{frame}
-	\frametitle{Human assistance}
-	\framesubtitle{Why humanoid robots?}
-	\begin{columns}[T]
-		\begin{column}{0.48\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:A caregiver assisting an elderly person}] 
-				{
-					\includegraphics[height=4.5cm]{figures/caregiver_stand_transparent.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.48\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:RHPS1 assisting a human in simulation}] 
-				{
-					\includegraphics[height=4.5cm]{figures/Friends_position_human3_transparent.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
-	\begin{itemize}
-		\item Anthropomorphic shape allows to take example from caregivers expertise
-		\item Never "lift" the person but assist their movements
-	\end{itemize}
-
+  \frametitle{Human assistance}
+  \centering
+  Robots already interact with humans for assistance:
+  \begin{columns}
+    \begin{column}{0.3\textwidth}
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Robear~\footfullcite{ding2014aim}}]
+        {
+          \includegraphics[height=3cm]{figures/Robear.jpg}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Twendy-one~\footfullcite{iwata2009icra}}]
+        {
+          \includegraphics[height=3cm]{figures/Twendy-one.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:RHPS1 Friends~\footfullcite{benallegue2025ram}}]
+        {
+          \includegraphics[height=3cm]{figures/FriendsTeleop.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Human assistance}
-	\framesubtitle{How to assist?}
-	\underline{Main research problem:} \\
-	\textbf{Enabling humanoid robots to assist humans in close contact}
-	\vfill
-	It can be divided into three main bricks
-
-	\begin{itemize}
-		\item<2-> How to best model the human to incorporate it in control?
-		\item<3-> How to enable the robot to compute and provide assistance for balance in movements like standing and sitting?
-		\item<4-> How can these balance critera be extended to dynamic movements?
-	\end{itemize}
+  \frametitle{Human assistance}
+  \framesubtitle{Why humanoid robots?}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:A caregiver assisting an elderly person}]
+        {
+          \includegraphics[height=4.5cm]{figures/caregiver_stand_transparent.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:RHPS1 assisting a human in simulation}]
+        {
+          \includegraphics[height=4.5cm]{figures/Friends_position_human3_transparent.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+    \item Anthropomorphic shape allows to take example from caregivers expertise
+    \item Never "lift" the person but assist their movements
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{Human perception and modeling}
-	\centering
-	\begin{columns}
-		\begin{column}{0.3\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Vision-based identification of posture~\footfullcite{lan2023trhumas}}] 
-				{
-					\includegraphics[height=3cm]{figures/VisionHuman.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.6\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Vision-based identification of posture~\footfullcite{zhang2025elec}}] 
-				{
-					\includegraphics[height=3cm]{figures/PostureVideo.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
-\end{frame}
+  \frametitle{Human assistance}
+  \framesubtitle{How to assist?}
+  \underline{Main research problem:} \\
+  \textbf{Enabling humanoid robots to assist humans in close contact}
+  \vfill
+  It can be divided into three main bricks
 
-\begin{frame}
-	\frametitle{Human perception and modeling}
-	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Marker-based motion capture (source: ar-tracking.com)}] 
-				{
-					\includegraphics[height=4cm]{figures/VisualMocap.jpg}
-				};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.6\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Musculo-skeletal models~\footfullcite{lugrís2023msd}}] 
-				{
-					\includegraphics[height=4cm]{figures/Musculoskeletal.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-	
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Robot modeling}
-	\framesubtitle{Kinematic and dynamic models}
-	Robots are modelled as a set of rigid bodies articulated by joints
-	\vfill
-	\begin{columns}[T]
-		\begin{column}{0.5\textwidth}
-			Joint space:
-			\begin{equation*}
-				\jointState = 
-				\begin{pmatrix}
-				\jointState_b \\
-				\jointState_j
-				\end{pmatrix}
-				\in \cross{\SE{3}}{\mathbb{R}^n}
-			\end{equation*}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			Task space:
-			\vfill
-			\begin{equation*}
-				\dot{{\bf s}} = \mathbf{J}(\jointState)\jointVel
-			\end{equation*}
-		\end{column}
-	\end{columns}
-	\vfill
-	Equation of motion for a floating base robot making $N$ contacts with its environment:
-	\begin{equation*}
-		\boldsymbol{M}(\jointState)\jointAcc + \textbf{C}(\jointState, \jointVel) = \sum_{i = 1}^{N}\transpose{\jacobianVector_{i}(\jointState)}\force_i + \transpose{\boldsymbol{S}}\torque
-	\end{equation*}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Robot modeling}
-	\framesubtitle{Reduced order models}
-	To simplify whole-body models we reduce the order and reason about the Center of Mass (CoM)
-	\vfill
-	The centroidal model gives the linear momentum
-    \begin{equation}
-      \label{Eq:NE_sum_forces}
-      \sum_{i=1}^{n} \force_{i} + m\mathbf{g} = m\ddot{\CoM} 
-    \end{equation}
-    and the angular momentum
-    \begin{equation}
-      \label{Eq:NE_sum_moments}
-      \sum_{i=1}^{n} (\mathbf{r}_{i} - \CoM) \times \force_{i} + \torque_{i} = \boldsymbol{\dot{L}}
-    \end{equation}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Robot modeling}
-	\framesubtitle{Reduced order models}
-	Modeling movement in a linear way:
-	\vfill
-    \begin{columns}[T]
-		\begin{column}{0.5\textwidth}
-			Zero-Moment Point (ZMP):
-			\vfill
-			For a given wrench $\wrench_0 = \transpose{(\torque_0, \force_0)}$ and a surface normal $\mathbf{n}$
-			\begin{equation}
-				\label{Eq:ZMP}
-				\ZMP = \frac{\mathbf{n}\times \torque_0}{\force_0.\mathbf{n}}
-			\end{equation}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			Linear Inverted Pendulum Mode (LIPM):
-			\vfill
-			\begin{enumerate}
-				\item $\boldsymbol{\dot{L}}=0$
-				\item Constant height
-			\end{enumerate}
-			
-			In this mode
-			\begin{equation}
-				\label{Eq:LIPM}
-				\ddot{\CoM} = \omega^2(\CoM - \ZMP)
-			\end{equation}
-			and $\omega^2 = \frac{g}{h}$ the natural frequency of the pendulum ZMP-CoM
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Balance and feasiblity}
-	\framesubtitle{2D regions}
-	With these models with coplanar contacts the area where the ZMP can be placed is the convex hull of the contacts: first 2D balance criteria
-	\begin{center}
-		\begin{tikzpicture}
-			\node
-			[label={[font=\scriptsize, align=center]below:Convex hull of two coplanar feet contacts}] 
-			{
-				\includegraphics[height=4.5cm]{figures/Supporting-convex-hull.png}
-			};
-		\end{tikzpicture}
-	\end{center}
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Balance and feasiblity}
-	\framesubtitle{3D regions}
-	In case of non coplanar contacts: 
-	\vfill
-	\begin{columns}[T]
-		\begin{column}{0.48\textwidth}
-			Newton-Euler: 
-			\begin{equation}\label{Eq:NEforce}
-				\sum_{i=1}^{n} \force_{i} + m\mathbf{g} = m\ddot{\CoM}
-			\end{equation}
-			\begin{equation}\label{Eq:NEmoments}
-				\sum_{i=1}^{n} (\mathbf{r}_{i} - \CoM) \times \force_{i} + \torque_{i} = \boldsymbol{\dot{L}}
-			\end{equation}
-		\end{column}
-		
-		\begin{column}{0.48\textwidth}
-			Unilateral contacts with non--slippage condition (friction cones):
-			\begin{equation}\label{Eq:Unilateral}
-				\mathbf{u}_i^T \force_i \geq 0  
-			\end{equation}
-			\begin{equation}\label{Eq:Friction}
-				\|(\mathbb{I}-\mathbf{u}_i \mathbf{u}_i^T)\force_i \| \leq \mu_i \mathbf{u}_i^T \force_i
-			\end{equation}
-		\end{column}
-	\end{columns}
-	
-	\hfill
-	\begin{itemize}
-		\item Set of contact wrenches $\wrench = (\torque,\force)$ and CoM positions $\CoM$ that respect equations \eqref{Eq:NEforce} to \eqref{Eq:Friction} balances the robot
-		\item Static balance if $\ddot{\CoM} = \mathbf{0}$
-	\end{itemize}
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Balance and feasiblity}
-	\framesubtitle{3D regions}
-	\begin{columns}[T]
-		\begin{column}{0.48\textwidth}
-			\begin{equation}
-				\sum_{i=1}^{n} \force_{i} + m\mathbf{g} = m\ddot{\CoM} \tag{\ref{Eq:NEforce}}
-			\end{equation}
-			\begin{equation}
-				\sum_{i=1}^{n} (\mathbf{r}_{i} - \CoM) \times \force_{i} + \torque_{i} = \boldsymbol{\dot{L}} \tag{\ref{Eq:NEmoments}}
-			\end{equation}
-			\begin{equation}
-				\mathbf{u}_i^T \force_i \geq 0  \tag{\ref{Eq:Unilateral}}
-			\end{equation}
-			\begin{equation}
-				\|(\mathbb{I}-\mathbf{u}_i \mathbf{u}_i^T)\force_i \| \leq \mu_i \mathbf{u}_i^T \force_i \tag{\ref{Eq:Friction}}
-			\end{equation}
-		\end{column}
-		
-		\begin{column}{0.48\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize]below:Visualization of the robust static balance region in\footfullcite{audren2018tro}.}]
-				{
-					\includegraphics[height=3.5cm]{figures/figure_haudren.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
-	
-	\begin{itemize}
-		\item Iterative projection to compute the 3D region (SOCP)
-		\item Capping $\ddot{\CoM}$ instead of setting it to zero gives a {\bf robust} balance
-	\end{itemize}
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Balance and feasiblity}
-	\framesubtitle{3D regions}
-	Extensions for the 3D robust static balance region:
-	\vfill
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Chebychev ball\footfullcite{samadi2021ral}}] 
-				{
-					\includegraphics[height=4cm]{figures/ChebychevBall.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.6\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Friction cones linearization\footfullcite{roux2021icar}}] 
-				{
-					\includegraphics[height=4cm]{figures/Stabiliplus.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
+  \begin{itemize}
+    \item<2-> How to best model the human to incorporate it in control?
+    \item<3-> How to enable the robot to compute and provide assistance for balance in movements like
+      standing and sitting?
+    \item<4-> How can these balance critera be extended to dynamic movements?
+  \end{itemize}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{Quadratic programming for robotics}
-	For real-time robotic control we solve a Quadratic Problem (QP) at each control iteration
-	\begin{equation}
-      \begin{aligned}
-        \min_{\boldsymbol{x} \in \mathbb{R}^n} \quad & \frac{1}{2} ||\boldsymbol{A}\boldsymbol{x} + \boldsymbol{b}||^2_{\boldsymbol{W}} \\
-        \textrm{s.t.} \quad & \boldsymbol{C}_{\text{ineq}} \boldsymbol{x} \leq \boldsymbol{d}_{\text{ineq}} \\
-                            & \boldsymbol{C}_{\text{eq}} \boldsymbol{x} = \boldsymbol{d}_{\text{eq}} 
-      \end{aligned}
-    \end{equation}
-	We minimize tasks errors (posture, movement...) under constraints (contacts, collisions...).
+  \frametitle{Human perception and modeling}
+  \centering
+  \begin{columns}
+    \begin{column}{0.3\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Vision-based identification of
+        posture~\footfullcite{lan2023trhumas}}]
+        {
+          \includegraphics[height=3cm]{figures/VisionHuman.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Vision-based identification of
+        posture~\footfullcite{zhang2025elec}}]
+        {
+          \includegraphics[height=3cm]{figures/PostureVideo.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Summary}
+  \frametitle{Human perception and modeling}
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Marker-based motion capture (source: ar-tracking.com)}]
+        {
+          \includegraphics[height=4cm]{figures/VisualMocap.jpg}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Musculo-skeletal models~\footfullcite{lugrís2023msd}}]
+        {
+          \includegraphics[height=4cm]{figures/Musculoskeletal.png}
+        };
+      \end{tikzpicture}
+    \end{column}
 
-	\begin{itemize}
-		\item Current pHRI methods do not fully exploit humanoid form factor
-		\item pHRI is limited to predetermined movements, not adaptive
-		\item Human modeling is developed but not fit for real time interaction
-		\item Knowledge in balance from robotics is not transferred to pHRI
-	\end{itemize}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Robot modeling}
+  \framesubtitle{Kinematic and dynamic models}
+  Robots are modelled as a set of rigid bodies articulated by joints
+  \vfill
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      Joint space:
+      \begin{equation*}
+        \jointState =
+        \begin{pmatrix}
+          \jointState_b \\
+          \jointState_j
+        \end{pmatrix}
+        \in \cross{\SE{3}}{\mathbb{R}^n}
+      \end{equation*}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      Task space:
+      \vfill
+      \begin{equation*}
+        \dot{{\bf s}} = \mathbf{J}(\jointState)\jointVel
+      \end{equation*}
+    \end{column}
+  \end{columns}
+  \vfill
+  Equation of motion for a floating base robot making $N$ contacts with its environment:
+  \begin{equation*}
+    \boldsymbol{M}(\jointState)\jointAcc + \textbf{C}(\jointState, \jointVel) = \sum_{i =
+    1}^{N}\transpose{\jacobianVector_{i}(\jointState)}\force_i + \transpose{\boldsymbol{S}}\torque
+  \end{equation*}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Robot modeling}
+  \framesubtitle{Reduced order models}
+  To simplify whole-body models we reduce the order and reason about the Center of Mass (CoM)
+  \vfill
+  The centroidal model gives the linear momentum
+  \begin{equation}
+    \label{Eq:NE_sum_forces}
+    \sum_{i=1}^{n} \force_{i} + m\mathbf{g} = m\ddot{\CoM}
+  \end{equation}
+  and the angular momentum
+  \begin{equation}
+    \label{Eq:NE_sum_moments}
+    \sum_{i=1}^{n} (\mathbf{r}_{i} - \CoM) \times \force_{i} + \torque_{i} = \boldsymbol{\dot{L}}
+  \end{equation}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Robot modeling}
+  \framesubtitle{Reduced order models}
+  Modeling movement in a linear way:
+  \vfill
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      Zero-Moment Point (ZMP):
+      \vfill
+      For a given wrench $\wrench_0 = \transpose{(\torque_0, \force_0)}$ and a surface normal $\mathbf{n}$
+      \begin{equation}
+        \label{Eq:ZMP}
+        \ZMP = \frac{\mathbf{n}\times \torque_0}{\force_0.\mathbf{n}}
+      \end{equation}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      Linear Inverted Pendulum Mode (LIPM):
+      \vfill
+      \begin{enumerate}
+        \item $\boldsymbol{\dot{L}}=0$
+        \item Constant height
+      \end{enumerate}
+
+      In this mode
+      \begin{equation}
+        \label{Eq:LIPM}
+        \ddot{\CoM} = \omega^2(\CoM - \ZMP)
+      \end{equation}
+      and $\omega^2 = \frac{g}{h}$ the natural frequency of the pendulum ZMP-CoM
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Balance and feasiblity}
+  \framesubtitle{2D regions}
+  With these models with coplanar contacts the area where the ZMP can be placed is the convex hull of the
+  contacts: first 2D balance criteria
+  \begin{center}
+    \begin{tikzpicture}
+      \node
+      [label={[font=\scriptsize, align=center]below:Convex hull of two coplanar feet contacts}]
+      {
+        \includegraphics[height=4.5cm]{figures/Supporting-convex-hull.png}
+      };
+    \end{tikzpicture}
+  \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Balance and feasiblity}
+  \framesubtitle{3D regions}
+  In case of non coplanar contacts:
+  \vfill
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      Newton-Euler:
+      \begin{equation}\label{Eq:NEforce}
+        \sum_{i=1}^{n} \force_{i} + m\mathbf{g} = m\ddot{\CoM}
+      \end{equation}
+      \begin{equation}\label{Eq:NEmoments}
+        \sum_{i=1}^{n} (\mathbf{r}_{i} - \CoM) \times \force_{i} + \torque_{i} = \boldsymbol{\dot{L}}
+      \end{equation}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      Unilateral contacts with non--slippage condition (friction cones):
+      \begin{equation}\label{Eq:Unilateral}
+        \mathbf{u}_i^T \force_i \geq 0
+      \end{equation}
+      \begin{equation}\label{Eq:Friction}
+        \|(\mathbb{I}-\mathbf{u}_i \mathbf{u}_i^T)\force_i \| \leq \mu_i \mathbf{u}_i^T \force_i
+      \end{equation}
+    \end{column}
+  \end{columns}
+
+  \hfill
+  \begin{itemize}
+    \item Set of contact wrenches $\wrench = (\torque,\force)$ and CoM positions $\CoM$ that respect
+      equations \eqref{Eq:NEforce} to \eqref{Eq:Friction} balances the robot
+    \item Static balance if $\ddot{\CoM} = \mathbf{0}$
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Balance and feasiblity}
+  \framesubtitle{3D regions}
+  \begin{columns}[T]
+    \begin{column}{0.48\textwidth}
+      \begin{equation}
+        \sum_{i=1}^{n} \force_{i} + m\mathbf{g} = m\ddot{\CoM} \tag{\ref{Eq:NEforce}}
+      \end{equation}
+      \begin{equation}
+        \sum_{i=1}^{n} (\mathbf{r}_{i} - \CoM) \times \force_{i} + \torque_{i} = \boldsymbol{\dot{L}}
+        \tag{\ref{Eq:NEmoments}}
+      \end{equation}
+      \begin{equation}
+        \mathbf{u}_i^T \force_i \geq 0  \tag{\ref{Eq:Unilateral}}
+      \end{equation}
+      \begin{equation}
+        \|(\mathbb{I}-\mathbf{u}_i \mathbf{u}_i^T)\force_i \| \leq \mu_i \mathbf{u}_i^T \force_i \tag{\ref{Eq:Friction}}
+      \end{equation}
+    \end{column}
+
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize]below:Visualization of the robust static balance region
+        in\footfullcite{audren2018tro}.}]
+        {
+          \includegraphics[height=3.5cm]{figures/figure_haudren.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+  \begin{itemize}
+    \item Iterative projection to compute the 3D region (SOCP)
+    \item Capping $\ddot{\CoM}$ instead of setting it to zero gives a {\bf robust} balance
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Balance and feasiblity}
+  \framesubtitle{3D regions}
+  Extensions for the 3D robust static balance region:
+  \vfill
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Chebychev ball\footfullcite{samadi2021ral}}]
+        {
+          \includegraphics[height=4cm]{figures/ChebychevBall.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Friction cones linearization\footfullcite{roux2021icar}}]
+        {
+          \includegraphics[height=4cm]{figures/Stabiliplus.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Quadratic programming for robotics}
+  For real-time robotic control we solve a Quadratic Problem (QP) at each control iteration
+  \begin{equation}
+    \begin{aligned}
+      \min_{\boldsymbol{x} \in \mathbb{R}^n} \quad & \frac{1}{2} ||\boldsymbol{A}\boldsymbol{x} +
+      \boldsymbol{b}||^2_{\boldsymbol{W}} \\
+      \textrm{s.t.} \quad & \boldsymbol{C}_{\text{ineq}} \boldsymbol{x} \leq \boldsymbol{d}_{\text{ineq}} \\
+      & \boldsymbol{C}_{\text{eq}} \boldsymbol{x} = \boldsymbol{d}_{\text{eq}}
+    \end{aligned}
+  \end{equation}
+  We minimize tasks errors (posture, movement...) under constraints (contacts, collisions...).
+\end{frame}
+
+\begin{frame}
+  \frametitle{Summary}
+
+  \begin{itemize}
+    \item Current pHRI methods do not fully exploit humanoid form factor
+    \item pHRI is limited to predetermined movements, not adaptive
+    \item Human modeling is developed but not fit for real time interaction
+    \item Knowledge in balance from robotics is not transferred to pHRI
+  \end{itemize}
 \end{frame}
 
 \section{Human presence and modeling}
 
 \begin{frame}
-	\frametitle{Human perception and modeling}
-	How to best model the human to incorporate it in control?
+  \frametitle{Human perception and modeling}
+  How to best model the human to incorporate it in control?
 \end{frame}
 
 \begin{frame}
-	\frametitle{Human state measurements}
-	\framesubtitle{Motion capture}
-	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			\begin{itemize}
-				\item 17 inertial sensors placed on the body, updated at 60Hz
-				\item Animates a proprietary 23 segments biomechanical model
-				\item Model movements can be extracted live (segment dynamics and CoM)
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.6\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Xsens biomechanical body model for motion capture~\footfullcite{schepers2018xsens}.}] 
-				{
-					\includegraphics[height=5cm]{figures/XsensModel.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
+  \frametitle{Human state measurements}
+  \framesubtitle{Motion capture}
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \begin{itemize}
+        \item 17 inertial sensors placed on the body, updated at 60Hz
+        \item Animates a proprietary 23 segments biomechanical model
+        \item Model movements can be extracted live (segment dynamics and CoM)
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Xsens biomechanical body model for motion
+        capture~\footfullcite{schepers2018xsens}.}]
+        {
+          \includegraphics[height=5cm]{figures/XsensModel.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Human state measurements}
-	\framesubtitle{Force measurements}
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\begin{itemize}
-				\item Prototype of force shoes equipped with force/torque sensors
-				\item Initially conceived for offline analysis of rehabilitation exercises
-				\item Reverse engineered to be connected live to a controller at 90Hz
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Xsens force shoes prototype with two ATI Mini45 6D force/torque \\ sensors on each sole.}] 
-				{
-					\includegraphics[height=5cm]{figures/shoes.jpg}
-				};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
+  \frametitle{Human state measurements}
+  \framesubtitle{Force measurements}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Prototype of force shoes equipped with force/torque sensors
+        \item Initially conceived for offline analysis of rehabilitation exercises
+        \item Reverse engineered to be connected live to a controller at 90Hz
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Xsens force shoes prototype with two ATI Mini45 6D
+        force/torque \\ sensors on each sole.}]
+        {
+          \includegraphics[height=5cm]{figures/shoes.jpg}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Human modeling}
-	\framesubtitle{URDF model}
-	\begin{columns}[T]
-		\begin{column}{0.3\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:URDF human model and its predefined \\interaction surfaces and frames.}] 
-				{
-					\includegraphics[height=5cm]{figures/URDFsurfaces.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.3\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:URDF human model convex shapes used for \\ collision detection and avoidance in QP controllers.}] 
-				{
-					\includegraphics[height=5cm]{figures/URDFconvexes.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.4\textwidth}
-			\begin{itemize}
-				\item Need an internal representation for human motions in the controller
-				\item Generic URDF model with 15 rigid bodies and 32 DoFs
-				\item Predefined surfaces and convex shapes for interactions and collisions
-			\end{itemize}
+  \frametitle{Human modeling}
+  \framesubtitle{URDF model}
+  \begin{columns}[T]
+    \begin{column}{0.3\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:URDF human model and its predefined \\interaction
+        surfaces and frames.}]
+        {
+          \includegraphics[height=5cm]{figures/URDFsurfaces.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:URDF human model convex shapes used for \\ collision
+        detection and avoidance in QP controllers.}]
+        {
+          \includegraphics[height=5cm]{figures/URDFconvexes.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      \begin{itemize}
+        \item Need an internal representation for human motions in the controller
+        \item Generic URDF model with 15 rigid bodies and 32 DoFs
+        \item Predefined surfaces and convex shapes for interactions and collisions
+      \end{itemize}
 
-		\end{column}
-	\end{columns}
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Incorporation in a multi-robot QP}
-
-	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			\begin{itemize}
-				\item Real human motion data is measured and a human representation is present in the controller
-				\item We want the human model to act as a digital twin
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.2\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				{
-					\includegraphics[height=5cm]{figures/HugoIRL.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.2\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				{
-					\includegraphics[height=5cm]{figures/HugoXsens.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.2\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				{
-					\includegraphics[height=5cm]{figures/HugoRviz.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{Incorporation in a multi-robot QP}
-	\framesubtitle{Model actuation}
-	\begin{itemize}
-		\item Human model actuated as a robot in the controller and retargets motion capture
-		\item Measured pose $\PluckerPose_d$ velocity $\dot{\PluckerPose}_d$ and acceleration $\ddot{\PluckerPose}_d$ of each real human segment given as task-space objectives for each body of the human model
-	\end{itemize}
-	\begin{equation}
-		\label{Eq:TransformTask}
-		\begin{aligned}
-			&\ddot{\PluckerPose} = \ddot{\PluckerPose}_d - \boldsymbol{K}_D\Delta\dot{\PluckerPose} - \boldsymbol{K}_P\Delta\PluckerPose \\
-			& \mathrm{where} \ \ \ \ \Delta\PluckerPose = 
-			\begin{bmatrix}
-			\Delta\PluckerPose_A \\ 
-			\Delta\PluckerPose_L 
-			\end{bmatrix} = 
-			\begin{bmatrix}
-			\ln \left(\boldsymbol{E} {\boldsymbol{E}}_d^{\mathsf {T}}\right) \\
-			\boldsymbol{r} - \boldsymbol{r}_d
-			\end{bmatrix},
-		\end{aligned}
-	\end{equation}
+  \frametitle{Incorporation in a multi-robot QP}
+
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      \begin{itemize}
+        \item Real human motion data is measured and a human representation is present in the controller
+        \item We want the human model to act as a digital twin
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        {
+          \includegraphics[height=5cm]{figures/HugoIRL.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        {
+          \includegraphics[height=5cm]{figures/HugoXsens.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        {
+          \includegraphics[height=5cm]{figures/HugoRviz.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
 \end{frame}
 
 \begin{frame}
-	\frametitle{Human model rescaling}
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Virtual body frames on a human arm \\ according to the Xsens convention}] 
-				{
-					\includegraphics[height=5cm]{figures/ArmFrames.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			\begin{itemize}
-				\item Depending on the subject the URDF model may not be accurate
-				\item Opposite problem of retargeting: instead of scaling measured movements to a fixed model we rescale the model to fit the measurements
-				\item We deduce real body dimensions online from joint-to-joint measurements
-				\item Kinematic chain rebuilt automatically to adapt the model while the controller runs
-			\end{itemize}
-		\end{column}
-	\end{columns}
+  \frametitle{Incorporation in a multi-robot QP}
+  \framesubtitle{Model actuation}
+  \begin{itemize}
+    \item Human model actuated as a robot in the controller and retargets motion capture
+    \item Measured pose $\PluckerPose_d$ velocity $\dot{\PluckerPose}_d$ and acceleration
+      $\ddot{\PluckerPose}_d$ of each real human segment given as task-space objectives for each body of the human model
+  \end{itemize}
+  \begin{equation}
+    \label{Eq:TransformTask}
+    \begin{aligned}
+      &\ddot{\PluckerPose} = \ddot{\PluckerPose}_d - \boldsymbol{K}_D\Delta\dot{\PluckerPose} -
+      \boldsymbol{K}_P\Delta\PluckerPose \\
+      & \mathrm{where} \ \ \ \ \Delta\PluckerPose =
+      \begin{bmatrix}
+        \Delta\PluckerPose_A \\
+        \Delta\PluckerPose_L
+      \end{bmatrix} =
+      \begin{bmatrix}
+        \ln \left(\boldsymbol{E} {\boldsymbol{E}}_d^{\mathsf {T}}\right) \\
+        \boldsymbol{r} - \boldsymbol{r}_d
+      \end{bmatrix},
+    \end{aligned}
+  \end{equation}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Experiments}
-	\centering
-	\movie[autostart,showcontrols,height=6cm,width=10.5cm,poster,loop]{}{movies/XsensPanda.mp4}
+  \frametitle{Human model rescaling}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Virtual body frames on a human arm \\ according to the
+        Xsens convention}]
+        {
+          \includegraphics[height=5cm]{figures/ArmFrames.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Depending on the subject the URDF model may not be accurate
+        \item Opposite problem of retargeting: instead of scaling measured movements to a fixed model we
+          rescale the model to fit the measurements
+        \item We deduce real body dimensions online from joint-to-joint measurements
+        \item Kinematic chain rebuilt automatically to adapt the model while the controller runs
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Experiments}
-	\begin{columns}
-		\begin{column}{0.8\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:X axis CoM position error for unscaled and rescaled model on a stand-up motion}] 
-				{
-					\includegraphics[width=0.8\textwidth]{figures/CoMerrorXaxis.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
+  \frametitle{Experiments}
+  \centering
+  \movie[autostart,showcontrols,height=6cm,width=10.5cm,poster,loop]{}{movies/XsensPanda.mp4}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Experiments}
+  \begin{columns}
+    \begin{column}{0.8\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:X axis CoM position error for unscaled and rescaled
+        model on a stand-up motion}]
+        {
+          \includegraphics[width=0.8\textwidth]{figures/CoMerrorXaxis.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 % \begin{frame}
-% 	\frametitle{Integrating a human in a controller}
-% 	\framesubtitle{Region computation for the human model}
-% 	\centering
-% 	\movie[autostart,showcontrols,width=8cm,height=5cm,poster,start=30s,duration=30s,loop]{}{movies/scalingHuman-compress.mp4}
+%   \frametitle{Integrating a human in a controller}
+%   \framesubtitle{Region computation for the human model}
+%   \centering
+%   \movie[autostart,showcontrols,width=8cm,height=5cm,poster,start=30s,duration=30s,loop]{}{movies/scalingHuman-compress.mp4}
 % \end{frame}
 
 \section{Sit-to-Stand-to-Sit Assistance}
 
 \begin{frame}
-	\frametitle{Providing physical assistance}
-	How to enable the robot to compute and provide assistance for balance in movements like standing and sitting?
+  \frametitle{Providing physical assistance}
+  How to enable the robot to compute and provide assistance for balance in movements like standing and sitting?
 \end{frame}
 
 \begin{frame}
-	\frametitle{Robust static balance polytope}
-	\begin{columns}
-		\begin{column}{0.4\textwidth}
-			Computing robust static balance polytope from human presence:
-			\begin{itemize}
-				\item Active contacts
-				\item Contact positions
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.6\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Real time computation of human balance region}] 
-				{
-					\includegraphics[height=5.5cm]{figures/HumanRobotScaled.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
-	
+  \frametitle{Robust static balance polytope}
+  \begin{columns}
+    \begin{column}{0.4\textwidth}
+      Computing robust static balance polytope from human presence:
+      \begin{itemize}
+        \item Active contacts
+        \item Contact positions
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.6\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Real time computation of human balance region}]
+        {
+          \includegraphics[height=5.5cm]{figures/HumanRobotScaled.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
 \end{frame}
 
 \begin{frame}
-	\frametitle{Dynamic balance criterion}
-	\framesubtitle{The previous criteria are insufficient}
+  \frametitle{Dynamic balance criterion}
+  \framesubtitle{The previous criteria are insufficient}
 
-	Movement too dynamic to watch only the CoM position: tests show balance without the criterion
-	\vfill
-	\begin{columns}
-		\begin{column}{0.25\textwidth}
-			\centering
-			\includegraphics[align=t,height=4cm]{figures/HumanRvizSitCoMOk.png}
-		\end{column}
-		\begin{column}{0.2\textwidth}
-			\centering
-			\includegraphics[align=t,height=4cm]{figures/HumanRvizCoMNOK.png}
-		\end{column}
-		\begin{column}{0.2\textwidth}
-			\centering
-			\includegraphics[align=t,height=4cm]{figures/HumanStandRvizCoMOK.png}
-		\end{column}
-	\end{columns}
-	
+  Movement too dynamic to watch only the CoM position: tests show balance without the criterion
+  \vfill
+  \begin{columns}
+    \begin{column}{0.25\textwidth}
+      \centering
+      \includegraphics[align=t,height=4cm]{figures/HumanRvizSitCoMOk.png}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \centering
+      \includegraphics[align=t,height=4cm]{figures/HumanRvizCoMNOK.png}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      \centering
+      \includegraphics[align=t,height=4cm]{figures/HumanStandRvizCoMOK.png}
+    \end{column}
+  \end{columns}
+
 \end{frame}
 
 \begin{frame}
-	\frametitle{Dynamic balance criterion}
-	\framesubtitle{The Divergent Component of Motion}
-	\begin{columns}
-		\begin{column}{0.48\textwidth}
-			\begin{equation*}
-				\begin{aligned}
-					\DCM=\CoM+{\frac{1}{\omega_{0}}}\dot{\CoM} \\
-					\omega_{0} = \sqrt{\frac{g}{\Delta z}} \\
-					\VRP = \CoM - \frac{\mathbf{F}_\text{ext}}{m\omega_{0}^{2}} + [0,0,\Delta z]^{T} \\
-					\dot{\DCM}=\omega_{0}(\DCM-\VRP)
-				\end{aligned}
-			\end{equation*}
-			3D DCM introduced by Englesberger\footfullcite{englsberger2015tro}
-		\end{column}
-		\begin{column}{0.48\textwidth}
-			\begin{tikzpicture}
-				\node
-					[label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human}] 
-					{
-						\fontsize{25pt}{26pt}\selectfont
-						\resizebox{!}{4.5cm}{\input{figures/HumanPoints.pdf_tex}}
-						% \includegraphics[align=t,height=4cm]{figures/CoM_outside.png}
-					};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
-	
+  \frametitle{Dynamic balance criterion}
+  \framesubtitle{The Divergent Component of Motion}
+  \begin{columns}
+    \begin{column}{0.48\textwidth}
+      \begin{equation*}
+        \begin{aligned}
+          \DCM=\CoM+{\frac{1}{\omega_{0}}}\dot{\CoM} \\
+          \omega_{0} = \sqrt{\frac{g}{\Delta z}} \\
+          \VRP = \CoM - \frac{\mathbf{F}_\text{ext}}{m\omega_{0}^{2}} + [0,0,\Delta z]^{T} \\
+          \dot{\DCM}=\omega_{0}(\DCM-\VRP)
+        \end{aligned}
+      \end{equation*}
+      3D DCM introduced by Englesberger\footfullcite{englsberger2015tro}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human}]
+        {
+          \fontsize{25pt}{26pt}\selectfont
+          \resizebox{!}{4.5cm}{\input{figures/HumanPoints.pdf_tex}}
+          % \includegraphics[align=t,height=4cm]{figures/CoM_outside.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
 \end{frame}
 
 \begin{frame}
-	\frametitle{Dynamic balance criterion}
-	\framesubtitle{The Divergent Component of Motion}
-	\begin{columns}
-		\begin{column}{0.55\textwidth}
-			\centering
-			\begin{equation*}
-				\begin{aligned}
-					\DCM=\CoM+{\frac{1}{\omega(t)}}\dot{\CoM} \\
-					\omega(t) = \sqrt{\frac{g + \ddot{c}_z}{\Delta z(t)}} \\
-					\VRP = \CoM - \frac{\mathbf{F}_\text{ext}}{m(\omega^{2}-\dot{\omega})} +\frac{{\bf g}}{\omega^{2}-\dot{\omega}} \\
-					\dot{\DCM}=\left(\omega-{\frac{\dot{\omega}}{\omega}}\right)\left(\DCM-{\VRP}\right) 
-				\end{aligned}
-			\end{equation*}
-			Time-varying natural frequency formulation\footfullcite{hopkins2014humanoids}
-		\end{column}
-		\begin{column}{0.48\textwidth}
-			\begin{tikzpicture}
-				\node
-					[label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human}] 
-					{
-						\fontsize{25pt}{26pt}\selectfont
-						\resizebox{!}{4.5cm}{\input{figures/HumanPoints.pdf_tex}}
-						% \includegraphics[align=t,height=4cm]{figures/CoM_outside.png}
-					};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
-	
+  \frametitle{Dynamic balance criterion}
+  \framesubtitle{The Divergent Component of Motion}
+  \begin{columns}
+    \begin{column}{0.55\textwidth}
+      \centering
+      \begin{equation*}
+        \begin{aligned}
+          \DCM=\CoM+{\frac{1}{\omega(t)}}\dot{\CoM} \\
+          \omega(t) = \sqrt{\frac{g + \ddot{c}_z}{\Delta z(t)}} \\
+          \VRP = \CoM - \frac{\mathbf{F}_\text{ext}}{m(\omega^{2}-\dot{\omega})} +\frac{{\bf
+          g}}{\omega^{2}-\dot{\omega}} \\
+          \dot{\DCM}=\left(\omega-{\frac{\dot{\omega}}{\omega}}\right)\left(\DCM-{\VRP}\right)
+        \end{aligned}
+      \end{equation*}
+      Time-varying natural frequency formulation\footfullcite{hopkins2014humanoids}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human}]
+        {
+          \fontsize{25pt}{26pt}\selectfont
+          \resizebox{!}{4.5cm}{\input{figures/HumanPoints.pdf_tex}}
+          % \includegraphics[align=t,height=4cm]{figures/CoM_outside.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
 \end{frame}
 
 \begin{frame}
-	\frametitle{Dynamic balance criterion}
-	\begin{columns}
-		\begin{column}{0.55\linewidth}
-			\centering
-			\begin{itemize}
-				\item DCM belonging in the region becomes the new criterion
-				\item A DCM position error is easily converted to a force error
-				\item Force can be applied online by a robot on the human
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.48\linewidth}
-			\begin{tikzpicture}
-				\node
-					[label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human \\ with and without assistance}] 
-					{
-						\fontsize{25pt}{26pt}\selectfont
-						\resizebox{!}{4.5cm}{\input{figures/HumanPointsWithRob.pdf_tex}}
-					};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
-	
+  \frametitle{Dynamic balance criterion}
+  \begin{columns}
+    \begin{column}{0.55\linewidth}
+      \centering
+      \begin{itemize}
+        \item DCM belonging in the region becomes the new criterion
+        \item A DCM position error is easily converted to a force error
+        \item Force can be applied online by a robot on the human
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\linewidth}
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Dynamic points of interest on the human \\ with and
+        without assistance}]
+        {
+          \fontsize{25pt}{26pt}\selectfont
+          \resizebox{!}{4.5cm}{\input{figures/HumanPointsWithRob.pdf_tex}}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
 \end{frame}
 
 \begin{frame}
-	\frametitle{Human assistance computation}
-	\framesubtitle{DCM feedback}
-	The reference VRP to apply to achieve the desired DCM dynamics is
-	\vfill
-	\begin{equation}
-		\label{Eq:ref VRP computation}
-		\VRP_r = \DCM - \frac{1}{\omega-\frac{\dot{\omega}}{\omega}}\left[ \dot{\DCM}_d + {\bf k}_{P}(\DCM_{d}-\DCM)\right]
-	\end{equation}
+  \frametitle{Human assistance computation}
+  \framesubtitle{DCM feedback}
+  The reference VRP to apply to achieve the desired DCM dynamics is
+  \vfill
+  \begin{equation}
+    \label{Eq:ref VRP computation}
+    \VRP_r = \DCM - \frac{1}{\omega-\frac{\dot{\omega}}{\omega}}\left[ \dot{\DCM}_d + {\bf k}_{P}(\DCM_{d}-\DCM)\right]
+  \end{equation}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Human assistance computation}
-	\framesubtitle{Wrench computation}
-	Two ways to compute missing assistive force $\mathbf{F}_{r}$ from reference VRP $\VRP_r$:
-	\vfill
-	\begin{columns}[T]
-		\begin{column}{0.5\textwidth}
-			Measuring the wrench applied on the human
-			\begin{equation}
-				\label{Eq:acceleration forces}
-				\mathbf{F}_\text{ext} = \mathbf{F}_{r} + {\bf f}_\text{LF} + {\bf f}_\text{RF}
-  			\end{equation}
-			\begin{equation}
-				\begin{aligned}
-				\label{Eq:Robot hand forces}
-				\mathbf{F}_\text{ext} &= m(\omega^{2}-\dot{\omega})(\CoM - \VRP_r) + m{\bf g} \\
-				\mathbf{F}_{r} &= m(\omega^{2}-\dot{\omega})(\CoM - \VRP_r)  + m{\bf g} - {\bf f}_\text{LF} - {\bf f}_\text{RF} \\
-				\end{aligned}
-			\end{equation}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			Measuring human CoM acceleration and deducing the force from missing acceleration $\ddot{\CoM}_e$
-			\begin{equation}
-				\begin{aligned}
-				\label{Eq:Robot_hand_model}
-				\ddot{\CoM}_d &= (\omega^{2}-\dot{\omega})(\CoM - \VRP_r) \\
-				\ddot{\CoM}_e &= (\omega^{2}-\dot{\omega})(\CoM - \VRP_r) - \ddot{\CoM} \\
-				\mathbf{F}_{r} &= m(\omega^{2}-\dot{\omega})(\CoM - \VRP_r) - m\ddot{\CoM} \\
-				\end{aligned}
-			\end{equation}
-		\end{column}
-	\end{columns}
+  \frametitle{Human assistance computation}
+  \framesubtitle{Wrench computation}
+  Two ways to compute missing assistive force $\mathbf{F}_{r}$ from reference VRP $\VRP_r$:
+  \vfill
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
+      Measuring the wrench applied on the human
+      \begin{equation}
+        \label{Eq:acceleration forces}
+        \mathbf{F}_\text{ext} = \mathbf{F}_{r} + {\bf f}_\text{LF} + {\bf f}_\text{RF}
+      \end{equation}
+      \begin{equation}
+        \begin{aligned}
+          \label{Eq:Robot hand forces}
+          \mathbf{F}_\text{ext} &= m(\omega^{2}-\dot{\omega})(\CoM - \VRP_r) + m{\bf g} \\
+          \mathbf{F}_{r} &= m(\omega^{2}-\dot{\omega})(\CoM - \VRP_r)  + m{\bf g} - {\bf f}_\text{LF} - {\bf
+          f}_\text{RF} \\
+        \end{aligned}
+      \end{equation}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      Measuring human CoM acceleration and deducing the force from missing acceleration $\ddot{\CoM}_e$
+      \begin{equation}
+        \begin{aligned}
+          \label{Eq:Robot_hand_model}
+          \ddot{\CoM}_d &= (\omega^{2}-\dot{\omega})(\CoM - \VRP_r) \\
+          \ddot{\CoM}_e &= (\omega^{2}-\dot{\omega})(\CoM - \VRP_r) - \ddot{\CoM} \\
+          \mathbf{F}_{r} &= m(\omega^{2}-\dot{\omega})(\CoM - \VRP_r) - m\ddot{\CoM} \\
+        \end{aligned}
+      \end{equation}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Human assistance computation}
-	\framesubtitle{Wrench distribution}
-	\begin{equation}
-		\begin{aligned}
-		\min_{{\boldsymbol{w}}_\text{RH}, {\boldsymbol{w}}_\text{LH}} \quad & ||{\bf f}_\text{RH} + {\bf f}_\text{LH} - \mathbf{F}_{r}||^2 + ||{\boldsymbol{w}}_\text{RH}||^2 + ||{\boldsymbol{w}}_\text{LH}||^2 \\
-		&+ ||({\bf r}_{\text{RH}} - \CoM) \times {\bf f}_{\text{RH}} + ({\bf r}_\text{LH} - \CoM) \times {\bf f}_\text{LH} ||^2\\  %+ ||w_{RH}||^2 + ||w_{LH}||^2 if min square
-		\textrm{s.t.} \quad & {\boldsymbol{w}}_\text{RH}  \in \textrm{RH contact wrench cone} \\
-							& {\boldsymbol{w}}_\text{LH}  \in \textrm{LH contact wrench cone} \\
-							& f_{\text{RH}_z} + f_{\text{LH}_z} < \textrm{Max total force}  \\  
-							& f_{\text{RH}_z} > \textrm{Min contact force}    \\
-							& f_{\text{LH}_z} > \textrm{Min contact force}    \\
-		\end{aligned}
-	\end{equation}
-	Contact wrench cones are formulated as inequalities for a rectangular contact surface\footfullcite{caron2015icra}
+  \frametitle{Human assistance computation}
+  \framesubtitle{Wrench distribution}
+  \begin{equation}
+    \begin{aligned}
+      \min_{{\boldsymbol{w}}_\text{RH}, {\boldsymbol{w}}_\text{LH}} \quad & ||{\bf f}_\text{RH} + {\bf
+      f}_\text{LH} - \mathbf{F}_{r}||^2 + ||{\boldsymbol{w}}_\text{RH}||^2 + ||{\boldsymbol{w}}_\text{LH}||^2 \\
+      &+ ||({\bf r}_{\text{RH}} - \CoM) \times {\bf f}_{\text{RH}} + ({\bf r}_\text{LH} - \CoM) \times {\bf
+      f}_\text{LH} ||^2\\  %+ ||w_{RH}||^2 + ||w_{LH}||^2 if min square
+      \textrm{s.t.} \quad & {\boldsymbol{w}}_\text{RH}  \in \textrm{RH contact wrench cone} \\
+      & {\boldsymbol{w}}_\text{LH}  \in \textrm{LH contact wrench cone} \\
+      & f_{\text{RH}_z} + f_{\text{LH}_z} < \textrm{Max total force}  \\
+      & f_{\text{RH}_z} > \textrm{Min contact force}    \\
+      & f_{\text{LH}_z} > \textrm{Min contact force}    \\
+    \end{aligned}
+  \end{equation}
+  Contact wrench cones are formulated as inequalities for a rectangular contact surface\footfullcite{caron2015icra}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Wrench application on human}
-	\framesubtitle{Impedance task}
-	Position control:
-	\begin{equation}
-		\label{Eq:EndEff task}
-		\Delta_\text{EF} = \boldsymbol{K}_P\Delta\PluckerPose + \boldsymbol{K}_D\Delta\dot{\PluckerPose} + \Delta\ddot{\PluckerPose}
-	\end{equation}
-	Force control:
-	\begin{equation}
-		\label{Eq:Impedance}
-		\boldsymbol{M}\Delta\ddot{\PluckerPose} + \boldsymbol{D}\Delta\dot{\PluckerPose} + \boldsymbol{K}\Delta\PluckerPose = \boldsymbol{K}_f (\boldsymbol{w}_m - \boldsymbol{w}_d)
-	\end{equation}
-	\vfill
-	Force control can be used to to compute a desired acceleration offset which can be added to the reference position control\footfullcite{bouyarmane2019tro}\footfullcite{murooka2022ral}.
+  \frametitle{Wrench application on human}
+  \framesubtitle{Impedance task}
+  Position control:
+  \begin{equation}
+    \label{Eq:EndEff task}
+    \Delta_\text{EF} = \boldsymbol{K}_P\Delta\PluckerPose + \boldsymbol{K}_D\Delta\dot{\PluckerPose} +
+    \Delta\ddot{\PluckerPose}
+  \end{equation}
+  Force control:
+  \begin{equation}
+    \label{Eq:Impedance}
+    \boldsymbol{M}\Delta\ddot{\PluckerPose} + \boldsymbol{D}\Delta\dot{\PluckerPose} +
+    \boldsymbol{K}\Delta\PluckerPose = \boldsymbol{K}_f (\boldsymbol{w}_m - \boldsymbol{w}_d)
+  \end{equation}
+  \vfill
+  Force control can be used to to compute a desired acceleration offset which can be added to the reference
+  position control\footfullcite{bouyarmane2019tro}\footfullcite{murooka2022ral}.
 \end{frame}
 
 \begin{frame}
-	\frametitle{Full framework}
-	\begin{tikzpicture}
-		\node
-			[label={[font=\scriptsize, align=center]below:All the components of the control system for humanoid assistance of a human.}] 
-			{
-				\fontsize{8pt}{9pt}\selectfont
-				\resizebox{\linewidth}{4.5cm}{\input{figures/Frameworkv2.pdf_tex}}
-			};
-	\end{tikzpicture}
+  \frametitle{Full framework}
+  \begin{tikzpicture}
+    \node
+    [label={[font=\scriptsize, align=center]below:All the components of the control system for humanoid
+    assistance of a human.}]
+    {
+      \fontsize{8pt}{9pt}\selectfont
+      \resizebox{\linewidth}{4.5cm}{\input{figures/Frameworkv2.pdf_tex}}
+    };
+  \end{tikzpicture}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Experiments}
-	\framesubtitle{MuJoCo simulations}
-	\centering
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\begin{tikzpicture}
-				\node
-					[label={[font=\scriptsize, align=center]below:Assistance of a person with Honda's E2DR.}] 
-					{
-						\includegraphics[width=0.22\textwidth, height=2cm]{figures/E2DRMujoco1.png}
-						\includegraphics[width=0.22\textwidth, height=2cm]{figures/E2DRMujoco2.png}
-						\includegraphics[width=0.22\textwidth, height=2cm]{figures/E2DRMujoco3.png}
-						\includegraphics[width=0.22\textwidth, height=2cm]{figures/E2DRMujoco4.png}
-					};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			\begin{tikzpicture}
-				\node
-					[label={[font=\scriptsize, align=center]below:Assistance of a person with Kawasaki's Friends.}] 
-					{
-						\includegraphics[width=0.22\textwidth, height=2cm]{figures/FriendsMujoco1.png}
-						\includegraphics[width=0.22\textwidth, height=2cm]{figures/FriendsMujoco2.png}
-						\includegraphics[width=0.22\textwidth, height=2cm]{figures/FriendsMujoco3.png}
-						\includegraphics[width=0.22\textwidth, height=2cm]{figures/FriendsMujoco4.png}
-					};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
-	
-	\begin{tikzpicture}
-		\node
-		[label={[font=\scriptsize, align=center]below:Assistance of a person with Kawada Robotics's HRP-4.}] 
-		{
-			\includegraphics[height=2cm]{figures/Mujoco.pdf}
-		};
-	\end{tikzpicture}
-	
+  \frametitle{Experiments}
+  \framesubtitle{MuJoCo simulations}
+  \centering
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Assistance of a person with Honda's E2DR.}]
+        {
+          \includegraphics[width=0.22\textwidth, height=2cm]{figures/E2DRMujoco1.png}
+          \includegraphics[width=0.22\textwidth, height=2cm]{figures/E2DRMujoco2.png}
+          \includegraphics[width=0.22\textwidth, height=2cm]{figures/E2DRMujoco3.png}
+          \includegraphics[width=0.22\textwidth, height=2cm]{figures/E2DRMujoco4.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Assistance of a person with Kawasaki's Friends.}]
+        {
+          \includegraphics[width=0.22\textwidth, height=2cm]{figures/FriendsMujoco1.png}
+          \includegraphics[width=0.22\textwidth, height=2cm]{figures/FriendsMujoco2.png}
+          \includegraphics[width=0.22\textwidth, height=2cm]{figures/FriendsMujoco3.png}
+          \includegraphics[width=0.22\textwidth, height=2cm]{figures/FriendsMujoco4.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
+  \begin{tikzpicture}
+    \node
+    [label={[font=\scriptsize, align=center]below:Assistance of a person with Kawada Robotics's HRP-4.}]
+    {
+      \includegraphics[height=2cm]{figures/Mujoco.pdf}
+    };
+  \end{tikzpicture}
+
 \end{frame}
 
 \begin{frame}
-	\frametitle{Experiments}
-	\framesubtitle{Torso emulator}
-	\centering
-	\movie[autostart,width=9cm,height=5cm,poster,showcontrols]{}{movies/PandaHRP4Torso.mp4}
+  \frametitle{Experiments}
+  \framesubtitle{Torso emulator}
+  \centering
+  \movie[autostart,width=9cm,height=5cm,poster,showcontrols]{}{movies/PandaHRP4Torso.mp4}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Experiments}
-	\framesubtitle{Real human-robot assistance}
-	\centering
-	\movie[autostart,width=8cm,height=5.2cm,poster,showcontrols]{}{movies/FullXP-27Mar-ForcesLimitsArrows.webm}
-	\footfullcite{lefevre2025ral}
+  \frametitle{Experiments}
+  \framesubtitle{Real human-robot assistance}
+  \centering
+  \movie[autostart,width=8cm,height=5.2cm,poster,showcontrols]{}{movies/FullXP-27Mar-ForcesLimitsArrows.webm}
+  \footfullcite{lefevre2025ral}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Limitations}
-	\begin{itemize}
-		\item Region not designed for dynamic movements
-		\item Slow computation ($\backsim$60ms for 3 contacts)
-		\item Not taking actuation capabilities into account (human weakness...)
-	\end{itemize}
+  \frametitle{Limitations}
+  \begin{itemize}
+    \item Region not designed for dynamic movements
+    \item Slow computation ($\backsim$60ms for 3 contacts)
+    \item Not taking actuation capabilities into account (human weakness...)
+  \end{itemize}
 \end{frame}
 
 \section{Dynamic balance region}
 
 \begin{frame}
-	\frametitle{Towards a dynamic balance region}
-	How can these balance critera be extended to dynamic movements?
-	\vfill
-	An idea comes from the sufficient actuation assumption: in theory a contact friction cone is infinite... 
-	\vfill
-	But can we apply infinite force?
+  \frametitle{Towards a dynamic balance region}
+  How can these balance critera be extended to dynamic movements?
+  \vfill
+  An idea comes from the sufficient actuation assumption: in theory a contact friction cone is infinite...
+  \vfill
+  But can we apply infinite force?
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{Feasible Contact Wrench Polytopes}
-	Feasible wrench polytopes include actuation capabilities
-	\begin{center}
-		\begin{tikzpicture}
-			\node
-			[label={[font=\scriptsize, align=center]below:Difference between friction cones contacts and feasible contacts\footfullcite{orsolino2017ral}}] 
-			{
-				\includegraphics[height=2.7cm]{figures/Orsolino1.png}
-				\includegraphics[height=2.7cm]{figures/Orsolino2.png}
-			};
-		\end{tikzpicture}
-	\end{center}
-	Computations often rely on quasi-static assumptions to simplify
+  \frametitle{Feasible Contact Wrench Polytopes}
+  Feasible wrench polytopes include actuation capabilities
+  \begin{center}
+    \begin{tikzpicture}
+      \node
+      [label={[font=\scriptsize, align=center]below:Difference between friction cones contacts and feasible
+      contacts\footfullcite{orsolino2017ral}}]
+      {
+        \includegraphics[height=2.7cm]{figures/Orsolino1.png}
+        \includegraphics[height=2.7cm]{figures/Orsolino2.png}
+      };
+    \end{tikzpicture}
+  \end{center}
+  Computations often rely on quasi-static assumptions to simplify
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{Feasible Contact Wrench Polytopes}
-	\framesubtitle{Actuation polytopes}
+  \frametitle{Feasible Contact Wrench Polytopes}
+  \framesubtitle{Actuation polytopes}
 
-	\begin{columns}
-		\begin{column}{0.7\textwidth}
-			\begin{equation}
-				\label{Eq:EoM surface contacts}
-				\boldsymbol{M}(\jointState)\jointAcc + \textbf{C}(\jointState, \jointVel) = \sum_{i = 1}^{N}\transpose{\jacobianVector_{i}(\jointState)}\wrench_i + \transpose{\boldsymbol{S}}\torque,
-			\end{equation}
+  \begin{columns}
+    \begin{column}{0.7\textwidth}
+      \begin{equation}
+        \label{Eq:EoM surface contacts}
+        \boldsymbol{M}(\jointState)\jointAcc + \textbf{C}(\jointState, \jointVel) = \sum_{i =
+        1}^{N}\transpose{\jacobianVector_{i}(\jointState)}\wrench_i + \transpose{\boldsymbol{S}}\torque,
+      \end{equation}
 
-			\begin{equation}\label{Eq:target acc contact}
-				^e\ddot{\mathbf{p}}_r = \jacobianVector(\jointState)\jointAcc + \dot{\jacobianVector}(\jointState)\jointVel.
-			\end{equation}
+      \begin{equation}\label{Eq:target acc contact}
+        ^e\ddot{\mathbf{p}}_r = \jacobianVector(\jointState)\jointAcc + \dot{\jacobianVector}(\jointState)\jointVel.
+      \end{equation}
 
-			\begin{equation}
-			\label{Eq:Wrench polytope Vrep}
-			\begin{aligned}
-				\jacobianVector\inverse{\boldsymbol{M}}\transpose{\jacobianVector}\wrench  &= \jacobianVector\inverse{\boldsymbol{M}}(\textbf{C} - \transpose{\boldsymbol{S}}\torque) + \jacobianVector\inverse{\boldsymbol{M}}\boldsymbol{M}\jointAcc \\
-				&= \jacobianVector\inverse{\boldsymbol{M}}(\textbf{C} - \transpose{\boldsymbol{S}}\torque) - \dot{\jacobianVector}\jointVel + {^e\ddot{\mathbf{p}}_r} \\
-				\inverse{\osInertia}\wrench &= \jacobianVector\inverse{\boldsymbol{M}}(\textbf{C} - \transpose{\boldsymbol{S}}\torque) - \dot{\jacobianVector}\jointVel + {^e\ddot{\mathbf{p}}_r} \\
-				\wrench &= \osInertia\jacobianVector\inverse{\boldsymbol{M}}(\textbf{C} - \transpose{\boldsymbol{S}}\torque) - \osInertia\dot{\jacobianVector}\jointVel + \osInertia {^e\ddot{\mathbf{p}}_r} \\
-				&= - \transpose{\overline{\jacobianVector}}\transpose{\boldsymbol{S}}\torque + \transpose{\overline{\jacobianVector}}\textbf{C} - \osInertia\dot{\jacobianVector}\jointVel + \osInertia {^e\ddot{\mathbf{p}}_r}
-			\end{aligned}
-			\end{equation}
-		\end{column}
-		\begin{column}{0.3\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-					[label={[font=\scriptsize, align=center]below:Actuation polytope for left foot contact \\of RHPS1}] 
-					{
-						\includegraphics[height=5cm]{figures/ActuationFriends.png}
-					};
-			\end{tikzpicture}
-			
-		\end{column}
-	\end{columns}
-	
-\end{frame}
+      \begin{equation}
+        \label{Eq:Wrench polytope Vrep}
+        \begin{aligned}
+          \jacobianVector\inverse{\boldsymbol{M}}\transpose{\jacobianVector}\wrench  &=
+          \jacobianVector\inverse{\boldsymbol{M}}(\textbf{C} - \transpose{\boldsymbol{S}}\torque) +
+          \jacobianVector\inverse{\boldsymbol{M}}\boldsymbol{M}\jointAcc \\
+          &= \jacobianVector\inverse{\boldsymbol{M}}(\textbf{C} - \transpose{\boldsymbol{S}}\torque) -
+          \dot{\jacobianVector}\jointVel + {^e\ddot{\mathbf{p}}_r} \\
+          \inverse{\osInertia}\wrench &= \jacobianVector\inverse{\boldsymbol{M}}(\textbf{C} -
+          \transpose{\boldsymbol{S}}\torque) - \dot{\jacobianVector}\jointVel + {^e\ddot{\mathbf{p}}_r} \\
+          \wrench &= \osInertia\jacobianVector\inverse{\boldsymbol{M}}(\textbf{C} -
+          \transpose{\boldsymbol{S}}\torque) - \osInertia\dot{\jacobianVector}\jointVel + \osInertia
+          {^e\ddot{\mathbf{p}}_r} \\
+          &= - \transpose{\overline{\jacobianVector}}\transpose{\boldsymbol{S}}\torque +
+          \transpose{\overline{\jacobianVector}}\textbf{C} - \osInertia\dot{\jacobianVector}\jointVel +
+          \osInertia {^e\ddot{\mathbf{p}}_r}
+        \end{aligned}
+      \end{equation}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Actuation polytope for left foot contact \\of RHPS1}]
+        {
+          \includegraphics[height=5cm]{figures/ActuationFriends.png}
+        };
+      \end{tikzpicture}
 
-\begin{frame}
-	\frametitle{Feasible Contact Wrench Polytopes}
-	\framesubtitle{Actuation polytopes}
-
-	\begin{columns}
-		\begin{column}{0.7\textwidth}
-			\begin{itemize}
-				\item The combinations of 6D wrenches from torque limits give vertices ($\mathcal{V}$-description) of the {\bf actuation} polytope of the contact
-				\item Double-description algorithm can convert it to a set of inequalities ($\mathcal{H}$-description)
-			\end{itemize}
-		\end{column}
-		\begin{column}{0.3\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-					[label={[font=\scriptsize, align=center]below:Actuation polytope for left foot contact \\of RHPS1}] 
-					{
-						\includegraphics[height=5cm]{figures/ActuationFriends.png}
-					};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Feasible Contact Wrench Polytopes}
-	\framesubtitle{Friction cones}
-	\begin{columns}
-		\begin{column}{0.3\textwidth}
-			\begin{equation}
-			\label{Eq:Friction H-rep}
-			\begin{bmatrix}
-				-1 & 0 & -\frac{\mu}{\sqrt{2}}\\
-				1 & 0 & -\frac{\mu}{\sqrt{2}}\\
-				0 & -1 & -\frac{\mu}{\sqrt{2}}\\
-				0 & 1 & -\frac{\mu}{\sqrt{2}}
-			\end{bmatrix}
-			\force_c \leq \mathbf{0}
-			\end{equation}
-		\end{column}
-		\begin{column}{0.7\textwidth}
-			\begin{tikzpicture}
-				\node
-					[label={[font=\scriptsize, align=center]below:Linearized friction cones in $\mathcal{V}$ and $\mathcal{H}$-description.}] 
-					{
-						\fontsize{9pt}{9pt}\selectfont
-						\def\svgwidth{\linewidth}{\input{figures/Friction_cones_linearization.pdf_tex}}
-					};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
-	\vfill
-	Friction cones can be linearized to be used in a QP, here into a 4-sided friction pyramid
-	
-\end{frame}
-
-\begin{frame}
-	\frametitle{Feasible Contact Wrench Polytopes}
-	\framesubtitle{CoP constraints}
-	\begin{itemize}
-		\item In case of contact surfaces and not points, application point of the force (Center of Pressure or CoP) is constrained to the surface
-		\item For rectangular surfaces contact, torques constraints are derived as \footfullcite{caron2015icra}
-	\end{itemize}
-	\begin{align}
-		|\tau^x| &\leq Y f^z \\
-		|\tau^y| &\leq X f^z \\
-		|\tau^z| &\leq \mu(X + Y)f^z - |Yf^x + \mu\tau^x| - |Xf^y + \mu\tau^y|
-	\end{align}
-	These inequalities can be written as 12 constraints depending on the friction coefficient and the surface dimensions
-\end{frame}
-
-\begin{frame}
-	\frametitle{Feasible Contact Wrench Polytopes}
-	\framesubtitle{Feasible polytopes}
-	
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\begin{itemize}
-				\item Intersection of $\mathcal{H}$-descriptions can be done by stacking inequalities
-				\item Intersection of the {\bf actuation} polytope and the friction related constraints gives the {\bf feasible} polytope
-			\end{itemize}
-			
-			\begin{equation}
-			\label{Eq:Feasible wrench polytope}
-			\begin{bmatrix}
-				\boldsymbol{A}_\text{act} \\
-				\multicolumn{2}{c}{\zeroMatrix} & \multicolumn{2}{c}{\boldsymbol{A}_\text{fr}} \\
-				\boldsymbol{A}_\text{yaw} \\
-				\boldsymbol{A}_\text{CoP}
-			\end{bmatrix}
-			\wrench_c \leq
-			\begin{bmatrix}
-				\boldsymbol{b}_\text{act} \\
-				\zeroVector \\ 
-				\zeroVector \\ 
-				\zeroVector
-			\end{bmatrix}
-			\end{equation}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-					[label={[font=\scriptsize, align=center]below:Actuation and feasible polytopes for left foot contact of RHPS1}] 
-					{
-						\includegraphics[height=4.7cm]{figures/ActuationFeasibleFriends.png}
-					};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{Implementation}
-	\framesubtitle{Polytopes computations}
-	\centering
-	\begin{tikzpicture}
-		\node
-			[label={[font=\scriptsize, align=center]below:Example case of the polytope library running in parallel to a robot controller.}] 
-			{
-				\fontsize{7.5pt}{9pt}\selectfont
-  				\def\svgwidth{\linewidth}{\input{figures/libraryConcept_horizontal.pdf_tex}}
-			};
-	\end{tikzpicture}
+  \frametitle{Feasible Contact Wrench Polytopes}
+  \framesubtitle{Actuation polytopes}
+
+  \begin{columns}
+    \begin{column}{0.7\textwidth}
+      \begin{itemize}
+        \item The combinations of 6D wrenches from torque limits give vertices ($\mathcal{V}$-description) of
+          the {\bf actuation} polytope of the contact
+        \item Double-description algorithm can convert it to a set of inequalities ($\mathcal{H}$-description)
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Actuation polytope for left foot contact \\of RHPS1}]
+        {
+          \includegraphics[height=5cm]{figures/ActuationFriends.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{Implementation}
-	\framesubtitle{Polytopes computations}
-	
-	\begin{table}[!htb]
-	\centering
-	\begin{tabular}{ |c||c|c|c|c| }
-		\hline
-		Number of Dofs for the contact & 6 & 7 & 8 & 9 \\
-		\hline
-		Force actuation polytope (3D) & 0.81 & 0.97 & 1.24 & 1.60 \\
-		Wrench actuation polytope (6D) & 7.72 & 37.6 & 120.4 & 405.4 \\
-		\hline
-	\end{tabular}
-	\caption{Average computation times (ms) for the contact actuation polytopes depending on the polytopes dimensions and the DoFs involved in the contact}
-	\label{Tab:Polytope timings}
-	\end{table}
-	\vfill
-	Computation cost depends on:
-	\begin{itemize}
-		\item Dimension of the contact polytope, force (3D) for point contacts or wrench (6D) for surface contacts
-		\item Number of actuators between the contact and the floating base
-	\end{itemize} 
-\end{frame}
-
-\begin{frame}
-	\frametitle{Constrained DCM-VRP Control}
-	\framesubtitle{DCM capturability}
-	We wanted to design a region more suited to dynamic points like the DCM
-	\vfill
-	From DCM-VRP formulations we can derive two propositions
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\begin{equation}
-				\label{Eq:DCM-VRP}
-				\dot{\DCM}=\omega(\DCM-\VRP)
-			\end{equation}
-			
-			\begin{equation}
-				\label{Eq:eCMP-VRP}
-				\VRP = \CoM - \frac{\mathbf{F}_\text{ext}}{m\omega^2} + \transpose{[0,0,\Delta z]}
-			\end{equation}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			\begin{proposition}
-				VRP repulses the DCM \eqref{Eq:DCM-VRP} so the capturable DCM positions set is the feasible VRP set
-			\end{proposition}
-			\begin{proposition}
-				VRP is a linear function of the sum of external forces~\eqref{Eq:eCMP-VRP} so the feasible VRP set is the feasible set of external forces, scaled and offset in cartesian space
-			\end{proposition}
-		\end{column}
-	\end{columns}
+  \frametitle{Feasible Contact Wrench Polytopes}
+  \framesubtitle{Friction cones}
+  \begin{columns}
+    \begin{column}{0.3\textwidth}
+      \begin{equation}
+        \label{Eq:Friction H-rep}
+        \begin{bmatrix}
+          -1 & 0 & -\frac{\mu}{\sqrt{2}}\\
+          1 & 0 & -\frac{\mu}{\sqrt{2}}\\
+          0 & -1 & -\frac{\mu}{\sqrt{2}}\\
+          0 & 1 & -\frac{\mu}{\sqrt{2}}
+        \end{bmatrix}
+        \force_c \leq \mathbf{0}
+      \end{equation}
+    \end{column}
+    \begin{column}{0.7\textwidth}
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Linearized friction cones in $\mathcal{V}$ and
+        $\mathcal{H}$-description.}]
+        {
+          \fontsize{9pt}{9pt}\selectfont
+          \def\svgwidth{\linewidth}{\input{figures/Friction_cones_linearization.pdf_tex}}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+  \vfill
+  Friction cones can be linearized to be used in a QP, here into a 4-sided friction pyramid
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{Constrained DCM-VRP Control}
-	\framesubtitle{DCM capturability}
-	\centering
-	For a single contact, the force polytope is the set of possible external forces:
-	\begin{columns}[T]
-		\begin{column}{0.3\textwidth}
-			\centering
-			$\mathbf{F}_\text{ext}$ \\
-			\includegraphics[height=5.5cm]{figures/FriendsFeasible.png}
-		\end{column}
-		\begin{column}{0.3\textwidth}
-			\centering
-			$\CoM - \frac{\mathbf{F}_\text{ext}}{m\omega^2}$ \\
-			\includegraphics[height=5.3cm]{figures/FriendseCMP.png}
-		\end{column}
-		\begin{column}{0.3\textwidth}
-			\centering
-			$\CoM - \frac{\mathbf{F}_\text{ext}}{m\omega^2} + \transpose{[0,0,\Delta z]} = \VRP$
-			\includegraphics[height=5.5cm]{figures/FriendsVRP.png}
-		\end{column}
-	\end{columns}
+  \frametitle{Feasible Contact Wrench Polytopes}
+  \framesubtitle{CoP constraints}
+  \begin{itemize}
+    \item In case of contact surfaces and not points, application point of the force (Center of Pressure or
+      CoP) is constrained to the surface
+    \item For rectangular surfaces contact, torques constraints are derived as \footfullcite{caron2015icra}
+  \end{itemize}
+  \begin{align}
+    |\tau^x| &\leq Y f^z \\
+    |\tau^y| &\leq X f^z \\
+    |\tau^z| &\leq \mu(X + Y)f^z - |Yf^x + \mu\tau^x| - |Xf^y + \mu\tau^y|
+  \end{align}
+  These inequalities can be written as 12 constraints depending on the friction coefficient and the surface dimensions
 \end{frame}
 
 \begin{frame}
-	\frametitle{Constrained DCM-VRP Control}
-	\framesubtitle{Full VRP region}
-	\begin{itemize}
-		\item Coupling of the equation of motion: set of feasible external forces/wrenches is not simply Minkowski sum of contact polytopes
-		\item It could be computed using iterative projections~\footfullcite{audren2018tro} but it is costly
-	\end{itemize}
-	
-	If we assume we have this set (or a single contact), we also have lineraly the VRP region
-	Any command can be constrained in this region to ensure dynamic balance
-	\begin{equation}
-		\begin{aligned}
-		\min_{\VRP} \quad & ||\VRP - \VRP_d||^2  \\
-		\textrm{s.t.} \quad & \VRP \in \cal{P}_\text{VRP} 
-		\end{aligned}
-	\end{equation}
-\end{frame}
+  \frametitle{Feasible Contact Wrench Polytopes}
+  \framesubtitle{Feasible polytopes}
 
-\begin{frame}
-	\frametitle{Constrained DCM-VRP Control}
-	\framesubtitle{Full VRP region}
-	\begin{columns}
-		\begin{column}{0.6\textwidth}
-			\begin{tikzpicture}
-				\node
-					[label={[font=\scriptsize, align=center]below:}] 
-					{
-						\fontsize{26pt}{26pt}\selectfont
-						\resizebox{!}{5.5cm}{\input{figures/VRP_constraint.pdf_tex}}
-					};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.4\textwidth}
-			For feedforward invariance we introduce the predicted DCM position $\hat{\DCM} = \DCM + \alpha \dot{\DCM}$
-			\begin{equation}
-			\begin{aligned}
-			\min_{\VRP} \quad & ||\VRP - \VRP_d||^2  \\
-			\textrm{s.t.} \quad & \VRP \in \cal{P}_\text{VRP} \\
-								& \hat{\DCM} \in \cal{P}_\text{VRP}
-			\end{aligned}
-			\end{equation}
-		\end{column}
-	\end{columns}
-	
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item Intersection of $\mathcal{H}$-descriptions can be done by stacking inequalities
+        \item Intersection of the {\bf actuation} polytope and the friction related constraints gives the
+          {\bf feasible} polytope
+      \end{itemize}
+
+      \begin{equation}
+        \label{Eq:Feasible wrench polytope}
+        \begin{bmatrix}
+          \boldsymbol{A}_\text{act} \\
+          \multicolumn{2}{c}{\zeroMatrix} & \multicolumn{2}{c}{\boldsymbol{A}_\text{fr}} \\
+          \boldsymbol{A}_\text{yaw} \\
+          \boldsymbol{A}_\text{CoP}
+        \end{bmatrix}
+        \wrench_c \leq
+        \begin{bmatrix}
+          \boldsymbol{b}_\text{act} \\
+          \zeroVector \\
+          \zeroVector \\
+          \zeroVector
+        \end{bmatrix}
+      \end{equation}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Actuation and feasible polytopes for left foot contact of RHPS1}]
+        {
+          \includegraphics[height=4.7cm]{figures/ActuationFeasibleFriends.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{Constrained DCM-VRP Control}
-	\framesubtitle{Implicit bounding}
-	\centering
-	\begin{columns}
-		\begin{column}{0.6\textwidth}
-			\begin{align}
-			\min_{\substack{\jointAcc, \torque, \wrench_i \\ 
-							\jointAcc^{\text{virt}}, \torque^{\text{virt}}, \wrench_i^{\text{virt}}}} 
-			\quad & ||\VRP - \VRP_{d}||^2  \label{Eq:DCM bounding objective} \\ 
-			\textrm{s.t.} \quad & \boldsymbol{M}\jointAcc + \textbf{C} = \sum_{i = 1}^{N}\transpose{\jacobianVector_{i}}\wrench_i + \transpose{\boldsymbol{S}}\torque \\
-								& \boldsymbol{M}\jointAcc^{\text{virt}} + \textbf{C} = \sum_{i = 1}^{N}\transpose{\jacobianVector_{i}}\wrench_i^{\text{virt}} + \transpose{\boldsymbol{S}}\torque^{\text{virt}}\\
-								& \lowerBound{\torque} \leq \torque \leq \upperBound{\torque} \\
-								& \lowerBound{\torque} \leq \torque^{\text{virt}} \leq \upperBound{\torque} \\
-								& \VRP \in \cal{P}_\text{VRP} \label{Eq:DCM bounding VRP constraint} \\ 
-								& \hat{\DCM} \in \cal{P}_\text{VRP} \label{Eq:DCM bounding dotDCM constraint}
-			\end{align}
-		\end{column}
-		\begin{column}{0.4\textwidth}
-			How to express these constraints without computing the full VRP region?
-			\vfill
-			\begin{itemize}
-				\item Solve the problem at the joint level
-				\item Introduce virtual joints, torques and contact wrenches variables to formulate $\hat{\DCM}$ as a VRP
-			\end{itemize}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Constrained DCM-VRP Control}
-	\framesubtitle{Implicit bounding}
-	\centering
-	\begin{columns}
-		\begin{column}{0.2\textwidth}
-			Objective
-			\begin{equation*}
-				||\VRP - \VRP_{d}||^2 
-			\end{equation*}
-			becomes
-			\begin{equation*}
-				||\CoM - \frac{\mathbf{F}_\text{ext}}{m\omega^2} + \boldsymbol{\Delta}_z - \VRP_d||^2
-			\end{equation*}
-		\end{column}
-		\begin{column}{0.2\textwidth}
-			Constraint
-			\begin{equation*}
-				\VRP \in \cal{P}_\text{VRP}
-			\end{equation*}
-			becomes
-			\begin{equation*}
-				\wrench_i \in \cal{P}_\text{Feasible i}
-			\end{equation*}
-		\end{column}
-		\begin{column}{0.4\textwidth}
-			Constraint
-			\begin{equation*}
-				\hat{\DCM} \in \cal{P}_\text{VRP}
-			\end{equation*}
-			becomes
-			\begin{equation*}
-				\frac{\alpha\mathbf{F}_\text{ext}}{m\omega} + \frac{\mathbf{F}_\text{virt}}{m\omega^2} = (1 + \alpha\omega)(\CoM - \DCM + \boldsymbol{\Delta}_z)
-			\end{equation*}
-		\end{column}
-	\end{columns}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Implementation}
-	\framesubtitle{QP formulation}
-	\begin{columns}[b]
-		\begin{column}{0.5\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Usual QP wrench distribution for a contact:\\ the contact forces are decomposed into lambda force variables}] 
-				{
-					\includegraphics[width=0.9\linewidth]{figures/contact_forceDistrib_lambdas.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			\centering
-			\begin{tikzpicture}
-				\node
-				[label={[font=\scriptsize, align=center]below:Proposed QP wrench distribution for a contact:\\ single 6D wrench variable}] 
-				{
-					\includegraphics[width=0.65\linewidth]{figures/contact_forceDistrib_wrenches.png}
-				};
-			\end{tikzpicture}
-		\end{column}
-	\end{columns}
+  \frametitle{Implementation}
+  \framesubtitle{Polytopes computations}
+  \centering
+  \begin{tikzpicture}
+    \node
+    [label={[font=\scriptsize, align=center]below:Example case of the polytope library running in parallel to
+    a robot controller.}]
+    {
+      \fontsize{7.5pt}{9pt}\selectfont
+      \def\svgwidth{\linewidth}{\input{figures/libraryConcept_horizontal.pdf_tex}}
+    };
+  \end{tikzpicture}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{Optimal DCM computation}
-	\centering
-	\begin{itemize}
-		\item Without locomotion reference trajectory objective is to remain balanced
-		\vfill
-		\item Individual contact polytopes can be used to determine default target
-	\end{itemize}
-	
+  \frametitle{Implementation}
+  \framesubtitle{Polytopes computations}
+
+  \begin{table}[!htb]
+    \centering
+    \begin{tabular}{ |c||c|c|c|c| }
+      \hline
+      Number of Dofs for the contact & 6 & 7 & 8 & 9 \\
+      \hline
+      Force actuation polytope (3D) & 0.81 & 0.97 & 1.24 & 1.60 \\
+      Wrench actuation polytope (6D) & 7.72 & 37.6 & 120.4 & 405.4 \\
+      \hline
+    \end{tabular}
+    \caption{Average computation times (ms) for the contact actuation polytopes depending on the polytopes
+    dimensions and the DoFs involved in the contact}
+    \label{Tab:Polytope timings}
+  \end{table}
+  \vfill
+  Computation cost depends on:
+  \begin{itemize}
+    \item Dimension of the contact polytope, force (3D) for point contacts or wrench (6D) for surface contacts
+    \item Number of actuators between the contact and the floating base
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Optimal DCM computation}
-	\framesubtitle{Robust static DCM}
-	\centering
-	The point with the most margin within a polytope can be found as the Chebychev center
+  \frametitle{Constrained DCM-VRP Control}
+  \framesubtitle{DCM capturability}
+  We wanted to design a region more suited to dynamic points like the DCM
+  \vfill
+  From DCM-VRP formulations we can derive two propositions
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{equation}
+        \label{Eq:DCM-VRP}
+        \dot{\DCM}=\omega(\DCM-\VRP)
+      \end{equation}
 
-	\begin{equation}
-	\begin{aligned}
-		\max_r \quad & r \\
-		\textrm{s.t.} \quad & \boldsymbol{A} \ \boldsymbol{x} + r\norm{\boldsymbol{A}} \leq \boldsymbol{b}
-	\end{aligned}
-	\end{equation}
+      \begin{equation}
+        \label{Eq:eCMP-VRP}
+        \VRP = \CoM - \frac{\mathbf{F}_\text{ext}}{m\omega^2} + \transpose{[0,0,\Delta z]}
+      \end{equation}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \begin{proposition}
+        VRP repulses the DCM \eqref{Eq:DCM-VRP} so the capturable DCM positions set is the feasible VRP set
+      \end{proposition}
+      \begin{proposition}
+        VRP is a linear function of the sum of external forces~\eqref{Eq:eCMP-VRP} so the feasible VRP set is
+        the feasible set of external forces, scaled and offset in cartesian space
+      \end{proposition}
+    \end{column}
+  \end{columns}
+
 \end{frame}
 
 \begin{frame}
-	\frametitle{Optimal DCM computation}
-	\framesubtitle{Robust static DCM}
-	DCM position for which there is static balance: $\transpose{\wrench_\text{static}} = \begin{bmatrix} 0 & 0 & 0 & 0 & 0 & mg\end{bmatrix}$
-	\vfill
-	\begin{equation}
-		\begin{bmatrix}
-			\underset{i = 1}{\overset{N}{\sum}} \torque_i + \underset{i = 1}{\overset{N}{\sum}} \cross{(\boldsymbol{r_i} - \CoM_\text{opti})}{\force_i} \\
-			\underset{i = 1}{\overset{N}{\sum}} \force_i
-		\end{bmatrix} \!=\!
-		\begin{bmatrix}
-			\torque_\text{static} \\ 
-			\mathbf{F}_\text{static}
-		\end{bmatrix}
-	\end{equation}
-	\begin{equation} \label{Eq:Optimal CoM-Wrenches}
-	\sum_{i = 1}^{N} \svaFT{i}{0}
-	\begin{bmatrix}
-		\torque_i \\
-		\force_i
-	\end{bmatrix}
-	+ 
-	\begin{bmatrix}
-		\lfloor\mathbf{F}_\text{static}\rfloor_\times \CoM_\text{opti} \\
-		\zeroMatrix
-	\end{bmatrix}
-	\!=\!
-	\begin{bmatrix}
-		\torque_\text{static} \\ 
-		\mathbf{F}_\text{static}
-	\end{bmatrix}
-	\end{equation}
+  \frametitle{Constrained DCM-VRP Control}
+  \framesubtitle{DCM capturability}
+  \centering
+  For a single contact, the force polytope is the set of possible external forces:
+  \begin{columns}[T]
+    \begin{column}{0.3\textwidth}
+      \centering
+      $\mathbf{F}_\text{ext}$ \\
+      \includegraphics[height=5.5cm]{figures/FriendsFeasible.png}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \centering
+      $\CoM - \frac{\mathbf{F}_\text{ext}}{m\omega^2}$ \\
+      \includegraphics[height=5.3cm]{figures/FriendseCMP.png}
+    \end{column}
+    \begin{column}{0.3\textwidth}
+      \centering
+      $\CoM - \frac{\mathbf{F}_\text{ext}}{m\omega^2} + \transpose{[0,0,\Delta z]} = \VRP$
+      \includegraphics[height=5.5cm]{figures/FriendsVRP.png}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Optimal DCM computation}
-	\framesubtitle{Optimal wrench distribution}
-	The QP becomes
-	\begin{equation} \label{Eq:CoM auto target}
-	\begin{aligned}
-		\min_{\substack{\wrench_i, r_i, \CoM_\text{opti}}} 
-	\quad & -\sum_{i = 1}^{N}r_i + \sum_{i = 1}^{N}\wrench_i + \eqref{Eq:Optimal CoM-Wrenches} + k||\CoM_\text{opti} - \DCM_\text{prev}||^2  \\ 
-	\textrm{s.t.} \quad & \boldsymbol{A}_i \ \wrench_i + r_i\norm{\boldsymbol{A}_i} \leq \boldsymbol{b}_i \\
-						& -r_i \leq 0
-	\end{aligned}
-	\end{equation}
-	The resulting optimal CoM position $ \CoM_\text{opti}$ is given as a target to the balancing task
+  \frametitle{Constrained DCM-VRP Control}
+  \framesubtitle{Full VRP region}
+  \begin{itemize}
+    \item Coupling of the equation of motion: set of feasible external forces/wrenches is not simply
+      Minkowski sum of contact polytopes
+    \item It could be computed using iterative projections~\footfullcite{audren2018tro} but it is costly
+  \end{itemize}
+
+  If we assume we have this set (or a single contact), we also have lineraly the VRP region
+  Any command can be constrained in this region to ensure dynamic balance
+  \begin{equation}
+    \begin{aligned}
+      \min_{\VRP} \quad & ||\VRP - \VRP_d||^2  \\
+      \textrm{s.t.} \quad & \VRP \in \cal{P}_\text{VRP}
+    \end{aligned}
+  \end{equation}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Optimal DCM computation}
-	\framesubtitle{Automatic contact transitions}
-	\begin{itemize}
-		\item Contact polytopes $\mathcal{H}$-description can be scaled using a coefficient on the planes offsets
-		\item This can be used for automatic contact transitions
-	\end{itemize}	
+  \frametitle{Constrained DCM-VRP Control}
+  \framesubtitle{Full VRP region}
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:}]
+        {
+          \fontsize{26pt}{26pt}\selectfont
+          \resizebox{!}{5.5cm}{\input{figures/VRP_constraint.pdf_tex}}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      For feedforward invariance we introduce the predicted DCM position $\hat{\DCM} = \DCM + \alpha \dot{\DCM}$
+      \begin{equation}
+        \begin{aligned}
+          \min_{\VRP} \quad & ||\VRP - \VRP_d||^2  \\
+          \textrm{s.t.} \quad & \VRP \in \cal{P}_\text{VRP} \\
+          & \hat{\DCM} \in \cal{P}_\text{VRP}
+        \end{aligned}
+      \end{equation}
+    \end{column}
+  \end{columns}
+
+
 \end{frame}
 
 \begin{frame}
-	\frametitle{Experiments}
-	\framesubtitle{Multi-contact dynamic balance}
-	\centering
-	\movie[autostart,width=10cm,height=6cm,duration=132s,poster,showcontrols]{}{movies/Friends_wall_poly.mp4}
+  \frametitle{Constrained DCM-VRP Control}
+  \framesubtitle{Implicit bounding}
+  \centering
+  \begin{columns}
+    \begin{column}{0.6\textwidth}
+      \begin{align}
+        \min_{\substack{\jointAcc, \torque, \wrench_i \\
+        \jointAcc^{\text{virt}}, \torque^{\text{virt}}, \wrench_i^{\text{virt}}}}
+        \quad & ||\VRP - \VRP_{d}||^2  \label{Eq:DCM bounding objective} \\
+        \textrm{s.t.} \quad & \boldsymbol{M}\jointAcc + \textbf{C} = \sum_{i =
+        1}^{N}\transpose{\jacobianVector_{i}}\wrench_i + \transpose{\boldsymbol{S}}\torque \\
+        & \boldsymbol{M}\jointAcc^{\text{virt}} + \textbf{C} = \sum_{i =
+        1}^{N}\transpose{\jacobianVector_{i}}\wrench_i^{\text{virt}} + \transpose{\boldsymbol{S}}\torque^{\text{virt}}\\
+        & \lowerBound{\torque} \leq \torque \leq \upperBound{\torque} \\
+        & \lowerBound{\torque} \leq \torque^{\text{virt}} \leq \upperBound{\torque} \\
+        & \VRP \in \cal{P}_\text{VRP} \label{Eq:DCM bounding VRP constraint} \\
+        & \hat{\DCM} \in \cal{P}_\text{VRP} \label{Eq:DCM bounding dotDCM constraint}
+      \end{align}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      How to express these constraints without computing the full VRP region?
+      \vfill
+      \begin{itemize}
+        \item Solve the problem at the joint level
+        \item Introduce virtual joints, torques and contact wrenches variables to formulate $\hat{\DCM}$ as a VRP
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Experiments}
-	\framesubtitle{Multi-contact dynamic balance}
-	\centering
-	\begin{tikzpicture}
-		\node
-		[label={[font=\scriptsize, align=center]below:Contact wrench norms computed by QP for each contact during the experiment.}] 
-		{
-			\fontsize{9pt}{9pt}\selectfont
-			\def\svgwidth{0.6\linewidth}{\input{figures/WrenchPhases_fixed.pdf_tex}}
-		};
-	\end{tikzpicture}
-	
+  \frametitle{Constrained DCM-VRP Control}
+  \framesubtitle{Implicit bounding}
+  \centering
+  \begin{columns}
+    \begin{column}{0.2\textwidth}
+      Objective
+      \begin{equation*}
+        ||\VRP - \VRP_{d}||^2
+      \end{equation*}
+      becomes
+      \begin{equation*}
+        ||\CoM - \frac{\mathbf{F}_\text{ext}}{m\omega^2} + \boldsymbol{\Delta}_z - \VRP_d||^2
+      \end{equation*}
+    \end{column}
+    \begin{column}{0.2\textwidth}
+      Constraint
+      \begin{equation*}
+        \VRP \in \cal{P}_\text{VRP}
+      \end{equation*}
+      becomes
+      \begin{equation*}
+        \wrench_i \in \cal{P}_\text{Feasible i}
+      \end{equation*}
+    \end{column}
+    \begin{column}{0.4\textwidth}
+      Constraint
+      \begin{equation*}
+        \hat{\DCM} \in \cal{P}_\text{VRP}
+      \end{equation*}
+      becomes
+      \begin{equation*}
+        \frac{\alpha\mathbf{F}_\text{ext}}{m\omega} + \frac{\mathbf{F}_\text{virt}}{m\omega^2} = (1 +
+        \alpha\omega)(\CoM - \DCM + \boldsymbol{\Delta}_z)
+      \end{equation*}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Experiments}
-	\framesubtitle{Multi-contact dynamic balance}
-	\centering
-	\begin{tikzpicture}
-		\node
-		[label={[font=\scriptsize, align=center]below:DCM x and y axis target (dotted lines) and value (continuous lines) during the experiment.}] 
-		{
-			\fontsize{9pt}{9pt}\selectfont
-			\def\svgwidth{0.6\linewidth}{\input{figures/DCM_plot_WrenchPhases.pdf_tex}}
-		};
-	\end{tikzpicture}
-	
+  \frametitle{Implementation}
+  \framesubtitle{QP formulation}
+  \begin{columns}[b]
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Usual QP wrench distribution for a contact:\\ the
+        contact forces are decomposed into lambda force variables}]
+        {
+          \includegraphics[width=0.9\linewidth]{figures/contact_forceDistrib_lambdas.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{tikzpicture}
+        \node
+        [label={[font=\scriptsize, align=center]below:Proposed QP wrench distribution for a contact:\\ single
+        6D wrench variable}]
+        {
+          \includegraphics[width=0.65\linewidth]{figures/contact_forceDistrib_wrenches.png}
+        };
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+
 \end{frame}
 
 \begin{frame}
-	\frametitle{Experiments}
-	\framesubtitle{Object manipulation}
-	\centering
-	\includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box1.png}
-	\includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box2.png}
-	\includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box3.png}
-	\includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box4.png} \\
-	\includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box5.png}
-	\includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box6.png}
-	\includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box7.png}
-	\includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box8.png}
+  \frametitle{Optimal DCM computation}
+  \centering
+  \begin{itemize}
+    \item Without locomotion reference trajectory objective is to remain balanced
+      \vfill
+    \item Individual contact polytopes can be used to determine default target
+  \end{itemize}
+
 \end{frame}
 
 \begin{frame}
-	\frametitle{Experiments}
-	\framesubtitle{Multi-robot balancing}
-	\centering
-	\includegraphics[width=0.2\linewidth, height=3cm]{figures/DualRob1.png}
-	\includegraphics[width=0.2\linewidth, height=3cm]{figures/DualRob2.png}
-	\includegraphics[width=0.2\linewidth, height=3cm]{figures/DualRob3.png} \\
-	\includegraphics[width=0.2\linewidth, height=3cm]{figures/DualRob4.png}
-	\includegraphics[width=0.2\linewidth, height=3cm]{figures/DualRob5.png}
-	\includegraphics[width=0.2\linewidth, height=3cm]{figures/DualRob6.png}
+  \frametitle{Optimal DCM computation}
+  \framesubtitle{Robust static DCM}
+  \centering
+  The point with the most margin within a polytope can be found as the Chebychev center
+
+  \begin{equation}
+    \begin{aligned}
+      \max_r \quad & r \\
+      \textrm{s.t.} \quad & \boldsymbol{A} \ \boldsymbol{x} + r\norm{\boldsymbol{A}} \leq \boldsymbol{b}
+    \end{aligned}
+  \end{equation}
 \end{frame}
 
+\begin{frame}
+  \frametitle{Optimal DCM computation}
+  \framesubtitle{Robust static DCM}
+  DCM position for which there is static balance: $\transpose{\wrench_\text{static}} =
+  \begin{bmatrix} 0 & 0 & 0 & 0 & 0 & mg
+  \end{bmatrix}$
+  \vfill
+  \begin{equation}
+    \begin{bmatrix}
+      \underset{i = 1}{\overset{N}{\sum}} \torque_i + \underset{i = 1}{\overset{N}{\sum}}
+      \cross{(\boldsymbol{r_i} - \CoM_\text{opti})}{\force_i} \\
+      \underset{i = 1}{\overset{N}{\sum}} \force_i
+    \end{bmatrix} \!=\!
+    \begin{bmatrix}
+      \torque_\text{static} \\
+      \mathbf{F}_\text{static}
+    \end{bmatrix}
+  \end{equation}
+  \begin{equation} \label{Eq:Optimal CoM-Wrenches}
+    \sum_{i = 1}^{N} \svaFT{i}{0}
+    \begin{bmatrix}
+      \torque_i \\
+      \force_i
+    \end{bmatrix}
+    +
+    \begin{bmatrix}
+      \lfloor\mathbf{F}_\text{static}\rfloor_\times \CoM_\text{opti} \\
+      \zeroMatrix
+    \end{bmatrix}
+    \!=\!
+    \begin{bmatrix}
+      \torque_\text{static} \\
+      \mathbf{F}_\text{static}
+    \end{bmatrix}
+  \end{equation}
+\end{frame}
 
 \begin{frame}
-	\frametitle{Drawbacks and perspectives}
-	\begin{itemize}
-		\item Coupling of the wrench polytopes limits their use without the whole-body QP
-		\item With studies on the average "torque limits" of impaired or elderly people, this exact framework could be used to better estimate the assitance needed
-		\item The fast computations could be plugged to an MPC for feasiblity
-	\end{itemize}
-	
+  \frametitle{Optimal DCM computation}
+  \framesubtitle{Optimal wrench distribution}
+  The QP becomes
+  \begin{equation} \label{Eq:CoM auto target}
+    \begin{aligned}
+      \min_{\substack{\wrench_i, r_i, \CoM_\text{opti}}}
+      \quad & -\sum_{i = 1}^{N}r_i + \sum_{i = 1}^{N}\wrench_i + \eqref{Eq:Optimal CoM-Wrenches} +
+      k||\CoM_\text{opti} - \DCM_\text{prev}||^2  \\
+      \textrm{s.t.} \quad & \boldsymbol{A}_i \ \wrench_i + r_i\norm{\boldsymbol{A}_i} \leq \boldsymbol{b}_i \\
+      & -r_i \leq 0
+    \end{aligned}
+  \end{equation}
+  The resulting optimal CoM position $ \CoM_\text{opti}$ is given as a target to the balancing task
+\end{frame}
+
+\begin{frame}
+  \frametitle{Optimal DCM computation}
+  \framesubtitle{Automatic contact transitions}
+  \begin{itemize}
+    \item Contact polytopes $\mathcal{H}$-description can be scaled using a coefficient on the planes offsets
+    \item This can be used for automatic contact transitions
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Experiments}
+  \framesubtitle{Multi-contact dynamic balance}
+  \centering
+  \movie[autostart,width=10cm,height=6cm,duration=132s,poster,showcontrols]{}{movies/Friends_wall_poly.mp4}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Experiments}
+  \framesubtitle{Multi-contact dynamic balance}
+  \centering
+  \begin{tikzpicture}
+    \node
+    [label={[font=\scriptsize, align=center]below:Contact wrench norms computed by QP for each contact during
+    the experiment.}]
+    {
+      \fontsize{9pt}{9pt}\selectfont
+      \def\svgwidth{0.6\linewidth}{\input{figures/WrenchPhases_fixed.pdf_tex}}
+    };
+  \end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Experiments}
+  \framesubtitle{Multi-contact dynamic balance}
+  \centering
+  \begin{tikzpicture}
+    \node
+    [label={[font=\scriptsize, align=center]below:DCM x and y axis target (dotted lines) and value
+    (continuous lines) during the experiment.}]
+    {
+      \fontsize{9pt}{9pt}\selectfont
+      \def\svgwidth{0.6\linewidth}{\input{figures/DCM_plot_WrenchPhases.pdf_tex}}
+    };
+  \end{tikzpicture}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{Experiments}
+  \framesubtitle{Object manipulation}
+  \centering
+  \includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box1.png}
+  \includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box2.png}
+  \includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box3.png}
+  \includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box4.png} \\
+  \includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box5.png}
+  \includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box6.png}
+  \includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box7.png}
+  \includegraphics[width=0.18\linewidth, height=3cm]{figures/HRP4Box8.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Experiments}
+  \framesubtitle{Multi-robot balancing}
+  \centering
+  \includegraphics[width=0.2\linewidth, height=3cm]{figures/DualRob1.png}
+  \includegraphics[width=0.2\linewidth, height=3cm]{figures/DualRob2.png}
+  \includegraphics[width=0.2\linewidth, height=3cm]{figures/DualRob3.png} \\
+  \includegraphics[width=0.2\linewidth, height=3cm]{figures/DualRob4.png}
+  \includegraphics[width=0.2\linewidth, height=3cm]{figures/DualRob5.png}
+  \includegraphics[width=0.2\linewidth, height=3cm]{figures/DualRob6.png}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Drawbacks and perspectives}
+  \begin{itemize}
+    \item Coupling of the wrench polytopes limits their use without the whole-body QP
+    \item With studies on the average "torque limits" of impaired or elderly people, this exact framework
+      could be used to better estimate the assitance needed
+    \item The fast computations could be plugged to an MPC for feasiblity
+  \end{itemize}
+
 \end{frame}
 
 \section{Conclusion}
 
 \begin{frame}
-	\frametitle{Conclusion}
-	\begin{itemize}
-		\item This work started with a "simple" question: how do you assist someone ?
-		\vfill
-		\item Instrumented perception for now, to be swapped with less invasive methods
-		\vfill
-		\item Robotics knowledge on balance and interactions can readily be applied to humans
-		\vfill
-		\item Dynamic balance offers a lot of perspectives including healthcare
-	\end{itemize}
+  \frametitle{Conclusion}
+  \begin{itemize}
+    \item This work started with a "simple" question: how do you assist someone ?
+      \vfill
+    \item Instrumented perception for now, to be swapped with less invasive methods
+      \vfill
+    \item Robotics knowledge on balance and interactions can readily be applied to humans
+      \vfill
+    \item Dynamic balance offers a lot of perspectives including healthcare
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Thank you !}
-	{\centering
-	\bf{Thank you for your attention !} \par}
-	
-	\hfill \\
-	
-	{\centering
-	Please ask any questions\par}
+  \frametitle{Thank you !}
+  {\centering
+  \bf{Thank you for your attention !} \par}
+
+  \hfill \\
+
+  {\centering
+  Please ask any questions\par}
 
 \end{frame}
 
 \begin{frame}
-	\frametitle{More material}
-	\begin{columns}
-		\begin{column}{0.5\textwidth}
-			\centering
-			\movie[autostart,width=3cm,height=6cm,poster,showcontrols]{}{movies/Manip_subject2.mp4}
-		\end{column}
-		\begin{column}{0.5\textwidth}
-			\centering
-			\movie[autostart,width=3cm,height=6cm,poster,showcontrols]{}{movies/Manip_subject3.webm}
-		\end{column}
-	\end{columns}
+  \frametitle{More material}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \movie[autostart,width=3cm,height=6cm,poster,showcontrols]{}{movies/Manip_subject2.mp4}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \movie[autostart,width=3cm,height=6cm,poster,showcontrols]{}{movies/Manip_subject3.webm}
+    \end{column}
+  \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{More material}
-	\centering
-	\movie[autostart,width=10cm,height=6cm,poster,showcontrols]{}{movies/HRP4WallXP2.webm}
+  \frametitle{More material}
+  \centering
+  \movie[autostart,width=10cm,height=6cm,poster,showcontrols]{}{movies/HRP4WallXP2.webm}
 \end{frame}
 
 \end{document}
